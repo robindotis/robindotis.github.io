@@ -12,10 +12,20 @@
 		<email>admin@robin.is</email>
 	</author>
 			<entry>
-		<title>Again using PHP</title>
-		<link href="https://www.robin.is/posts/2024/again-using-php/"/>
+		<title>Back on GitHub Pages</title>
+		<link href="https://www.robin.is/posts/2024/back-on-github-pages/"/>
+		<updated>2024-09-30 09:11:00</updated>
+		<id>https://www.robin.is/posts/2024/back-on-github-pages/</id>
+		<content type="html">&lt;p&gt;A couple of days ago I wrote about how I had migrated my SSG from &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt; to my own custom PHP script and switched to hosting the site on &lt;a href=&quot;https://www.nearlyfreespeech.net/&quot;&gt;NearlyFreeSpeech.Net&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I now managed to get my PHP running with GitHub Actions, which meant I can again publish to GitHub Pages. As much as like supporting smaller hosts, the convenience of publishing to GitHub Pages using an automated GitHub Action is hard to beat. It saves me having to connect to the NFS servers and run a build script there. Sure I could have a cron job running there or something like that, but it seemed a bit pointless to build without changes to the content.&lt;/p&gt;
+&lt;p&gt;Now if only there was a good editor or even CMS for GitHub. I miss forestry.io, which really did exactly what I wanted, but unfortunately its replacement, &lt;a href=&quot;https://tina.io/forestry/&quot;&gt;tina.io&lt;/a&gt; does not. I will keep looking.&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
+		<title>Going it alone</title>
+		<link href="https://www.robin.is/posts/2024/going-it-alone/"/>
 		<updated>2024-09-28 09:11:00</updated>
-		<id>https://www.robin.is/posts/2024/again-using-php/</id>
+		<id>https://www.robin.is/posts/2024/going-it-alone/</id>
 		<content type="html">&lt;p&gt;Towards the end of 2020 I started to rebuild my site using the &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt; static site generator.  &lt;a href=&quot;/posts/2021/welcome-back/&quot;&gt;The new site went live on the 1st January 2021&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My site had been running on &lt;a href=&quot;https://wordpress.org/&quot;&gt;Wordpress&lt;/a&gt; for years. First on a self-hosted Wordpress installation, later on &lt;a href=&quot;https://wordpress.org/&quot;&gt;Wordpress.com&lt;/a&gt;. At some point I just got tired of the increasing complexity of Wordpress. It&#039;s a great tool, but all I really needed to do was to write some posts and update some pages. I also wanted to be much more free to style my site the way I wanted, without having create or adapt Wordpress themes. In short I wanted to be closer to the metal and didn&#039;t need 99% of the features Wordpress offers.&lt;/p&gt;
 &lt;p&gt;Eleventy seemed like a good choice at the time, and so it proved. I don&#039;t in any way regret making the switch. Once I got going in it, I found it relatively easy to deal with and adapt. However, with time I also realised that my JavaScript skills are simply not good enough. I stopped programming for a living over 10 years ago. Even beforehand, I was never really focussed on JavaScript. With time I realised that whilst I could get things done in Eleventy, I struggled to understand what I was doing. There is excellent support out there in terms of blogs and discussions, and I always managed to implement what I wanted, but it often felt more like plug and pray.&lt;/p&gt;
@@ -278,23 +288,6 @@
 &lt;p&gt;Some citizens rationalise keeping the status quo in various ways: The miserable child probably would not get much better if let free; Freeing the child would prevent other works of brilliance and beauty from existing.&lt;/p&gt;
 &lt;p&gt;Others, upon seing the misery of the child, simply walk down the street, keep walking and walking and eventually leave Omelas. They are The Ones Who Walk Away From Omelas. The author states that the place they head to is even less imagineable than Omelas. I take this as a hint that it might be better. Meaning that if you have the courage to walk away from something apparently wonderful, yet disagreeable , you might actually reach somewhere even better.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/2024/omelas.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-</content>
-	</entry>
-			<entry>
-		<title>The Dispossessed</title>
-		<link href="https://www.robin.is/posts/2024/the-dispossessed/"/>
-		<updated>2024-07-24 17:28:11</updated>
-		<id>https://www.robin.is/posts/2024/the-dispossessed/</id>
-		<content type="html">&lt;h2&gt;by Ursula K. Le Guin&lt;/h2&gt;
-&lt;p&gt;I read this book straight after reading &lt;a href=&quot;/posts/2024/the-left-hand-of-darkness/&quot;&gt;The Left Hand of Darkness&lt;/a&gt; by the same author.&lt;/p&gt;
-&lt;p&gt;The book tells the story of the invention of the ansible, which allows for instantaneous communication (but not travel) across solar systems. It covers three different civilisations spread across several plantes. These are the anarchists on Anarres, the propertarians on Urras, the Terrans (surviving on Earth earth afte climate collapse reduced their population from 9 billion to 500 million) and the Hainish, which at several thousands of millenia is the oldest civilisation.&lt;/p&gt;
-&lt;p&gt;It is a very insightful critique of different political systems such as capitalism, communism and anarchism without actually taking sides. They all have their faults and all have their benefits. The book also encourages you to think about how these systems could interact going foward as purposefully it does not come to a clear conclusion.&lt;/p&gt;
-&lt;p&gt;I particularly liked that part of the ending with the Hainish commander Ketho being curious to visit the young anarchist civilisation on Anarres. Despite warnings from Shevek that his safety could not be guaranteed he insisted on visiting, not because anarchy was something new to his civilisation, far from it. But because his civilisation was 100s of millenia old and whilst it had tried anarchy, he personally had not experienced it. As he said:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The there is nothing new under any sun. But if each life is not new, wach single life, then why are we born?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The way I understand it he basically wanted to experience a youthful civilisation, given the age of his own, Hainish, society.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/the-dispossessed.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </content>
 	</entry>
 	</feed>
