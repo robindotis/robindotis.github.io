@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<LINK REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../css/atd_viewer.css">
+</HEAD>
+<SCRIPT LANGUAGE="javascript">
+aGlossary = new Array();
+aGlossary[0] = "COL";
+aGlossary[1] = "EC";
+function checkEntry(e)
+{
+ sSearch = document.forms[0].search.value; //+sKeyChar;
+	iLength = sSearch.length;
+	if (iLength>0)
+	{
+		//check items
+		for (i=0;i<aGlossary.length;i++)
+		{
+			if (sSearch.toLowerCase() == aGlossary[i].substring(0,iLength).toLowerCase())
+			{
+				parent.RESULTS.location.href="glossary.htm#"+aGlossary[i];
+				i=aGlossary.length;
+			}
+		}
+	}
+	return true;
+}
+
+function loadKeyword()
+{
+//	var sLocation = parent.RESULTS.location.href;
+//	var iPos = sLocation.indexOf("#");
+//	if ((iPos==-1)||(sLocation.length<=iPos+2))
+//		alert("Sorry, no glossary item has been selected")
+//	else
+//		parent.opener.openGlossary(sLocation.substring(iPos+1,sLocation.length))
+	window.open("glossarySearch.htm","GLSEARCH","width=380,height=380,left=40,top=40");
+}
+
+</SCRIPT>
+<BODY VLINK=blue CLASS="dialog">
+<CENTER>
+<FORM>
+<FONT SIZE=2>
+A&nbsp;
+B&nbsp;
+<A HREF="glossary.htm#C" TARGET="RESULTS">C</A>&nbsp;
+D&nbsp;
+<A HREF="glossary.htm#E" TARGET="RESULTS">E</A>&nbsp;
+F&nbsp;
+G&nbsp;
+H&nbsp;
+I&nbsp;
+J&nbsp;
+K&nbsp;
+L&nbsp;
+M&nbsp;
+N&nbsp;
+O&nbsp;
+P&nbsp;
+Q&nbsp;
+R&nbsp;
+S&nbsp;
+T&nbsp;
+U&nbsp;
+V&nbsp;
+W&nbsp;
+X&nbsp;
+Y&nbsp;
+Z&nbsp;
+</FONT>
+&nbsp;&nbsp;&nbsp;
+<INPUT TYPE=button NAME="keyword" VALUE="Search" onClick="loadKeyword();">
+&nbsp;
+<INPUT TYPE=button onClick="top.close();" VALUE="Close">
+</FORM>
+</CENTER>
+</BODY>
+</HTML>

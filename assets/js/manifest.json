@@ -1,0 +1,40 @@
+{
+    "name": "robin.is",
+    "short_name": "robindotis",
+    "start_url": "/",
+    "display": "minimal-ui",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "description": "Robin Massart",
+    "icons": [
+      {
+        "src": "/assets/images/cw.jpg",
+        "sizes": "75x75",
+        "type": "image/jpg"
+      },
+      {
+        "src": "/assets/images/cw-icon.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/images/cw-icon-large.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "/assets/images/screenshot-narrow.png",
+        "type": "image/png",
+        "sizes": "400x472",
+        "form_factor": "narrow"
+      },
+      {
+        "src": "/assets/images/screenshot-wide.png",
+        "type": "image/png",
+        "sizes": "800x441",
+        "form_factor": "wide"
+      }
+    ]
+  }

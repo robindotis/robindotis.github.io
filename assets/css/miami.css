@@ -1,0 +1,118 @@
+/*=========
+  DARK MODE
+  =========*/
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-bg-color: #333;
+        --header-bg-color: #264d73;
+        --header-title-color: #ddd;
+        --header-title-focus-color: #B85F01;
+        --header-subtitle-color: #fff;
+        --header-navtext-color: #ffffff;
+        --main-highlight-color: #009cd7;
+        --main-bg-color: #333;
+        --main-text-color: var(--header-title-color);
+        --main-font-family: "'Lucia Grande', Verdana, Helvetica, Arial, sans-serif, serif";
+        --postlist-navtext-color: #000000;
+        --footer-bg-color: #aaa;
+        --footer-text-color: #000;
+        --footer-navtext-color: #000;
+        --link-color: var(--header-title-color);
+        --link-focus-color: #000;
+        --link-focus-bg-color: #ffff00;
+        --date-bg-color: var(--header-bg-color);
+        --date-text-color: var(--header-title-color);        
+    }
+}
+
+/*==========
+  LIGHT MODE
+  ==========*/
+/*
+    Google search: https://www.google.com/search?q=miami+colours&oq=miami+colours
+    Color pallette: https://www.color-hex.com/color-palette/80537  
+*/
+
+  @media (prefers-color-scheme: light) {
+    :root {
+        --body-bg-color: #ff4df0;
+        --header-bg-color: #70ffdf;
+        --header-title-color: #1d269b;
+        --header-title-focus-color: #B85F01;
+        --header-subtitle-color: #1d269b;
+        --header-navtext-color: #1d269b;
+        --main-highlight-color:  #ff4df0;
+        --main-bg-color: ;
+        --main-text-color: #fff;
+        --main-font-family: "'Lucia Grande', Verdana, Helvetica, Arial, sans-serif, serif";
+        --postlist-navtext-color: #000000;
+        --footer-bg-color: ;
+        --footer-text-color: #005c5c;
+        --footer-navtext-color: #005c5c;
+        --link-color: #fff;
+        --link-focus-color: #000;
+        --link-focus-bg-color: #ffff00;
+        --date-bg-color: var(--header-bg-color);
+        --date-text-color: var(--header-title-color);        
+    }
+}
+
+body {
+  font-stretch: 110%;
+  font-weight: 600;
+  background: linear-gradient(#70ffdf, #ff4df0);
+  background-attachment: fixed;
+}
+
+main {
+  background-image: url('/assets/images/miami-skyline-small.png');
+  background-position: 0 130px;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+}
+
+header nav.subtitle a.current {
+  color: #fff;
+}
+
+main > div.main-content {
+/*  margin: 0 1rem;*/
+  padding: 10px;
+  width: calc(100% - 6rem);
+}
+
+header div.header-area {
+  background: linear-gradient(#70ffdf, #ff4df0);
+  background-attachment: fixed;
+}
+
+main div.main-content {
+  background-color: #9d4dff;
+  border-top: #ff4df0 solid 1rem;
+  border-bottom: #1d269b solid 1rem;
+  border-left: #ff4df0 solid 1rem;
+  border-right: #ff4df0 solid 1rem;
+}
+
+th {
+    background-color: #ff4df0;
+    color: var(--header-navtext-color);
+}
+
+tr:nth-child(even) td {background: var(--header-navtext-color);}
+tr:nth-child(odd) td {background: var(--main-bg-color);}
+
+footer {
+  border:0;
+}
+
+@media (min-width: 900px) { 
+  main div.main-content {
+    border-left: #ff4df0 solid 1rem;
+    border-right: #ff4df0 solid 1rem;
+  }
+}
+
+.sitetitle img {
+  content: url("/assets/images/miami.jpg");
+}

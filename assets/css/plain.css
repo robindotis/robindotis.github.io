@@ -1,0 +1,21 @@
+:root {
+    --header-bg-color: #F2E3A9; /*#009cd7;*/
+    --header-title-color: #B85F01; /*#fff;*/
+    --header-title-focus-color: #000; /*#B85F01;*/
+    --header-subtitle-color: #800020;
+    --header-navtext-color: #005c5c;
+    --main-highlight-color: #AE0951;
+    --main-bg-color: #ffffff;
+    --main-text-color: #000;
+    --main-font-family: "'Lucia Grande', Verdana, Helvetica, Arial, sans-serif, serif";
+    --postlist-navtext-color: var(--header-navtext-color);
+    --footer-bg-color: #eeeeee;
+    --footer-text-color: var(--header-navtext-color);
+    --footer-navtext-color: var(--header-navtext-color);
+    --link-color: #000000;
+    --link-focus-color: var(--link-color);
+    --link-focus-bg-color: #ffff00;
+    --date-bg-color: var(--header-title-color); /*var(--header-bg-color);*/
+    --date-text-color: var(--header-bg-color); /*var(--header-title-color);*/
+    --body-color: #fff;        
+}

@@ -1,0 +1,113 @@
+<!-- notes.htm -->
+<!--
+' Descr: 		Annotate page
+' Created:		03/11/1998 (RM)
+' Last Changed:	10/11/1998 (RM)
+' Params:		
+-->
+<HTML>
+<TITLE>Notes Viewer</TITLE>
+<HEAD>
+<LINK REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../css/atd_viewer.css">
+<SCRIPT LANGUAGE='javascript'>
+<!--
+var iThisPage = window.opener.parent.HIDDEN.iCurrentPage;   //Current page number
+var bSaved = true;	//Have notes been saved: true or false
+
+//*********************
+//Name:	loadNotes
+//Purpose:	Loads the notes for the current page from the
+//		notes array in the lesson engine (hidden frame).
+//Params:	None
+//Return:	None
+//Created:	03/11/1998 (RM)
+//Modified:	03/11/1998 (RM)
+//*********************
+function loadNotes()
+{
+  parent.opener.status="Notes Window";
+  document.notes.text.value=window.opener.parent.HIDDEN.L.Page[self.iThisPage].notes;
+}
+
+//*********************
+//Name:	closeWindow
+//Purpose:	Closes the notes window after determining whether the user has
+//		updates and saved any changes to the notes
+//Params:	None
+//Return:	None
+//Created:	03/11/1998 (RM)
+//Modified:	03/11/1998 (RM)
+//*********************
+function closeWindow()
+{
+  if (bSaved) {self.close();}
+  else
+  {
+	if (confirm("Unsaved changes will be lost.\nAre you sure you want to quit?")) {self.close();}
+  }
+}
+
+//*********************
+//Name:	saveNotes
+//Purpose:	Saves the notes entered by the user to the notes array in the lesson engine
+//		and sets the coorect image to be displayed in the toolbar.
+//Params:	None
+//Return:	None
+//Created:	03/11/1998 (RM)
+//Modified:	03/11/1998 (RM)
+//*********************
+function saveNotes()
+{
+  window.opener.parent.HIDDEN.L.Page[self.iThisPage].notes = document.notes.text.value;
+  self.bSaved = true;
+
+  if (document.notes.text.value=="")
+  {
+	window.opener.document.paperclip_on_img.src = window.opener.paperclip_off_img.src;
+  }
+  else
+  {
+	window.opener.document.paperclip_on_img.src = window.opener.paperclip_on_img.src;
+  }
+}
+
+//*********************
+//Name:	deleteNotes
+//Purpose:	Deletes the notes of the current page, by setting the notes array
+//		(in the lesson engine) for the current page equal to ""
+//Params:	None
+//Return:	None
+//Created:	03/11/1998 (RM)
+//Modified:	03/11/1998 (RM)
+//*********************
+function deleteNotes()
+{
+  if (confirm("Delete Notes?"))
+  {
+	window.opener.parent.HIDDEN.L.Page[self.iThisPage].notes = "";
+	document.notes.text.value="";
+	//set image in toolbar.
+	window.opener.document.paperclip_on_img.src = window.opener.paperclip_off_img.src;
+	self.bSaved = true;
+  }
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY onLoad="loadNotes();" onUnload="parent.opener.parent.HIDDEN.intNotes=0;">
+<FORM NAME='notes'>
+<TABLE>
+<TR>
+<TD>Type Notes here:</TD>
+</TR><TR>
+<TD><TEXTAREA COLS=40 ROWS=10 NAME='text' onChange='self.bSaved=false;'></TEXTAREA></TD>
+</TR><TR><TD ALIGN=right>
+<INPUT TYPE='button' NAME=submit VALUE='Save' onClick="saveNotes();">
+<INPUT TYPE='button' NAME=submit VALUE='Delete' onClick="deleteNotes();">
+<INPUT TYPE='button' NAME=submit VALUE='Close' onClick="closeWindow();">
+</TD></TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

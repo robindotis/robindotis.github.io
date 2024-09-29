@@ -1,0 +1,124 @@
+BODY
+{
+    BACKGROUND-COLOR: #ffffff;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 9pt
+}
+TABLE
+{
+    BACKGROUND-COLOR: #ffffff;
+    FONT-SIZE: 9pt
+}
+TD
+{
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 9pt
+}
+TD.pTitle
+{
+    BORDER-BOTTOM: #000000 solid 2px;
+    BORDER-LEFT: #000000 0px;
+    BORDER-RIGHT: #000000 solid 2px;
+    BORDER-TOP: #000000 0px;
+    FONT-SIZE: 9pt
+}
+BODY.toolbar
+{
+    BACKGROUND-COLOR: #c0c0c0;
+    FONT-SIZE: 9pt
+}
+TABLE.toolbar
+{
+    BACKGROUND-COLOR: #c0c0c0;
+    FONT-SIZE: 9pt
+}
+TABLE.bookmarks
+{
+    BACKGROUND-COLOR: lightblue;
+    FONT-SIZE: 9pt
+}
+TD.newletter
+{
+    BACKGROUND-COLOR: lightblue;
+    FONT-SIZE: 9pt
+}
+A.map
+{
+    FONT-SIZE: 9pt;
+    TEXT-DECORATION: none
+}
+SPAN.cell
+{
+    COLOR: white;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: bold
+}
+DIV
+{
+    FONT-SIZE: 9pt
+}
+TD.maptitle
+{
+    FONT-SIZE: 15pt
+}
+A.tabhigh
+{
+    COLOR: red;
+    TEXT-DECORATION: none
+}
+A.tabnormal
+{
+    COLOR: white;
+    TEXT-DECORATION: none
+}
+TD.tabhigh
+{
+    BACKGROUND-COLOR: #c0c0c0
+}
+TD.tabnormal
+{
+    BACKGROUND-COLOR: #808080
+}
+TD.tabselected
+{
+    BACKGROUND-COLOR: #02329a
+}
+A.tabselected
+{
+    COLOR: blue;
+    TEXT-DECORATION: none
+}
+A.glossary
+{
+    COLOR: blue;
+    TEXT-DECORATION: none;
+    CLOR: #008000;
+    EXT-DECORATION: none
+}
+A.popup
+{
+    COLOR: #0000ff;
+    EXT-DECORATION: none
+}
+A.nopopup
+{
+    COLOR: #800000;
+    EXT-DECORATION: none
+}
+BODY.dialog
+{
+    BACKGROUND-COLOR: silver
+}
+TD.dialog
+{
+    BACKGROUND-COLOR: silver
+}
+TABLE.dialog
+{
+    BACKGROUND-COLOR: silver;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none
+}

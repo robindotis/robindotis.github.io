@@ -1,0 +1,131 @@
+<!-- blank.htm -->
+<!--
+<%
+' Descr: 		blank page
+' Created:		01/12/1998 (RM)
+' Last Changed:	01/12/1998 (RM)
+' Params:		
+%>
+-->
+<HTML>
+<HEAD>
+<LINK REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../css/atd_viewer.css">
+<TITLE>Glossary Search</TITLE>
+<!--<FRAMESET>
+</FRAMESET>-->
+<SCRIPT LANGUAGE='javascript'>
+<!--
+//*********************
+//Name:	
+//Purpose:			
+//Params:	
+//Return:	
+//Created:	
+//Modified:	
+//*********************
+function checkEntry(e)
+{
+	sSearch = document.forms[0].search.value; //+sKeyChar;
+	aGlos = opener.aGlossary;
+	iLength = sSearch.length;
+	if (iLength>0)
+	{
+		//check items
+		for (i=0;i<aGlos.length;i++)
+		{
+			if (sSearch.toLowerCase() == aGlos[i].substring(0,iLength).toLowerCase())
+			{
+				var iPos = i+15;
+				
+				if (iPos>document.forms[0].elements[1].options.length-1)
+					iPos=document.forms[0].elements[1].options.length-1
+					
+				document.forms[0].elements[1].selectedIndex = iPos;
+				document.forms[0].elements[1].selectedIndex = i;
+				i=aGlos.length;
+			}
+		}
+	}
+	return true;
+}
+
+function populateForm()
+{
+	iOptCount = document.forms[0].elements[1].options.length;
+
+	// remove all elements;
+	for (var i=0;i<iOptCount;i++)
+	{
+		document.forms[0].elements[1].options[0]=null;
+	}
+
+	aGlos = opener.aGlossary;
+	iGlossCount = aGlos.length;
+	for (var i=0;i<iGlossCount;i++)
+	{
+		var oOption = document.createElement("OPTION");
+		oOption.value = aGlos[i];
+		oOption.text = aGlos[i];
+		document.forms[0].elements[1].add(oOption);  //options[i] = aGlos[i];
+	}
+
+	var sTerm = opener.parent.opener.parent.HIDDEN.strGlossaryTerm;
+	
+	if ((sTerm!="")&&(sTerm!="TOP"))
+	{
+		document.forms[0].search.value = sTerm;
+		checkEntry();
+	}
+	else
+		opener.parent.opener.parent.HIDDEN.strGlossaryTerm = "";
+	
+}
+
+function loadItem()
+{
+	//check selected item
+	var iSel = document.forms[0].elements[1].selectedIndex;
+
+	if (iSel!=-1)
+	{
+		sName = document.forms[0].elements[1].options[iSel].text;
+		opener.parent.RESULTS.location.href="glossary.htm#"+sName;
+		window.close();
+	}
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY CLASS="dialog" BCOLOR="silver" onLoad="populateForm()">
+<FORM NAME="search">
+<TABLE CLASS="dialog" BORDER=0 CELLPADDING=3>
+<TR>
+	<TD CLASS="dialog">
+		Enter search words here:<BR>
+		<INPUT TYPE="text" NAME="search" onKeyUp="checkEntry();" SIZE="40">
+	</TD>
+</TR><TR>
+	<TD CLASS="dialog">
+		<SELECT SIZE="15" onDblClick="loadItem()">
+			<OPTION>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</OPTION>
+		</SELECT>
+	</TD>
+</TR><TR>
+	<TD CLASS="dialog" ALIGN="CENTER" WIDTH="100%">
+		<INPUT TYPE="button" NAME="go" VALUE="View" onClick="loadItem();">&nbsp;&nbsp;&nbsp;
+		<INPUT TYPE="button" NAME="close" VALUE="Close" onClick="window.close();">
+	</TD>
+</TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

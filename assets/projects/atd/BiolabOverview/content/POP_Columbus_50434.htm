@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE>Columbus</TITLE>
+<LINK REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../common/css/atd_viewer.css">
+<SCRIPT LANGUAGE="javascript">
+<!--
+bAudioExists = false;
+function checkSound()
+{
+	if ((opener.parent.HIDDEN.bAudio==true)&&(bAudioExists))
+	{
+	  //Have to ensure there is a file in IE, else an error occurs
+	  if (opener.parent.HIDDEN.NSsound)
+	  {
+		document.embeds["oSound0"].play();
+	  }
+	  else if (opener.parent.HIDDEN.IEsound)
+	  {
+		document.embeds["oSound0"].play();
+	  }
+	}
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY onLoad="self.focus(); checkSound();" onBlur="self.focus();">
+<DIV ID="text0" NAME="text0" STYLE="font-family: arial; position: absolute; top: 10; left: 10; visibility: visible;">
+<TABLE WIDTH=100% CELLPADDING=2 CELLSPACING=2 BORDER=0>
+<TR>
+<TD WIDTH=100% NAME=full VALIGN=top ALIGN=center>
+<IMG SRC="graphics/ISS_columbus view.jpg"><BR><B>Fig: </B>ISS_columbus view<BR></TD>
+</TR>
+</TABLE>
+</DIV>
+
+</BODY>
+</HTML>

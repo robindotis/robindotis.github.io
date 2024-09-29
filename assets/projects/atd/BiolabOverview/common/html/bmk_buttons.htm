@@ -1,0 +1,25 @@
+<!-- bmk_buttons.htm -->
+<!--
+<%
+' Descr: 		Page containing bookmark buttons
+' Created:		05/11/1998 (RM)
+' Last Changed:	05/11/1998 (RM)
+' Params:		
+%>
+-->
+<HTML>
+<HEAD>
+<LINK REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../css/atd_viewer.css">
+</HEAD>
+<BODY onUnload="parent.opener.parent.HIDDEN.intBookmarks=0;" CLASS="dialog">
+<FORM NAME="bookmark">
+<TABLE WIDTH=100% CLASS="dialog">
+<TR><TD ALIGN=center CLASS="dialog">
+<INPUT TYPE=button VALUE="Add" onClick="parent.MAIN.addBookmark();">
+<INPUT TYPE=button VALUE="Delete" onClick="parent.MAIN.deleteBookmark();">
+<INPUT TYPE=button VALUE="Close" onClick="parent.close();"><BR>
+</TD></TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

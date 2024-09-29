@@ -1,0 +1,36 @@
+:root {
+    --header-bg-color: #333;
+    --header-title-color: #ffff00;
+    --header-title-focus-color: #000;
+    --header-subtitle-color: var(--header-title-color);
+    --header-navtext-color: var(--header-title-color);
+    --main-highlight-color: #888;
+    --main-bg-color: #000;
+    --main-text-color: var(--header-title-color);
+    --main-font-family: "'Lucia Grande', Verdana, Helvetica, Arial, sans-serif, serif";
+    --postlist-navtext-color: var(--header-navtext-color);
+    --footer-bg-color: #000;
+    --footer-text-color: var(--header-navtext-color);
+    --footer-navtext-color: var(--header-navtext-color);
+    --link-color: #fff;
+    --link-focus-color: #000;
+    --link-focus-bg-color: var(--header-title-color);
+    --date-bg-color: var(--header-bg-color);
+    --date-text-color: var(--header-title-color);        
+}
+
+a:focus, a:hover, button:focus {
+    background-color: #70ffdf!important; /* var(--link-focus-bg-color)!important;*/
+    color: var(--link-focus-color)!important;
+    border:2px solid;
+    border-color: var(--link-focus-color)!important;
+    text-decoration: none!important;
+}
+
+th {
+    background-color: var(--header-title-color);
+    color: var(--main-bg-color);
+}
+
+tr:nth-child(even) td {background: #444;}
+tr:nth-child(odd) td {background: var(--main-bg-color);}

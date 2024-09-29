@@ -1,0 +1,121 @@
+<HTML>
+<HEAD>
+<TITLE>Toolbar</TITLE>
+<LINK REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../common/css/atd_viewer.css">
+<SCRIPT LANGUAGE="JavaScript" SRC="../common/js/toolbar.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide from old browsers
+
+bExport = true;
+//-----------------------------------------------------------------------------
+//---- This is addded at end because it only applies to the previewer ---------
+//-----------------------------------------------------------------------------
+
+// Set button positions (not navigation buttons)
+aPos = new Array();
+aPos[0] = glossary_btn;
+aPos[1] = bookmarks_btn;
+aPos[2] = search_btn;
+aPos[3] = word_btn;
+aPos[4] = audio_btn;
+
+// Stop hiding from old browsers -->
+</SCRIPT>
+</HEAD>
+<BODY onKeyUp="Key_Up_IE();" CLASS=toolbar TOPMARGIN="0" LEFTMARGIN="0" onLoad="load(); startChecker();" >
+<DIV ALIGN="center">
+<CENTER>
+<FORM NAME="step">
+<TABLE CLASS=toolbar BORDER="0" WIDTH="100%">
+  <TR>
+	<TD>
+		<SCRIPT>
+		<!-- // Create nav buttons 
+		document.write("<A HREF='javascript:void(0)' onClick=\""+prev_btn.click+"\" onMouseOver=\""+prev_btn.mouseover+"\">");
+		document.write("<IMG NAME=\""+prev_btn.name+"\" SRC=\""+prev_btn.src+"\" BORDER=0 ALT=\""+prev_btn.alt+"\">");
+		document.write("</A>");
+		// Stop hiding from old browsers -->
+		</SCRIPT>
+
+	</TD>
+	<TD>
+		<SCRIPT>
+		<!-- // Create nav buttons
+		document.write("<A HREF='javascript:void(0)' onClick=\""+next_btn.click+"\" onMouseOver=\""+next_btn.mouseover+"\">");
+		document.write("<IMG NAME=\""+next_btn.name+"\" SRC=\""+next_btn.src+"\" BORDER=0 ALT=\""+next_btn.alt+"\">");
+		document.write("</A>");
+		// Stop hiding from old browsers -->
+		</SCRIPT>
+		</A> 
+	</TD>
+	<TD WIDTH='5%' ALIGN='left'>
+		<SCRIPT>
+		<!--  // creates tool buttons in user defined order (export only)
+		for (var i=0;i<aPos.length;i++)
+		{
+			if (aPos[i].name.indexOf("lm_on_img")==-1)
+			{
+				document.write("<A HREF='javascript:void(0)' onClick=\"aPos["+i+"].load(aPos["+i+"])\" onMouseOver=\""+aPos[i].mouseover+"\">");
+				document.write("<IMG NAME=\""+aPos[i].name+"\" SRC=\""+aPos[i].src+"\" BORDER=0 ALT=\""+aPos[i].alt+"\"></A>&nbsp;");
+			}
+		}
+		//-->
+		</SCRIPT>
+	</TD>
+
+	<TD WDTH="100%" ALIGN="left">
+		<SCRIPT>
+		<!-- // Create paperclip buttons
+		document.write("<A HREF='javascript:void(0)' onClick=\"paperclip_btn.load(paperclip_btn)\" onMouseOver=\""+paperclip_btn.mouseover+"\">");
+		document.write("<IMG NAME=\""+paperclip_btn.name+"\" SRC=\""+paperclip_btn.src+"\" BORDER=0 ALT=\""+paperclip_btn.alt+"\">");
+		document.write("</A>");
+		// Stop hiding from old browsers -->
+		</SCRIPT>
+	</TD>
+
+	<TD WIDTH="100%" ALIGN="center">
+		<SCRIPT>
+		<!-- // Create rewind button
+		document.write("<A HREF='javascript:void(0)' onClick=\""+rewind_btn.click+"\" onMouseOver=\""+rewind_btn.mouseover+"\">");
+		document.write("<IMG NAME=\""+rewind_btn.name+"\" SRC=\""+rewind_btn.src+"\" BORDER=0 ALT=\""+rewind_btn.alt+"\">");
+		document.write("</A>");
+		// Stop hiding from old browsers -->
+		</SCRIPT>
+		<SCRIPT>
+		<!-- // Create play buttons
+		document.write("<A HREF='javascript:void(0)' onClick=\""+play_btn.click+"\" onMouseOver=\""+play_btn.mouseover+"\">");
+		document.write("<IMG NAME=\""+play_btn.name+"\" SRC=\""+play_btn.src+"\" BORDER=0 ALT=\""+play_btn.alt+"\">");
+		document.write("</A>");
+		// Stop hiding from old browsers -->
+		</SCRIPT>
+		<SCRIPT>
+		<!-- // Create pause buttons
+		document.write("<A HREF='javascript:void(0)' onClick=\""+pause_btn.click+"\" onMouseOver=\""+pause_btn.mouseover+"\">");
+		document.write("<IMG NAME=\""+pause_btn.name+"\" SRC=\""+pause_btn.src+"\" BORDER=0 ALT=\""+pause_btn.alt+"\">");
+		document.write("</A>");
+		// Stop hiding from old browsers -->
+		</SCRIPT>
+		<SCRIPT>
+		<!-- // Create skip buttons
+		document.write("<A HREF='javascript:void(0)' onClick=\""+skip_btn.click+"\" onMouseOver=\""+skip_btn.mouseover+"\">");
+		document.write("<IMG NAME=\""+skip_btn.name+"\" SRC=\""+skip_btn.src+"\" BORDER=0 ALT=\""+skip_btn.alt+"\">");
+		document.write("</A>");
+		// Stop hiding from old browsers -->
+		</SCRIPT>
+	</TD>
+
+  </TR>
+</TABLE>
+</FORM>
+</CENTER></DIV>
+<p>
+<applet name="PROC" CODE="LessonAider.class" HEIGHT="125" WIDTH="150" id="Applet1" MAYSCRIPT>
+  <param name="useslibrary" value="LessonAider">
+  <param name="namespace" value="YourNameSpace">
+  <param name="useslibrarycodebase" value="LessonAider.cab">
+  <param name="useslibraryversion" value="1,1,1,1">
+</applet>
+</p>
+</BODY>
+</HTML>

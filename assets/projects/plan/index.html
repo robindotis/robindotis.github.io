@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="UTF-8">
+        <!-- See: https://www.w3schools.com/css/css_rwd_viewport.asp-->
+        <!-- 
+            var tasksInline = [
+                {
+                    "localid": "ts0",
+                    "id": "10001",
+                    "name": "Translation 1",
+                    "pages": "8",
+                    "startDate": "2023-02-14",
+                    "endDate": "2023-02-16"
+                },
+                {
+                    "localid": "ts1",
+                    "id": "10002",
+                    "name": "Translation 2",
+                    "pages": "26",
+                    "startDate": "2023-2-15",
+                    "endDate": "2023-02-17"
+                },
+                {
+                    "localid": "ts2",
+                    "id": "10003",
+                    "name": "Translation 3",
+                    "pages": "41",
+                    "startDate": "2023-02-16",
+                    "endDate": "2023-02-19"
+                },
+                {
+                    "localid": "ts3",
+                    "id": "10004",
+                    "name": "Translation 4",
+                    "pages": "8",
+                    "startDate": "2023-02-15",
+                    "endDate": "2023-03-18"
+                },
+                {
+                    "localid": "ts4",
+                    "id": "10005",
+                    "name": "Translation 5",
+                    "pages": "1",
+                    "startDate": "2023-2-15",
+                    "endDate": "2023-02-17"
+                },
+                {
+                    "localid": "ts5",
+                    "id": "10006",
+                    "name": "Translation 6",
+                    "pages": "3",
+                    "startDate": "2023-2-15",
+                    "endDate": "2023-02-17"
+                },
+                {
+                    "localid": "ts6",
+                    "id": "10007",
+                    "name": "Translation 7",
+                    "pages": "3",
+                    "startDate": "2023-2-15",
+                    "endDate": "2023-02-17"
+                },
+                {
+                    "localid": "ts7",
+                    "id": "10008",
+                    "name": "Translation 8",
+                    "pages": "1",
+                    "startDate": "2023-2-15",
+                    "endDate": "2023-02-17"
+                }
+            ];
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task planner</title>
+
+        <style>
+            td {
+                border: 1px solid #000;
+                vertical-align: top;
+            }
+
+            .nowork td {
+                background-color: #ccc;
+            }
+
+            .ok td {
+                background-color: #C6EFCE;
+            }
+
+            .nok td {
+                background-color: #FFC7CE;
+            }
+
+            header, footer {
+                color:#fff;
+                background-color: #004494;
+                padding: 1rem;
+            }
+            header h1, footer p {
+                margin: 0;
+            }
+            main {
+                display: flex;
+            }
+            #config {
+                /*float:right;
+                width: auto;*/
+                flex: 1;
+                order:2;
+                border: 1px solid #000;
+                padding: 1rem;
+            }
+            #plan {
+                /*float:left;
+                width:*/
+                flex:0 0 auto;
+                order:1;
+                border: 1px solid #000;
+                padding: 1rem 4rem 1rem 1rem;
+            }
+            #setup {
+                /*float:left;
+                width:*/
+                flex:1;
+                order:3;
+                border: 1px solid #000;
+                padding: 1rem;
+            }
+            footer {
+                clear:both;
+            }
+
+            input[type='number']{
+               width: 5ch;
+            }
+
+            textarea {
+                width: 60ch;
+            }
+
+            h2 { 
+                width: 100%;
+                background-color: #ddd;
+                padding: 0.5rem 0 0.5rem 0.5rem;
+            }
+
+            h3 { 
+                width: 100%;
+                border-bottom: 1px solid #000;
+            }
+
+            table th {
+                text-align: left;
+            }
+            table td {
+                border:0;
+                padding: 0.1rem 0.4rem 0.1rem 0;
+            }
+</style> 
+
+        <script src="planning.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Translation planner</h1>
+        </header>
+        <main>
+            <div id="config">
+                <h2>Manage</h2>
+                <h3>Tasks</h3>
+                <div id="tasks">
+                    <div id="forms">
+                        <form id="form0" onsubmit="return processForm(event)"></form>
+                    </div>
+                    <table>
+                        <thead>
+                            <th><label id="task-id">Your Id</label></th>
+                            <th><label id="task-name">Name</label></th>
+                            <th><label id="task-pages">Pages</label></th>
+                            <th><label id="task-date">Due date</label></th>
+                            <th><label id="task-submit">Submit</label></th>
+                        </thead>
+                        <tbody id="taskstable">
+                            <tr>
+                                <td>
+                                    <input form="form0" aria-labelledby="task-id" name="task-id" type="text" required size="2">
+                                </td>
+                                <td>
+                                    <input form="form0" aria-labelledby="task-name" name="task-name" type="text" required size="10">
+                                </td>
+                                <td>
+                                    <input form="form0" aria-labelledby="task-pages" name="task-pages" type="number" step="1" required size="2">
+                                </td>
+                                <td>
+                                    <input form="form0" aria-labelledby="task-date" name="task-date" type="date" required>
+                                </td>
+                                <td>
+                                    <input form="form0" name="task-submit" type="submit" value="Add">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <template id="taskForm">
+                    <form id="form" onsubmit="return processForm(event);"></form>
+                </template>
+                <template id="taskInputs">
+                    <tr>
+                        <td>
+                            <input form="form" name="task-localid" type="text" required readonly hidden>
+                            <input form="form" aria-labelledby="task-id" name="task-id" type="text" required size="2">
+                        </td>
+                        <td>
+                            <input form="form" aria-labelledby="task-name" name="task-name" type="text" required size="10">
+                        </td>
+                        <td>
+                            <input form="form" aria-labelledby="task-pages" name="task-pages" type="number" step="1" required size="2">
+                        </td>
+                        <td>
+                            <input form="form" aria-labelledby="task-date" name="task-date" type="date" required>
+                        </td>
+                        <td>
+                            <input form="form" name="task-submit" type="submit" value="Update">
+                            <input form="form" name="task-delete" type="button" onclick="deleteTask(this);" value="Delete">
+                        </td>
+                    </tr>
+                </template>
+                <h3>Holidays</h3>
+                <div id="holidayForms">
+                    <form id="holidayForm0" onsubmit="return processHolidayForm(event)"></form>
+                </div>
+                <table>
+                    <thead>
+                        <th><label id="holiday-start">Start date</label></th>
+                        <th><label id="holiday-end">End date</label></th>
+                        <th><label id="holiday-action">Action</label></th>
+                    </thead>
+                    <tbody id="holidaystable">
+                        <tr>
+                            <td>
+                                <input form="holidayForm0" aria-labelledby="holiday-start" name="holiday-start" type="date" required>
+                            </td>
+                            <td>
+                                <input form="holidayForm0" aria-labelledby="holiday-end" name="holiday-end" type="date" required>
+                            </td>
+                            <td>
+                                <input form="holidayForm0" name="holiday-submit" type="submit" value="Add">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="setup">
+                <h2>Setup</h2>
+                <h3>Messages</h3>
+                <span id="message">Planning loaded</span>
+
+                <h3>Tasks - JSON</h3>
+                <p>
+                    Copy and store in case loose browser localstorage
+                </p>
+                <form id="jsonCurrentForm">
+                    <label for="jsonCurrent">Current JSON</label>
+                    <br/>
+                    <textarea name="json" id="jsonCurrent" rows="5" readonly></textarea>
+                    <br/>
+                    <button type="button" onclick="CopyJson('jsonCurrent')">Copy to clipboard</button>
+                    [Paste it somewhere safe with "Ctrl+V"]
+                </form>
+                <br/>
+                <form id="jsonForm" onsubmit="processJSON(event);">
+                    <label for="json-tasks">Paste saved JSON</label>
+                    <br/>
+                    <textarea name="json-tasks" id="json-tasks" rows="5"></textarea>
+                    <br/>
+                    <input type="submit" value="Save JSON tasks" />                    
+                </form>
+
+
+                <h3>Holidays - JSON</h3>
+                <p>
+                    Copy and store in case loose browser localstorage
+                </p>
+                <form id="jsonHolidaysCurrentForm">
+                    <label for="jsonHolidaysCurrent">Current JSON</label>
+                    <br/>
+                    <textarea name="json-holidays" id="jsonHolidaysCurrent" rows="5" readonly></textarea>
+                    <br/>
+                    <button type="button" onclick="CopyJson('jsonCurrent')">Copy to clipboard</button>
+                    [Paste it somewhere safe with "Ctrl+V"]
+                </form>
+                <br/>
+                <form id="jsonHolidayForm" onsubmit="processHolidaysJSON(event);">
+                    <label for="json-holidays">Paste saved JSON</label>
+                    <br/>
+                    <textarea name="json-holidays" id="json-holidays" rows="5"></textarea>
+                    <br/>
+                    <input type="submit" value="Save JSON holidays" />                    
+                </form>
+                <template id="holidayForm">
+                    <form id="holidayForm" onsubmit="return processHolidayForm(event);"></form>
+                </template>
+                <template id="holidayInputs">
+                    <tr>
+                        <td>
+                            <input form="holidayForm" name="holiday-localid" type="text" hidden required readonly>
+                            <input form="holidayForm" aria-labelledby="holiday-start" name="holiday-start" type="date" required>
+                        </td>
+                        <td>
+                            <input form="holidayForm" aria-labelledby="holiday-end" name="holiday-end" type="date" required>
+                        </td>
+                        <td>
+                            <input form="holidayForm" name="holiday-submit" type="submit" value="Update">
+                            <input form="holidayForm" name="holiday-delete" type="button" onclick="deleteHoliday(this);" value="Delete">
+                        </td>
+                    </tr>
+                </template>    
+            </div>
+            <div id="plan">
+                <h2>Planning</h2>
+                <table>
+                    <thead>
+                        <th>Day</th>
+                        <th>Task (Id)</th>
+                        <th>Hours</th>
+                        <th>Counter</th>
+                    </thead>
+                    <tbody id="planner">
+                    </tbody>
+                </table>
+                <template id="day">
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </template>    
+            </div>
+        </main>
+        <footer>
+            <p>
+                Offered without any warranty or guarantee about the accuracy. Good luck!
+            </p>
+        </footer>
+    </body>
+</html>

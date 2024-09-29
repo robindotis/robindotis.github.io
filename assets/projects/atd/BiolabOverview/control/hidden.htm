@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<SCRIPT SRC="../common/js/hidden.js"></SCRIPT>
+<SCRIPT LANGUAGE='javascript'>
+<!--
+var bExport = true;
+//--------------------------------------
+//-------- Global Variables ------------
+//--------------------------------------
+
+L = new Lesson(0,"BiolabOverview",50403);
+
+//-----------------------------------------------
+//-- Create array with all page longcodes stored in it
+//-----------------------------------------------
+iCount = 43;
+iHigh  = 50406;
+T = new Tree(1);
+T.C[1] = new Item(50406,'Lesson Map','ico_LessonMap.gif',50403,0,2,1,'les',';Lesson;Map','');
+T.C[1].C[1] = new Item(50436,'Introduction','ico_lesson_segment.gif',50406,1,2,1,'seg',';Introduction','');
+T.C[1].C[1].C[1] = new Item(50437,'Purpose & Function','ico_lesson_unit.gif',50436,2,2,0,'unt',';Purpose;&;Function','');
+T.C[1].C[1].C[1].C[1] = new Item(50439,'Purpose','ico_lesson_page.gif',50437,3,7,0,'pag','purpose;Purpose;Purpose','Purpose_50439.htm');
+T.C[1].C[1].C[1].C[1].C[1] = new Item(51614,'Purpose Step 1','ico_item_step.gif',50439,4,0,0,'stp',';Purpose;Step','');
+T.C[1].C[1].C[1].C[1].C[2] = new Item(51616,'Purpose Step 2','ico_item_step.gif',50439,4,0,0,'stp',';Purpose;Step','');
+T.C[1].C[1].C[1].C[1].C[3] = new Item(51617,'Purpose Step 3','ico_item_step.gif',50439,4,0,0,'stp',';Purpose;Step','');
+T.C[1].C[1].C[1].C[1].C[4] = new Item(51618,'Purpose Step 4','ico_item_step.gif',50439,4,0,0,'stp',';Purpose;Step','');
+T.C[1].C[1].C[1].C[1].C[5] = new Item(51619,'Purpose Step 5','ico_item_step.gif',50439,4,0,0,'stp',';Purpose;Step','');
+T.C[1].C[1].C[1].C[1].C[6] = new Item(51620,'Purpose Step 6','ico_item_step.gif',50439,4,0,0,'stp',';Purpose;Step','');
+T.C[1].C[1].C[1].C[1].C[7] = new Item(51615,'Final Step','ico_item_step.gif',50439,4,0,0,'stp',';Final;Step','');
+T.C[1].C[1].C[1].C[2] = new Item(50440,'Function','ico_lesson_page.gif',50437,3,6,0,'pag','function;Function;Function','Function_50440.htm');
+T.C[1].C[1].C[1].C[2].C[1] = new Item(51637,'Function Step 1','ico_item_step.gif',50440,4,0,0,'stp',';Function;Step','');
+T.C[1].C[1].C[1].C[2].C[2] = new Item(51639,'Function Step 2','ico_item_step.gif',50440,4,0,0,'stp',';Function;Step','');
+T.C[1].C[1].C[1].C[2].C[3] = new Item(51640,'Function Step 3','ico_item_step.gif',50440,4,0,0,'stp',';Function;Step','');
+T.C[1].C[1].C[1].C[2].C[4] = new Item(51641,'Function Step 4','ico_item_step.gif',50440,4,0,0,'stp',';Function;Step','');
+T.C[1].C[1].C[1].C[2].C[5] = new Item(51642,'Function Step 5','ico_item_step.gif',50440,4,0,0,'stp',';Function;Step','');
+T.C[1].C[1].C[1].C[2].C[6] = new Item(51638,'Final Step','ico_item_step.gif',50440,4,0,0,'stp',';Final;Step','');
+T.C[1].C[1].C[2] = new Item(50438,'Features & Components','ico_lesson_unit.gif',50436,2,3,0,'unt',';Features;&;Components','');
+T.C[1].C[1].C[2].C[1] = new Item(50447,'Sections','ico_lesson_page.gif',50438,3,4,0,'pag','automated;Automated;manual;Manual;Sections','Sections_50447.htm');
+T.C[1].C[1].C[2].C[1].C[1] = new Item(50449,'RACK','ico_item_step.gif',50447,4,0,0,'stp',';RACK','');
+T.C[1].C[1].C[2].C[1].C[2] = new Item(50451,'Automated Section','ico_item_step.gif',50447,4,0,0,'stp',';Automated;Section','');
+T.C[1].C[1].C[2].C[1].C[3] = new Item(50452,'Manual Section','ico_item_step.gif',50447,4,0,0,'stp',';Manual;Section','');
+T.C[1].C[1].C[2].C[1].C[4] = new Item(50450,'Final Step','ico_item_step.gif',50447,4,0,0,'stp',';Final;Step','');
+T.C[1].C[1].C[2].C[2] = new Item(50448,'Components','ico_lesson_page.gif',50438,3,3,0,'pag',';Components','Components_50448.htm');
+T.C[1].C[1].C[2].C[2].C[1] = new Item(50466,'Overview','ico_item_tab.gif',50448,4,0,0,'tab',';Overview','');
+T.C[1].C[1].C[2].C[2].C[2] = new Item(50475,'Incubator','ico_item_tab.gif',50448,4,0,0,'tab','incubator;Incubator','');
+T.C[1].C[1].C[2].C[2].C[3] = new Item(50478,'Centrifuges','ico_item_tab.gif',50448,4,0,0,'tab','centrifuge;Centrifuges','');
+T.C[1].C[1].C[2].C[3] = new Item(51655,'Utility Interface Panel','ico_lesson_page.gif',50438,3,0,0,'pag',';Utility;Interface;Panel','UtilityInterfacePanel_51655.htm');
+T.C[1].C[2] = new Item(51658,'Component Overview','ico_lesson_segment.gif',50406,1,1,1,'seg',';Component;Overview','');
+T.C[1].C[2].C[1] = new Item(51660,'Crew Commanding Station','ico_lesson_unit.gif',51658,2,4,0,'unt',';Crew;Commanding;Station','');
+T.C[1].C[2].C[1].C[1] = new Item(51661,'Purpose','ico_lesson_page.gif',51660,3,0,0,'pag',';Purpose','Purpose_51661.htm');
+T.C[1].C[2].C[1].C[2] = new Item(51662,'Components','ico_lesson_page.gif',51660,3,6,0,'pag','Commanding Station; CCS;Components','Components_51662.htm');
+T.C[1].C[2].C[1].C[2].C[1] = new Item(51663,'CCS Components Step 1','ico_item_step.gif',51662,4,0,0,'stp',';CCS;Components;Step','');
+T.C[1].C[2].C[1].C[2].C[2] = new Item(51665,'CCS Components Step 2','ico_item_step.gif',51662,4,0,0,'stp',';CCS;Components;Step','');
+T.C[1].C[2].C[1].C[2].C[3] = new Item(51666,'CCS Components Step 3','ico_item_step.gif',51662,4,0,0,'stp',';CCS;Components;Step','');
+T.C[1].C[2].C[1].C[2].C[4] = new Item(51667,'CCS Components Step 4','ico_item_step.gif',51662,4,0,0,'stp',';CCS;Components;Step','');
+T.C[1].C[2].C[1].C[2].C[5] = new Item(51668,'CCS Components Step 5','ico_item_step.gif',51662,4,0,0,'stp',';CCS;Components;Step','');
+T.C[1].C[2].C[1].C[2].C[6] = new Item(51664,'Final Step','ico_item_step.gif',51662,4,0,0,'stp',';Final;Step','');
+T.C[1].C[2].C[1].C[3] = new Item(51674,'Operations','ico_lesson_page.gif',51660,3,2,0,'pag',';Operations','Operations_51674.htm');
+T.C[1].C[2].C[1].C[3].C[1] = new Item(51675,'Standard','ico_item_tab.gif',51674,4,0,0,'tab',';Standard','');
+T.C[1].C[2].C[1].C[3].C[2] = new Item(51676,'Laptop','ico_item_tab.gif',51674,4,0,0,'tab',';Laptop','');
+T.C[1].C[2].C[1].C[4] = new Item(51677,'Fact Sheet','ico_lesson_page.gif',51660,3,0,0,'pag',';Fact;Sheet','FactSheet_51677.htm');
+T.C[1].sel = 1;
+defaultMethod = T.C[1].Met;
+defaultId = T.C[1].Id;
+defaultScrollPos = 0;
+
+var iPageCount = 0;
+//These values store the previous and current page numbers
+var iPreviousPage = 0;
+var iCurrentPage = 0;
+
+var NSsound = navigator.plugins && navigator.plugins["LiveAudio"];
+//window.alert(navigator.plugins);
+
+//Popups
+L.Popup[0] = new Popup("POP_Columbus_50434.htm",50434,400,400);
+L.Popup[1] = new Popup("POP_Specimen_50483.htm",50483,400,400);
+
+//Disable unwanted buttons
+var iLMapState = 1;
+var iGlossaryState = 1;
+var iBookmarkState = 1;
+var iSearchState = 1;
+var iPrintState = 1;
+var iNoteState = 1;
+var iAudioState = 1;
+var iExitState = 1;
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR=#C0C0C0 onLoad="createPageTree(T);  L.nPages = L.Page.length; checkSound();">
+<EMBED NAME="test" ID="test" SRC="../common/graphics/soundTest.wav" MASTERSOUND AUTOSTART="false" HEIGHT=1 WIDTH=1 HIDDEN="true">
+<!--
+Blank page (almost)
+<FORM NAME="DEBUG">
+<INPUT TYPE=text NAME="output" SIZE=100>
+</FORM>
+-->
+</BODY>
+</HTML>

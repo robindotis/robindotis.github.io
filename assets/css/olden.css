@@ -1,0 +1,24 @@
+:root {
+    --header-bg-color: #aaa;
+    --header-title-color: #000;
+    --header-title-focus-color: #B85F01;
+    --header-subtitle-color: #000;
+    --header-navtext-color: #000;
+    --main-highlight-color: #888;
+    --main-bg-color: #ffffff;
+    --main-font-family: "'Lucia Grande', Verdana, Helvetica, Arial, sans-serif, serif";
+    --postlist-navtext-color: var(--header-navtext-color);
+    --footer-bg-color: #eeeeee;
+    --footer-text-color: var(--header-navtext-color);
+    --footer-navtext-color: var(--header-navtext-color);
+    --link-color: #000000;
+    --link-focus-color: var(--link-color);
+    --link-focus-bg-color: #ffff00;
+    --date-bg-color: var(--header-bg-color);
+    --date-text-color: var(--header-title-color);        
+}
+
+.sitetitle img {
+    filter: grayscale(65%);
+}
+  

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feed/pretty-feed-v3.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Robin is</title>
+	<subtitle>writing, travelling, seeing, coding and walking the 🐕‍🦺</subtitle>
+		<link href="https://www.robin.is/feed/index.xml" rel="self"/>
+	<link href="https://www.robin.is/" rel="alternate" type="text/html"/>
+	<updated></updated>
+	<id>https://www.robin.is/</id>
+	<author>
+		<name>robindotis</name>
+		<email>admin@robin.is</email>
+	</author>
+			<entry>
+		<title>Again using PHP</title>
+		<link href="https://www.robin.is/posts/2024/again-using-php/"/>
+		<updated>2024-09-28 09:11:00</updated>
+		<id>https://www.robin.is/posts/2024/again-using-php/</id>
+		<content type="html">&lt;p&gt;Towards the end of 2020 I started to rebuild my site using the &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt; static site generator.  &lt;a href=&quot;/posts/2021/welcome-back/&quot;&gt;The new site went live on the 1st January 2021&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My site had been running on &lt;a href=&quot;https://wordpress.org/&quot;&gt;Wordpress&lt;/a&gt; for years. First on a self-hosted Wordpress installation, later on &lt;a href=&quot;https://wordpress.org/&quot;&gt;Wordpress.com&lt;/a&gt;. At some point I just got tired of the increasing complexity of Wordpress. It&#039;s a great tool, but all I really needed to do was to write some posts and update some pages. I also wanted to be much more free to style my site the way I wanted, without having create or adapt Wordpress themes. In short I wanted to be closer to the metal and didn&#039;t need 99% of the features Wordpress offers.&lt;/p&gt;
+&lt;p&gt;Eleventy seemed like a good choice at the time, and so it proved. I don&#039;t in any way regret making the switch. Once I got going in it, I found it relatively easy to deal with and adapt. However, with time I also realised that my JavaScript skills are simply not good enough. I stopped programming for a living over 10 years ago. Even beforehand, I was never really focussed on JavaScript. With time I realised that whilst I could get things done in Eleventy, I struggled to understand what I was doing. There is excellent support out there in terms of blogs and discussions, and I always managed to implement what I wanted, but it often felt more like plug and pray.&lt;/p&gt;
+&lt;p&gt;I became curious to write my own SSG (static site generator). One which does exactly what I want without the flexibility to support various use cases. I mean, how difficult can it be to process a bunch of markdown files?&lt;/p&gt;
+&lt;p&gt;After procrastinating between using Python or PHP, I decided on PHP as I at least had some experience of using that. After a couple of weeks of hacking, the job was done. My script came it at under 500 lines of code which I understood (at least at the time of writing them!).&lt;/p&gt;
+&lt;p&gt;Now I needed to sort out the hosting. With the Eleventy site I used a &lt;a href=&quot;https://docs.github.com/en/actions&quot;&gt;GitHub Action&lt;/a&gt; to publish my site to &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;. But getting my PHP script to run in GitHub actions seemed a lot of effort. Instead I reverted back to &lt;a href=&quot;https://www.nearlyfreespeech.net/&quot;&gt;NearlyFreeSpeech.Net&lt;/a&gt; and now use that to run the PHP script and host the static files. This involves some GitHub API calls to retrieve the latest updates of the content before processing in order to update the live site. This is a little more involved than with GitHub, but I can probably simplify it in the future.&lt;/p&gt;
+&lt;p&gt;It also feels good to be hosting my files on a smaller, indepedent host. NearlyFreeSpeech.Net have been around for over 20 years. Clearly they know what they are doing. They are also cheap as chips, hosting my site shouldn&#039;t cost me much more than a couple of dollars a month. This doesn&#039;t compete with GitHub Pages, which is free. But then, so what? The domain name costs me more than the hosting!!!&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
+		<title>Health Inequity Hackathon</title>
+		<link href="https://www.robin.is/posts/2024/health-inequity-hackathon/"/>
+		<updated>2024-09-06 23:18:27</updated>
+		<id>https://www.robin.is/posts/2024/health-inequity-hackathon/</id>
+		<content type="html">&lt;p&gt;She&#039;s done it again! After being Bacalaureate of the year in her school last year, this year my elder daughter has won the &lt;a href=&quot;https://www.linkedin.com/feed/update/urn:li:activity:7237878146769833984/&quot;&gt;Health Inequity hackathon&lt;/a&gt; organised by &lt;a href=&quot;https://www.lilly.com/&quot;&gt;Lilly&lt;/a&gt; and &lt;a href=&quot;https://www.msd-uk.com/&quot;&gt;MKD&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Well done, we are very proud parents!&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
+		<title>Visiting Copenhagen</title>
+		<link href="https://www.robin.is/posts/2024/visiting-copenhagen/"/>
+		<updated>2024-09-02 20:20:30</updated>
+		<id>https://www.robin.is/posts/2024/visiting-copenhagen/</id>
+		<content type="html">&lt;h2&gt;Gothenburg to Copenhagen&lt;/h2&gt;
+&lt;p&gt;After a couple of nights in &lt;a href=&quot;/posts/2024/visiting-gothenburg/&quot;&gt;Gothenburg&lt;/a&gt; we again got on a train, this time a 4 hour journey to Copenhagen. Again everything was smooth and without incident. You have to give it to the Scandinavians, they know how to make things work efficiently.&lt;/p&gt;
+&lt;h3&gt;Tivoli Hotel&lt;/h3&gt;
+&lt;p&gt;We got to our hotel in the early evening, it was the Tivoli hotel, a ten minute walk from the Tivoli gardens (and central train station). Whilst not as fanatastical as the Grand Curiosa hotel we stayed in in Gothenburg, it was still a very nice place. It is also a conference centre, which meant the whole place had a business feel to it, but as we saw in the morning there were plenty of families with young kids in the hotel as well.&lt;/p&gt;
+&lt;p&gt;No photos, but I impressed with this cheese cutting mechanism.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-1.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;We also found these two nearby residential towers very eye-catching. Believe it or not, everything is actually flat.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-2.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Copenhagen Day 1&lt;/h2&gt;
+&lt;p&gt;For our first full day in Copenhagen the weather was fantastic. Around 26°C with full sun all day and that city showed itself to us its best. People sunbathing at the waterfront (which is everywhere), jumping into the canals, climbing out on ladders which are every hundred meters or so. They have slides going into the water. Fantastic.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-3.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;And despite people being everywhere, it never felt crowded.&lt;/p&gt;
+&lt;h3&gt;Architecture museum&lt;/h3&gt;
+&lt;p&gt;Talking of slides, the architecture museum has one going down three floors.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-4.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;It also has lots of other interesting things to see and experience. Definitely worth a visit.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-5.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Nyhavn&lt;/h3&gt;
+&lt;p&gt;We kept walking along the waterfront until we reached the famous Nyhavn canal, a lovely little canal, old style.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-6.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Danish Design Museum&lt;/h3&gt;
+&lt;p&gt;Further along, we paid a visit to the Danish Design Museum to gain a better understanding of what site behind this countries designs. Of course, everyone will be familiar with this &amp;quot;Series 7&amp;quot; chair by Arne Jacobsen.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-7.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Mermaid statue&lt;/h3&gt;
+&lt;p&gt;After the design museum, we continued even further, past a fortress area and to the famous mermaid statue.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-8.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Not the biggest of statues, but very nice nonetheless!&lt;/p&gt;
+&lt;h3&gt;Boat ride back&lt;/h3&gt;
+&lt;p&gt;By the time we had seen the mermaid, we&#039;d been on our feet several hours. It was time to get the ferry boat back to our hotel. Again we could experience how great all this water is when the weather is nice. People were everywhere and the city has taken great care to ensure the locals can enjoy the water for free. Here&#039;s a swimming pool, in the canal, with a 3 metre diving board!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-9.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Copenhagen Day 2&lt;/h2&gt;
+&lt;h3&gt;Christiania&lt;/h3&gt;
+&lt;p&gt;In the morning I had a walk around the free town of Christiania, apparently not a part of the EU.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-10.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Nearby is also the Church of our Saviour, with it&#039;s impressive steeple.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-11.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Superkilen&lt;/h3&gt;
+&lt;p&gt;The next day we headed to the Superkilen park, slightly to the north of the city. This is a park with contributions from various countries. Bulgaria&#039;s was a chess board, Belgium&#039;s a round park bench.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-12.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-13.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-14.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Paternoster lift&lt;/h3&gt;
+&lt;p&gt;On the way back we stopped off at the Axelborg building to try a &lt;a href=&quot;https://en.wikipedia.org/wiki/Paternoster_lift&quot;&gt;patternoster&lt;/a&gt; lift.  This would never pass any health and safety rules these days!&lt;/p&gt;
+&lt;h3&gt;Quirky shopping street&lt;/h3&gt;
+&lt;p&gt;Finally we ambled round some smaller shopping streets.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-15.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Tivoli Gardens&lt;/h3&gt;
+&lt;p&gt;In the evening, we went to the famous Tivoli gardens, one of the oldest amusement parks in the world.  The oldest one is in fact just &lt;a href=&quot;https://www.bakken.dk/&quot;&gt;outside of Copenhagen&lt;/a&gt;, but we did not visit that.&lt;/p&gt;
+&lt;p&gt;There are plenty of rides here, but the most interesting one was the &amp;quot;Rutschebanen&amp;quot;, which once it starts rolling from the top, has no breaks, except for the one controlled by the driver sitting between the first and second carriages. Which means that the driver controls the speed of the train. So you will have slightly different experiences each time you go on it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-16.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;There was also the &amp;quot;Villa Vendetta&amp;quot;, which was a haunted house with real actors in it, not just dummies falling out of cupboards or from ceilings. They actually chased you!&lt;/p&gt;
+&lt;p&gt;And of course the whole place looks lovely at night and even had a rock concert later in the evening.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-17.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-18.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Copenhagen Day 3&lt;/h2&gt;
+&lt;h3&gt;Rooftop flea market&lt;/h3&gt;
+&lt;p&gt;On our third day we had a wander around the local flea market, struggling to buy goods where no one takes card. Cash or mobile transfers only. Unfortunately the danish system and our system are not compatible. Maybe one day... A trip to the cash machine it was then.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-19.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Roundtower&lt;/h3&gt;
+&lt;p&gt;After that we went to the round tower, Rundetaarn, whose hollow centre is also the geographic centre of Denmark.  It was fun walking up the tower and there was also an interesting science exhibition in one of the adjoining rooms.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-20.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;There&#039;s even an observatory at the top.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-21.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;As well as a 360 balcony with a view.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-22.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Rosenburg castle gardens&lt;/h3&gt;
+&lt;p&gt;Walking on we ambled through the Rosenburg castle gardens.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-23.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Cafe La Posata&lt;/h3&gt;
+&lt;p&gt;And then stopped off in an Italian cafe, in Copenhagen run by French guys. The espresso was strong!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-24.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Hire car&lt;/h3&gt;
+&lt;p&gt;After that we slowly returned to the hotel as we then had to go to the airport to pick up the rental car for a day trip. The car was an automatic Skopa Superb and drove very nicely. My next car will be an automatic!&lt;/p&gt;
+&lt;h2&gt;Copenhagen Day 4&lt;/h2&gt;
+&lt;p&gt;So having picked up the hire car the previous day, we set off on our day trip. The idea was to see Mons Klint and the forest tower &lt;a href=&quot;https://www.campadventure.dk/en/skovtaarnet/&quot;&gt;Skovtarnet&lt;/a&gt;. Fate had other ideas...&lt;/p&gt;
+&lt;h3&gt;Mons Klint&lt;/h3&gt;
+&lt;p&gt;It took us two hours to reach Mons Klint. We parked, had a look at the welcome centre and had just bought tickets to see the museum area when my phone started beeping with text messages. Our flight home that evening had been cancelled, we should go to the airport sort out a hotel for the night. In addition we had not all been put on the same return flight.&lt;/p&gt;
+&lt;p&gt;We decided to skip the museum but anyway walk down the cliff side to see what we came for. It was quite a steep descent, but it was definitely worth the eventual, equally steep, ascent. No lifts or escalators here.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-25.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-26.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;del&gt;Forest Tower&lt;/del&gt; Cancelled Luxair flight&lt;/h3&gt;
+&lt;p&gt;But we had to cancel the visit to the forest tower and head back to the airport. With no further information being provided by Luxair, we did not know whether there would be a hotel room or not. Also I had to keep phoning them to ensure we were all on the same flight home. On the phone they said to go to the Luxair office at the airport for the hotel details. Of course, they have no office in Copenhagen. Thankfully one of the security guards knew the deal and directed us to the correct hotel. Thanks for nothing Luxair!&lt;/p&gt;
+&lt;p&gt;In the end it all worked out, but they could have saved us a lot of stress and not ruined our last day by simply giving us all the details up front. We&#039;re still waiting for our compensation as well.&lt;/p&gt;
+&lt;h2&gt;Copenhagen +1&lt;/h2&gt;
+&lt;p&gt;So with no particular plan for our extra day in Copenhagen we slowly walked up the local waterfront near the airport. This turned out to be a fantastic idea. It was wonderful there, with it being all setup for sports activities, but relatively empty. We had a nice coffee and ice cream in one of the many little cafes along the path. And we finished with a round of mini golf, as well as watching a seagull snatching a crab from the water and then peck it apart before eating it!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-27.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-28.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-29.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-30.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-31.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-32.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;And finally yours truly and K2.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/copenhagen-33.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
+		<title>Girl Missing</title>
+		<link href="https://www.robin.is/posts/2024/girl-missing/"/>
+		<updated>2024-08-28 21:00:33</updated>
+		<id>https://www.robin.is/posts/2024/girl-missing/</id>
+		<content type="html">&lt;h2&gt;by Tess Gerritsen&lt;/h2&gt;
+&lt;p&gt;An interesting story, easy to read and follow. About drugs taken from a pharma research lab killing down and outs on the street. Nothing special, but a nice read on a long train journey.&lt;/p&gt;
+&lt;p&gt;26.08.2024 to 28.08.2024&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/girl-missing.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
+		<title>Visiting Gothenburg</title>
+		<link href="https://www.robin.is/posts/2024/visiting-gothenburg/"/>
+		<updated>2024-08-28 20:20:30</updated>
+		<id>https://www.robin.is/posts/2024/visiting-gothenburg/</id>
+		<content type="html">&lt;h2&gt;Oslo to Goteborg&lt;/h2&gt;
+&lt;p&gt;Having spent 3 lovely days in &lt;a href=&quot;/posts/2024/visiting-oslo/&quot;&gt;Oslo&lt;/a&gt; we got the train to Gothenburg in the afternoon. After about 4 hours we arrived there in the late afternoon. A short taxi ride took us to our hotel, the Grand Curiosa.&lt;/p&gt;
+&lt;h2&gt;Grand Curiosa Hotel&lt;/h2&gt;
+&lt;p&gt;This was a quite spectacular hotel, mainly geared to families visiting the amusement park next door, which however was only open on weekends. We arrived on a Monday. The hotel had a distinct Harry Potter style to it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/gothenburg-1.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/gothenburg-2.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Island Tour&lt;/h2&gt;
+&lt;p&gt;The next day we headed to the archipelago in the sea to the west of the city. First we took a half hour tram ride, then we got on a boat, again part of the public transport system. No need to pay for overpriced tours.&lt;/p&gt;
+&lt;p&gt;Our destination was Vrango island, the furthest out on the boat route. The weather was sunny, so we enjoyed the day strolling around the island.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/gothenburg-3.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/gothenburg-4.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/gothenburg-5.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/gothenburg-6.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/gothenburg-7.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/gothenburg-8.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Gothenburg was only a short stop on our way to &lt;a href=&quot;/posts/2024/visiting-copenhagen/&quot;&gt;Copenhagen&lt;/a&gt;. The next day we had another train to catch.&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
+		<title>Glucose Revolution</title>
+		<link href="https://www.robin.is/posts/2024/glucose-revolution/"/>
+		<updated>2024-08-25 23:00:33</updated>
+		<id>https://www.robin.is/posts/2024/glucose-revolution/</id>
+		<content type="html">&lt;h2&gt;by Jessie Inchauspe&lt;/h2&gt;
+&lt;p&gt;A very interesting and easy read about how food affects our blood sugar levels and how glucose spikes ruin our health. According to the book we need to reduce the number of glucose spikes as well reduce their size. The best thing: we can do this without changing our diet, by simply changing the order in which we eat foods.&lt;/p&gt;
+&lt;p&gt;The order should be:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Fibres&lt;/li&gt;
+&lt;li&gt;Proteins&lt;/li&gt;
+&lt;li&gt;Carbs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Or in terms of actual food&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Veg&lt;/li&gt;
+&lt;li&gt;Meat&lt;/li&gt;
+&lt;li&gt;Bread, pasta, rice, etc&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I&#039;ve tried this for three days and it seems to be helping. I will see later if this works long term. The proof will be in the pudding, which should always be eaten as a dessert and not separately from the main meal.&lt;/p&gt;
+&lt;p&gt;19.08.2024 to 25.08.2024.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/glucose-revolution.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
+		<title>Visiting Oslo</title>
+		<link href="https://www.robin.is/posts/2024/visiting-oslo/"/>
+		<updated>2024-08-25 20:20:30</updated>
+		<id>https://www.robin.is/posts/2024/visiting-oslo/</id>
+		<content type="html">&lt;h2&gt;Oslo Day 1&lt;/h2&gt;
+&lt;p&gt;We landed in Oslo around 11am. The airport is quite a distance out of town, but they have a very efficient train service to get you to Oslo centre in about 20 minutes. After checking in at our hotel, we headed out to explore the city. The weather was not great so pretty much the first thing we did was take shelter in the central library and had a coffee there. It&#039;s a wonderful library, well worth a visit in itself.&lt;/p&gt;
+&lt;h3&gt;Opera House&lt;/h3&gt;
+&lt;p&gt;Once the rain had stopped, we walked to the opera house on the sea front. It&#039;s an impressive piece of architecture that affords great views of the bay from its root. That&#039;s if you manage to hang on and not get blown off.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-1.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-2.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-7.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Munch museum&lt;/h3&gt;
+&lt;p&gt;Next we headed to the Munch museum, just behind the opera house. It was about 5pm when we arrived, so there were no queues to buy tickets. Most famous for being the home of Munch&#039;s &amp;quot;Scream&amp;quot; painting, it is well worth a visit in its own right.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-3.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;What most people don&#039;t know, me included, is that Munch created more than one version his most famous artwork, The Scream. There are versions using different mediums. The three most important ones are displayed in an octagonal room, where only one version is visible at any one time. They alternate every 30 minutes. They say this is to protect the painting from over exposure to too much light. I reckon it&#039;s to encourage you to visit the rest of the museum! These are the three pictures on show in that room.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-4.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-5.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-6.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Olivia restaurant&lt;/h3&gt;
+&lt;p&gt;We finished the day with a lovely meal in the Olivia Italian restaurant. Living in Luxembourg, the idea of free water in restaurants is alien to us, so we were very happy to see that they give it away in bucket loads. The beer on the other hand costs €11 for a pint!&lt;/p&gt;
+&lt;h2&gt;Oslo Day 2&lt;/h2&gt;
+&lt;p&gt;The next day we were met by a Ukrainian friend and her partner, who gave us a great tour of Oslo for the next two days.&lt;/p&gt;
+&lt;h3&gt;Vigeland park&lt;/h3&gt;
+&lt;p&gt;First up was Vigeland park, which is a large park containing a lot of sculptures. The most famous one being this angry boy.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-8.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;He reminded me a bit of mannequin piss in Brussels.  In fact the sculpture has been stolen on numerous occasions, but they always managed to return it.&lt;/p&gt;
+&lt;p&gt;The centre piece of the whole park is this massive sculpture, carved from one piece of rock.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-9.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Holmenkollen&lt;/h3&gt;
+&lt;p&gt;After the park, we got the metro to Holmenkollen, an olympic ski jump area. The metro ride takes you through a lovely wooded residential area.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-10.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;We had a lovely picnic on Ukrainian national day with a Norwegian beer!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-11.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Frognersteren&lt;/h3&gt;
+&lt;p&gt;Next we took the metro further up the hill to Frognersteren, where we had a short in the nature bordering the city.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-12.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Boat ride&lt;/h3&gt;
+&lt;p&gt;We finished the day&#039;s touring with a boat ride around the bay, which because it was part of the public transport system, cost nothing extra.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-13.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Egond restautant&lt;/h3&gt;
+&lt;p&gt;Finally, we sat down in the Egond restaurant near the central train station. Not as nice as the Olivia restaurant the day before, but still a good choice.&lt;/p&gt;
+&lt;h2&gt;Oslo Day 3&lt;/h2&gt;
+&lt;h3&gt;Bygdoy&lt;/h3&gt;
+&lt;p&gt;On our last full day in Oslo, our friends took us to the Bygdoy peninsuala visit the folk musem. The weather was much sunnier which made the visit even more pleasurable.&lt;/p&gt;
+&lt;h3&gt;Volkmuseum&lt;/h3&gt;
+&lt;p&gt;The folk museum is an outdoor museum recreating how Norwegians traditionally lived in various parts of the country. It is well worth a visit.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-14.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-15.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-17.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;There was an impressive performance by the country&#039;s folk dancing group.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-16.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Huk bay&lt;/h3&gt;
+&lt;p&gt;After the folk museum, we finished the day with another picnic, this time in Huk Bay.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-18.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Our friends had brought along their little gas grill, so we had some lovely grilled sausages.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-19.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Oslo Day 4&lt;/h2&gt;
+&lt;p&gt;The next day our train left for Gothenburg later in the afternoon, so we still had time to discover the city a little more in the morning.&lt;/p&gt;
+&lt;p&gt;First we visited the church near our hotel, which had been shut whenever we turned up the previous days.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-21.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Finally, we managed to see the royal palace. Not as impressive as Buckingham palace, but then they don&#039;t take their royal family so serious I don&#039;t think. In the photo, the right hand side of the building is actually being renovated, so what you see is in fact a giant painting covering the ongoing works.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-20.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;And so finished our visit to Oslo. Next up: &lt;a href=&quot;/posts/2024/visiting-gothenburg/&quot;&gt;Gothenburg&lt;/a&gt;.&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
+		<title>Deception Point</title>
+		<link href="https://www.robin.is/posts/2024/deception-point/"/>
+		<updated>2024-08-18 19:00:33</updated>
+		<id>https://www.robin.is/posts/2024/deception-point/</id>
+		<content type="html">&lt;h2&gt;by Dan Brown&lt;/h2&gt;
+&lt;p&gt;A very interesting read about a metorite containing alien fossils and the political scheming surrounding it, as well as the consequences it could have for NASA. I finished this book in about one week. The story was interesting and easy to follow. Makes a change to some of the science fiction I have been reading the last few years.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/deception-point.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
+		<title>The Ones Who Walk Away From Omelas</title>
+		<link href="https://www.robin.is/posts/2024/omelas/"/>
+		<updated>2024-07-31 22:38:11</updated>
+		<id>https://www.robin.is/posts/2024/omelas/</id>
+		<content type="html">&lt;h2&gt;by Ursula K. Le Guin&lt;/h2&gt;
+&lt;p&gt;This is a very interesting and thought provoking short story about citizens living in a Utopia, called Omelas, enabled through the continuous misery of one child. It doesn&#039;t go into the technicalities of how this works, but makes the reader think about what they would do.&lt;/p&gt;
+&lt;p&gt;Some citizens rationalise keeping the status quo in various ways: The miserable child probably would not get much better if let free; Freeing the child would prevent other works of brilliance and beauty from existing.&lt;/p&gt;
+&lt;p&gt;Others, upon seing the misery of the child, simply walk down the street, keep walking and walking and eventually leave Omelas. They are The Ones Who Walk Away From Omelas. The author states that the place they head to is even less imagineable than Omelas. I take this as a hint that it might be better. Meaning that if you have the courage to walk away from something apparently wonderful, yet disagreeable , you might actually reach somewhere even better.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/omelas.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
+		<title>The Dispossessed</title>
+		<link href="https://www.robin.is/posts/2024/the-dispossessed/"/>
+		<updated>2024-07-24 17:28:11</updated>
+		<id>https://www.robin.is/posts/2024/the-dispossessed/</id>
+		<content type="html">&lt;h2&gt;by Ursula K. Le Guin&lt;/h2&gt;
+&lt;p&gt;I read this book straight after reading &lt;a href=&quot;/posts/2024/the-left-hand-of-darkness/&quot;&gt;The Left Hand of Darkness&lt;/a&gt; by the same author.&lt;/p&gt;
+&lt;p&gt;The book tells the story of the invention of the ansible, which allows for instantaneous communication (but not travel) across solar systems. It covers three different civilisations spread across several plantes. These are the anarchists on Anarres, the propertarians on Urras, the Terrans (surviving on Earth earth afte climate collapse reduced their population from 9 billion to 500 million) and the Hainish, which at several thousands of millenia is the oldest civilisation.&lt;/p&gt;
+&lt;p&gt;It is a very insightful critique of different political systems such as capitalism, communism and anarchism without actually taking sides. They all have their faults and all have their benefits. The book also encourages you to think about how these systems could interact going foward as purposefully it does not come to a clear conclusion.&lt;/p&gt;
+&lt;p&gt;I particularly liked that part of the ending with the Hainish commander Ketho being curious to visit the young anarchist civilisation on Anarres. Despite warnings from Shevek that his safety could not be guaranteed he insisted on visiting, not because anarchy was something new to his civilisation, far from it. But because his civilisation was 100s of millenia old and whilst it had tried anarchy, he personally had not experienced it. As he said:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The there is nothing new under any sun. But if each life is not new, wach single life, then why are we born?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The way I understand it he basically wanted to experience a youthful civilisation, given the age of his own, Hainish, society.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/the-dispossessed.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+	</entry>
+	</feed>

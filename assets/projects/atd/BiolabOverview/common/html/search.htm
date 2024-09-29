@@ -1,0 +1,191 @@
+<!-- search.htm -->
+<!--
+' Descr: 		Search input page
+' Created:		12/11/1998 (RM)
+' Last Changed:	12/11/1998 (RM)
+' Params:		
+-->
+<HTML>
+<HEAD>
+<LINK REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../css/atd_viewer.css">
+<SCRIPT LANGUAGE='javascript'>
+<!--
+
+//GLOBAL VARIABLES
+aPages = new Array;
+aTabs = new Array;
+var iCounter = 0;  //number of elements in aPages array
+var sKeywords = "";	//needed for passing on to results page
+
+//*********************
+//Name:	KeywordSearch
+//Purpose:	This function reads the keywords entered by the user in the text field
+//		and the choices selected and then calls the search function in the lesson engine
+//Params:	None
+//Return:	None
+//Created:	12/11/1998 (RM)
+//Modified:	12/11/1998 (RM)
+//*********************
+function KeywordSearch()
+{
+  //Initialise variables and get values entered by user
+  sKeywords = document.search.words.value;
+  var sAndOr = "OR";
+  var sReturn = "";
+  var sPages = "";
+  var sTabs = "";
+  var bCaseSensitive = false;
+  var bCharOk = true;
+  var bOk = true;
+  
+  if (document.search.cases.checked) {bCaseSensitive = true;}
+
+  if (document.search.andor[0].checked)
+    {sAndOr = "AND";}
+  else
+    {sAndOr = "OR";}
+
+  //Check if keywords aren't all blanks
+  if(sKeywords=="")
+	bOk = false
+
+  var sSpace = String.fromCharCode(32);
+  for(i=0;i<sKeywords.length;i++)
+  {
+	if(sKeywords.charAt(i)==sSpace)
+		bCharOk = false
+	else
+	{
+		bCharOk = true;
+		i = sKeywords.length;
+	}
+  }
+
+  if(bCharOk==false)
+	bOk = false
+	
+  if(!bOk)
+	alert("You have entered an empty string, please alter your search.")
+  else
+  {
+	//pass the values to hidden.htm to perform search.
+	//A string containing all pages with matches will be returned.
+	//This list is not ordered, though.
+	sReturn = parent.opener.parent.HIDDEN.Search(sKeywords, bCaseSensitive, sAndOr);
+
+	aPages = new Array();	//will store page numbers of search result
+	aTabs = new Array(); //will store tab numbers corresponding to page numbers in aPages
+	var iTIndex = sReturn.indexOf("T");
+
+	self.iCounter = 0;
+	sPages = sReturn.substring(0,iTIndex-1);
+	sTabs = sReturn.substring(iTIndex+1,sReturn.length-1);
+
+	if(sPages.length==0)
+		iCounter = 0
+	else
+	{
+		// Fill pages and tabs arrays
+		if(sPages.indexOf(",")==-1)	//if no comma, means only on page found
+									//can't use split, though.
+		{
+			aPages[0] = sPages;
+			aTabs[0] = sTabs;
+		}
+		else
+		{
+			aPages = sPages.split(",");
+			aTabs = sTabs.split(",");
+		}
+		
+		//Sort page numbers into ascending order
+		var bSwitch = false;
+		do
+		{
+			bSwitch = false;
+			for (i=0;i<aPages.length-1;i++)
+			{
+				if(aPages[i]>aPages[i+1])
+				{
+					var sStore = aPages[i];
+					aPages[i] = aPages[i+1];
+					aPages[i+1] = sStore;
+
+					sStore = aTabs[i];
+					aTabs[i] = aTabs[i+1];
+					aTabs[i+1] = sStore;
+			
+					bSwitch = true;
+				}
+			}
+		}
+		while (bSwitch)
+
+		self.iCounter = aPages.length;
+	}
+  parent.RESULTS.location.reload(true);
+  }
+}
+
+function checkDefault()
+{
+	var sLocation = parent.location.href;
+	var iPos = sLocation.indexOf("#");
+	
+	parent.RESULTS.location="src_results.htm";
+	if (iPos!=-1)
+	{
+		document.search.words.value = sLocation.substring(iPos+1,sLocation.length);
+		KeywordSearch();
+	}
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY onUnload="parent.opener.parent.HIDDEN.intSearch=0;" onLoad="checkDefault();" CLASS="dialog">
+<form NAME="search">
+  <table bgcolor="#EEEEEE" bordercolor="#C0C0C0" bordercolorlight="#C0C0C0"
+  bordercolordark="#C0C0C0" class="dialog" height="119" width="375">
+    <tr>
+      <td class="dialog" height="21" width="213">Enter search words
+      here:<BR>(use spaces between words)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td class="dialog" height="21" width="46"></td>
+      <td class="dialog" height="21" width="104">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="dialog" height="25" width="213"><input TYPE="text" NAME="words" size="28"></td>
+      <td class="dialog" height="25" width="46"></td>
+      <td class="dialog" height="25" width="104"><input TYPE="button" NAME="search"
+      VALUE="Search" onClick="KeywordSearch();" style="font-family: Arial; font-size: 10pt"></td>
+    </tr>
+    <tr>
+      <td class="dialog" height="21" width="205"></td>
+      <td class="dialog" height="21" width="46"></td>
+      <td class="dialog" height="21" width="104"><input TYPE="button" NAME="close"
+      VALUE=" Close " onClick="parent.close();" style="font-family: Arial; font-size: 10pt"></td>
+    </tr>
+  </table>
+  <hr>
+  <table class="dialog" width="376" bordercolor="#000000" border="1">
+    <tr>
+      <td class="dialog" width="372" style="border: medium none" colspan="4"><p
+      style="margin: 0px; padding: 0px">&nbsp; Options :</td>
+    </tr>
+    <tr>
+      <td class="dialog" width="26" style="border: medium"><input TYPE="radio" NAME="andor"
+      VALUE="and"></td>
+      <td class="dialog" width="57" style="border: medium">AND</td>
+      <td class="dialog" width="29" style="border: medium"><input TYPE="radio" NAME="andor"
+      VALUE="or" CHECKED></td>
+      <td class="dialog" width="260" style="border: medium">OR</td>
+    </tr>
+    <tr>
+      <td class="dialog" width="26" style="border: medium"><input TYPE="checkbox" NAME="cases"
+      value="ON"></td>
+      <td class="dialog" width="346" style="border: medium" colspan="3">Match case</td>
+    </tr>
+  </table>
+  <hr>
+</form>
+</BODY>
+</HTML>

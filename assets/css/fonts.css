@@ -1,0 +1,33 @@
+/*
+I have four style sheets for the site
+1. fonts.css        - loads the font face
+2. structure.css    - defining the layout and structure of the site
+3. style.css        - defining the design of the site, such as colours, fonts and so on
+                    - overridden by the theme as needed
+4. default.css      - the default theme css. Replaced by other theme css files using the theme picker
+                    - default theme only contains the dark / light mode settings
+*/
+
+/* https://github.com/mona-sans */
+
+@font-face {
+    font-family: 'Mona Sans';
+    src:
+      url('/assets/fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+      url('/assets/fonts/Mona-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+    font-display: optional;
+}
+
+/*  
+@font-face {
+    font-family: 'Hubot Sans';
+    src:
+      url('/assets/fonts/Hubot-Sans.woff2') format('woff2 supports variations'),
+      url('/assets/fonts/Hubot-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+    font-display: swap;
+}
+*/

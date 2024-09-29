@@ -1,0 +1,515 @@
+/*
+I have four style sheets for the site
+1. fonts.css        - loads the font face
+2. structure.css    - defining the layout and structure of the site
+3. style.css        - defining the design of the site, such as colours, fonts and so on
+                    - overridden by the theme as needed
+4. default.css      - the default theme css. Replaced by other theme css files using the theme picker
+                    - default theme only contains the dark / light mode settings
+*/
+
+html {
+    /*See: https://www.sitepoint.com/understanding-and-using-rem-units-in-css/*/
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+}
+
+.skip-link {
+    position: absolute;
+    left: 3px;
+    top: 7px;
+    border: 0;
+    font-size: x-large;
+    font-weight: 600;
+    line-height: normal;
+    padding: 2px;
+    background-color: yellow;
+    color: #000000;
+    margin: 0;
+    transform: translateX(-200%);
+    transition: transform 0.3s;
+}
+
+.skip-link a {
+    text-decoration: none;
+    padding:2px;
+}
+.skip-link:focus-within {
+    transform: translateX(0%);
+    transition: transform 0.3s;
+}
+/*
+.skip-link {
+    left: -9999rem;
+    top: 2.5rem;
+    z-index: 999999999;
+    text-decoration: underline;
+    border: 0;
+    clip: rect(1px,1px,1px,1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute!important;
+    width: 1px;
+    font-size: x-large;
+}
+
+.skip-link:focus-within {
+    display: block;
+    left: 6px;
+    top: 7px;
+    font-weight: 600;
+    text-decoration: none;
+    line-height: normal;
+    padding: 5px;
+    z-index: 100000;
+    right: auto;
+    background-color: yellow;
+    clip: auto !important;
+    -webkit-clip-path: none;
+    clip-path: none;
+    color: #000000;
+    height: auto;
+    width: auto;
+}
+*/
+
+.nodisplay {
+    display: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+header.masthead {
+    margin:0;
+    padding:0;
+}
+
+header p#themeSwitch {
+    width:100%;
+    text-align: right;
+    margin: 0 0 10px 0;
+}
+
+header p#themeSwitch form {
+    display: inline;
+}
+
+header div.header-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 20px 20px 20px 20px;
+}
+
+header div.nav-area {
+    display: flex;
+    margin: 0;
+}
+
+header img.logo {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+header .sitetitle, header .subtitle {
+    display: inline;
+}
+
+header nav {
+    display:inline-block;
+    text-align: right;
+}
+
+header h2 {
+    margin: 0;
+    margin-top: 10px;
+}
+
+main article section {
+    margin-top: 20px;
+}
+
+/*
+nav ul {
+    font-size: 1.7em;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+nav.paging {
+    text-align: right;
+}
+
+nav.paging ul {
+    font-size: 1em;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 0 16px 0 0;
+}   
+
+nav ul li:last-child {
+    padding: 0;
+}
+*/
+
+header .header-nav {
+    text-align: right;
+}
+
+header ul, header li {
+    display: inline;
+    padding-inline-start: 0;
+}
+
+
+main {
+    clear: both;
+    line-height: 1.6;
+    font-size: 1.8em;
+}
+
+article ul, ul.postlist {
+    list-style-type:none;
+    padding-left: 0;
+}
+
+.postlist li {
+    padding-bottom: 0.2em;    
+}
+
+article ul li::before, ul.postlist li:before {
+    content: '👉';
+    font-size: 0.9em;
+    vertical-align: top;
+    padding-right: 0.5em;    
+}
+
+article ul.taglist li::before {
+    content: none;
+}
+
+ul.taglist {
+    list-style-type: none;
+}
+
+ul.taglist li {
+    display: inline;
+    padding: 0 10px 0 0;
+}
+
+main div.main-content {
+    margin:auto;
+    padding: 10px 20px 20px;
+}
+
+
+main article header {
+    text-align: center;
+    margin:auto;
+    margin-bottom: 1em;
+}
+
+blockquote {
+    margin-left: 0;
+}
+
+main article blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+pre {
+    white-space:pre-wrap;
+}
+
+code {
+    word-break:break-all;
+}
+
+main > div.main-content, div.footer-area, header.masthead div.header-area {
+    max-inline-size: 65rem;
+    margin-inline: auto; 
+}
+
+main > article {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+main article h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin:auto;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #555555;
+    padding: 5px 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #ccc;
+}
+
+tr:nth-child(even) td {background: #fff}
+tr:nth-child(odd) td {background: #eee}
+
+ul p img, ul img {
+    float: none;
+    max-width: 100%;
+    height: auto;
+}
+
+p img, figure img {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8px;
+    padding-right: 10px;
+    max-width: 100%;
+    height:auto;
+    /*max-height: 600px;*/
+    clear: both;
+}
+
+.badges p img {
+    display:inline;
+}
+
+main article h1, main article h2, main article h3, main article h4, main figcaption {
+    clear: both;
+    margin-bottom: 5px;
+}
+
+main article p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    clear:both;
+}
+
+main ul, main ol {
+    margin-top: 0;
+}
+
+div.tagged, div.prev-next {
+    text-align: right;
+}
+
+.webmentions {
+    margin-top: 50px;
+}
+
+.webmentions article {
+    border: 0;
+    padding-left: 0;
+    margin:0;
+    margin-bottom: 40px ;
+}
+
+.webmentions h3 {
+    margin:0;
+    font-size: 1em;
+}
+
+.webmentions footer {
+    background-color: inherit;
+    border: 0;
+    padding:0;
+    margin:0;
+    font-size: 0.7em;
+}
+
+.webmentions footer p {
+    margin: 0;
+}
+
+.webmentions footer cite {
+    font-style: normal;
+}
+
+.webmentions footer a {
+    text-decoration: underline;
+    text-decoration-color: var(--main-highlight-color);
+    text-decoration-thickness: 3px;
+}
+
+footer {
+    /*margin-top: 10px;*/
+    clear:both;
+}
+
+footer div {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+footer div.power {
+    width:100%;
+}
+footer div.power img {
+    vertical-align:text-bottom;
+}
+
+footer a.a11y-statement {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+footer div.copy {
+    width:100%;
+}
+
+footer div.copy div {
+    display: inline-block;
+}
+
+footer div.lastrun {
+    font-size: 0.8em;
+    width: 100%;
+}
+
+footer div.webring {
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+
+footer div.lastrun span#reverse {
+    display: inline-block;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1,1);
+}
+
+footer div.lastrun a {
+    font-weight: normal;
+    text-decoration-thickness: 1px;
+}
+
+footer .badges {
+    padding-top: 5px;
+}
+
+footer .badges p a {
+    display: inline-block;
+    margin: 10px 20px 0 0;
+}
+
+footer div.footer-area {
+    display: block;
+}
+
+footer div p,
+footer div p img {
+    border:0;
+    padding: 0;
+    margin: 0;
+    vertical-align: text-bottom;
+}
+
+footer p img {
+    display: inline;
+}
+
+main .barchart {
+    width: 100%;
+}
+
+main .barchart .line {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+main .barchart a {
+    width: 100%;
+    display: inline-block;
+}
+
+main .barchart span {
+    display: inline-block;
+}
+
+main .barchart a {
+    text-decoration: none;
+}
+
+main .barchart a:active {
+    text-decoration: none;
+}
+
+main .barchart .legend {
+    /*border-right: #555555 solid 2px;*/
+    width: 2.5em;
+}
+main .barchart .bar {
+    width: calc(var(--p) / var(--max) * 60%);
+    background-color: var(--header-bg-color);
+}
+
+main .barchart a:hover .bar {
+    background-color: black;
+}
+
+main .main-content h2 a {
+    /*text-decoration: none;*/
+}
+
+blockquote footer {
+    all:unset;
+}
+
+/* =========
+   MAX WIDTH
+   =========  */
+@media (max-width: 700px) { 
+    header div.sitetitle {
+        margin-right:40%;
+    }
+}
+
+@media (max-width: 600px) { 
+    header div.sitetitle {
+        margin-right:20%;
+    }
+}
+
+@media (max-width: 500px) { 
+    header div.sitetitle {
+        margin-right:10%;
+    }
+}
+
+@media (max-width: 400px) { 
+    header div.sitetitle {
+        margin-right:5%;
+    }
+}

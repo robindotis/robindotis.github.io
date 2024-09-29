@@ -1,0 +1,77 @@
+<!-- src_results.htm -->
+<!--
+' Descr: 		Results page for Keyword search
+' Created:		12/11/1998 (RM)
+' Last Changed:	13/04/1999 (RM)
+' Params:		
+-->
+<HTML>
+<HEAD>
+<LINK REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../css/atd_viewer.css">
+<SCRIPT LANGUAGE='javascript'>
+<!--
+//*********************
+//Name:		goPage
+//Purpose:	Loads the selected page in the main viewer
+//Params:	sPageNum - page number of linked page
+//			sTabNum - tab number of linked page
+//Return:	None
+//Created:	09/11/1998 (RM)
+//Modified:	13/04/1999 (RM)
+//*********************
+function goPage(sPageNum,sTabNum)
+{
+  parent.opener.sKeywords = parent.SEARCH.sKeywords;
+  parent.opener.parent.HIDDEN.iCurrentPage = parseInt(sPageNum);
+  parent.opener.loadPageResults(sPageNum,sTabNum,"last");
+//  parent.close();
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY CLASS="dialog">
+<CENTER>
+<TABLE CELLSPACING=0 CLASS="dialog">
+<TR>
+<TD WIDTH=100% ALIGN=center CLASS="dialog"><B>SEARCH RESULTS</B></TD>
+</TR>
+<SCRIPT LANGUAGE='javascript'>
+<!--
+//Create table containing links to pages in the search result
+//alert(parent.SEARCH.iCounter);
+if (parent.SEARCH.iCounter == 0)  //No matches found
+{
+	document.write("<TR>");
+	document.write("<TD ROWSPAN=3 ALIGN=center VALIGN=center BGCOLOR=#F7EFDE CLASS='dialog'><FONT COLOR=red><B>NO MATCHES FOUND</B></FONT></TD>");
+	document.write("</TR><TD CLASS='dialog'>&nbsp</TD></TR><TR><TD>&nbsp</TD></TR>");
+}
+else
+{
+	//Create a hyperlink for each page that contained a keyword entered by the user
+	for (var i=0;i<parent.SEARCH.iCounter;i++)
+	{
+		var sTabText = ""
+		if(parent.SEARCH.aTabs[i]!=0)
+			sTabText = ", tab"+parent.SEARCH.aTabs[i]
+
+//		alert(parent.SEARCH.aPages[i]);
+
+		sText = parent.opener.parent.TOOLBAR.detStatusText(parent.SEARCH.aPages[i]);
+		sText = sText.substring(0, sText.indexOf(" of "));
+
+		iPageNum = 1 + Number(parent.SEARCH.aPages[i]);
+		document.write("<TR><TD class='dialog'><A HREF=\"javascript:goPage('"+parent.SEARCH.aPages[i]+"','"+parent.SEARCH.aTabs[i]+"')\";");
+		document.write(" onMouseOver=\"parent.opener.status='Go to "+parent.opener.parent.HIDDEN.L.Page[parent.SEARCH.aPages[i]].name+" ("+sText+sTabText+")'; return true\"");
+		document.write(" onMouseOut=\"parent.opener.status='Search Window'; return true\">\n");
+		document.write(parent.opener.parent.HIDDEN.L.Page[parent.SEARCH.aPages[i]].name+" ("+sText+sTabText+")");
+		document.write("</A></TD></TR>\n");
+	}
+	//Reset the counter in search.htm
+	parent.SEARCH.iCounter = 0;
+}
+//-->
+</SCRIPT>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>

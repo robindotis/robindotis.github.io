@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="UTF-8">
+        <!-- See: https://www.w3schools.com/css/css_rwd_viewport.asp-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>European Baccalaureate Subject Choices</title>
+    
+        <script>
+            const aCompulsory = ["L1","L2","BIO2","HIS2","GEO2","PHI2","ETH","PE","MAT3","MAT5"];
+            const aCompulsoryX = aCompulsory.slice(0,aCompulsory.length-2).concat(["MAT"]);
+            const aOptional = ["BIO4","HIS4","GEO4","PHI4","CHE","PHY","ART","MUS","L3","L4","ECO","LAT"];
+            const aOptionalX = aOptional.slice(0,aOptional.length-2).concat(["ECL","ADV"]);
+            const aAdvanced = ["AL1","AL2","AMA"];
+            const aComplementary = ["ARC","CLS","MSC","DRA","SUS","ICT","ECI","PSC","SOC","SPO","TDR","L5C","L5D","L5G","L5S","L5L","NOL5","LABBIO4","LABCHE","LABPHY","NOLAB"];
+            const aComplementaryX = aComplementary.slice(0,aComplementary.length-10).concat(["L5","LAB"]);
+            const aWrittenCheckboxes = ["optionW1","optionW2","optionW3","optionW4"];
+            const aOralRadios = ["optionL21","optionL22","optionL23","optionO31","optionO32","optionO33","optionO34","optionO35","optionO36"];
+            const aOralLetters = ["A","B","C","D","E","F"];
+
+            function updateValue(e) {
+                const elId = e.target.id;
+                var elName = e.target.id;
+                if(e.target.type == "radio") {
+                    // add _X to end of name to get field for lesson count
+                    elName = e.target.name;
+                }                    
+                var elNameX = elName + "_X";
+                const field = document.getElementById(elNameX);
+                if(e.target.checked) {
+                    field.value = e.target.value;
+                }
+                else {
+                    field.value = 0;
+                }
+
+                //Uncheck GEO2, HIS2 and PHI2 if 4 period is chosen
+                if(elId == "HIS4" || elId == "GEO4" || elId == "PHI4") {
+                    const subj2 = elId.replace("4","2");
+                    document.getElementById(subj2).checked = !e.target.checked;
+                    document.getElementById(subj2 + "_X").value = Number(document.getElementById(subj2).checked) * Number(document.getElementById(subj2).value);
+                }
+                
+                //Enable Advanced Maths only if MAT5 chosen
+                if(elName == "MAT") {
+                    const field = document.getElementById("AMA");
+                    if(e.target.value == 5) {
+                        field.disabled = false;
+                    }
+                    else {
+                        field.disabled = true;
+                        if(field.checked){
+                            document.getElementById("ADV_X").value = 0;
+                            field.checked = false;
+                        }
+                    }
+                }
+
+                //Enable LABs depending on the 4P science chosen
+                if(elId == "BIO4" || elId == "CHE" || elId == "PHY") {
+                    const field = document.getElementById("LAB" + elId);
+                    if(e.target.checked) {
+                        field.disabled = false;
+                    }
+                    else {
+                        field.disabled = true;
+                        if(field.checked){
+                            document.getElementById("LAB_X").value = 0;
+                            field.checked = false;
+                            document.getElementById("NOLAB").checked = true;
+                        }
+                    }
+                
+                    //if BIO4 checked, uncheck and disable BIO2
+                    if(document.getElementById("BIO4").checked) {
+                        document.getElementById("BIO2").checked = false;
+                        document.getElementById("BIO2").disabled = true;
+                        document.getElementById("BIO2_X").value = 0;
+                    }
+                    else if(!document.getElementById("CHE").checked && !document.getElementById("PHY").checked) {
+                            //Enable if neither CHE or PHY are checked and BIO4 not checked
+                            //Check BIO2 and disable it
+                            document.getElementById("BIO2").checked = true;
+                            document.getElementById("BIO2").disabled = true;
+                            document.getElementById("BIO2_X").value = 2;
+                    } 
+                    else if(document.getElementById("CHE").checked || document.getElementById("PHY").checked) {
+                            //Enable BIO2 if either CHE and PHY are checked and BIO4 not checked
+                            document.getElementById("BIO2").disabled = false;
+                    }
+                }
+
+                //Disable Intro to Eco if Economics p4 chosen
+                if(elName == "ECL") {
+                    const field = document.getElementById("ECI");
+                    if(elId == "ECO") {
+                        field.disabled = true;
+                        if(field.checked){
+                            document.getElementById("ECI_X").value = 0;
+                            field.checked = false;
+                        }
+                    }
+                    else {
+                        field.disabled = false;
+                    }
+                }
+
+                //Disable Art p2 if taken as p4
+                if(elId == "ART") {
+                    const field = document.getElementById("ARC");
+                    if(e.target.checked) {
+                        field.disabled = true;
+                        if(field.checked){
+                            document.getElementById("ARC_X").value = 0;
+                            field.checked = false;
+                        }
+                    }
+                    else {
+                        field.disabled = false;
+                    }
+                }
+
+                //Disable Music p2 if taken as p4
+                if(elId == "MUS") {
+                    const field = document.getElementById("MSC");
+                    if(e.target.checked) {
+                        field.disabled = true;
+                        if(field.checked){
+                            document.getElementById("MSC_X").value = 0;
+                            field.checked = false;
+                        }
+                    }
+                    else {
+                        field.disabled = false;
+                    }
+                }
+
+                updateTotals();
+            }
+
+            function setMaxSciences(){
+                document.getElementById("choices").reset();
+
+                document.getElementById("BIO4").checked = true;
+                document.getElementById("BIO4_X").value = document.getElementById("BIO4").value;
+                document.getElementById("CHE").checked = true;
+                document.getElementById("CHE_X").value = document.getElementById("CHE").value;
+                document.getElementById("PHY").checked = true;
+                document.getElementById("PHY_X").value = document.getElementById("PHY").value;
+                document.getElementById("BIO2").checked = false;
+                document.getElementById("BIO2").enabled = true;
+                document.getElementById("BIO2_X").value = 0;
+                document.getElementById("MAT5").checked = true;
+                document.getElementById("MAT_X").value = document.getElementById("MAT5").value;
+
+                updateTotals();
+            }
+
+            function setMinSubjects(){
+                document.getElementById("choices").reset();
+
+                document.getElementById("MAT5").checked = true;
+                document.getElementById("MAT_X").value = document.getElementById("MAT5").value;
+                document.getElementById("HIS4").checked = true;
+                document.getElementById("HIS4_X").value = document.getElementById("HIS4").value;
+                document.getElementById("GEO4").checked = true;
+                document.getElementById("GEO4_X").value = document.getElementById("GEO4").value;
+                document.getElementById("PHI4").checked = true;
+                document.getElementById("PHI4_X").value = document.getElementById("PHI4").value;
+                document.getElementById("BIO4").checked = true;
+                document.getElementById("BIO4_X").value = document.getElementById("BIO4").value;
+                document.getElementById("HIS2").checked = false;
+                document.getElementById("HIS2_X").value = 0;
+                document.getElementById("GEO2").checked = false;
+                document.getElementById("GEO2_X").value = 0;
+                document.getElementById("PHI2").checked = false;
+                document.getElementById("PHI2_X").value = 0;
+                document.getElementById("BIO2").checked = false;
+                document.getElementById("BIO2_X").value = 0;
+
+                updateTotals();
+            }
+
+            function updateSubTotals(aFields,target){
+                //calculate new totals
+                var total = 0;
+                for (i in aFields) {
+                    total += +document.getElementById(aFields[i]+"_X").value;
+                }
+                document.getElementById(target).value = total;
+                return total;
+            }
+
+            function toggleFields(aFields,state,maxed){
+                for (i in aFields) {
+                    const field = document.getElementById(aFields[i]);
+                    field.disabled = false;
+  
+                    if(maxed && field.type == "radio"){
+                        if (document.querySelector("input[name=" + field.name + "]:checked").value == "0") {
+                            field.disabled = state;
+                        }
+                    }
+                    else if(field.checked == false) {
+                        field.disabled = state;
+                    }
+                }
+            }
+
+            function updateTotals(){
+                var totalCompulsory = updateSubTotals(aCompulsoryX,"COMPULSORY_X");
+                var totalOptional = updateSubTotals(aOptionalX,"OPTIONAL_X");
+                var totalComplementary = updateSubTotals(aComplementaryX,"COMPLEMENTARY_X");
+                var total = totalCompulsory + totalOptional + totalComplementary;
+                document.getElementById("TOTAL_X").value = total; 
+
+                //disable unchecked optional subjects once 4 have been chosen#
+                document.getElementById("totals").classList.remove("high");
+                document.getElementById("totals").classList.remove("good");
+                document.getElementById("totals").classList.remove("low");
+                document.getElementById("status").innerText = "";
+                if(total >= 35) {
+                    //toggleFields(aCompulsory,true);
+                    toggleFields(aOptional,true,true);
+                    toggleFields(aAdvanced,true,true);
+                    toggleFields(aComplementary,true,true);
+
+                    //make totals area red
+                    if(total > 35) {
+                        document.getElementById("totals").classList.add("high");
+                        document.getElementById("status").innerText = "(too high)";
+                    }
+                    else {
+                        document.getElementById("totals").classList.add("good");
+                        document.getElementById("status").innerText = "(ok)";
+                    }
+                }
+                else {
+                    if(total < 31) {
+                        document.getElementById("totals").classList.add("low");
+                        document.getElementById("status").innerText = "(too low)";
+                    }
+                    else {
+                        document.getElementById("totals").classList.add("good");
+                        document.getElementById("status").innerText = "(ok)";
+                    }
+                    if(totalOptional >= 16) {
+                        toggleFields(aOptional,true,true);
+                        setAdvRadioDependencies(false);
+                    }
+                    else {
+                        toggleFields(aOptional,false,false);
+                    }
+                    if(totalComplementary >= 6) {
+                        toggleFields(aComplementary,true,true);
+                    }
+                    else {
+                        toggleFields(aComplementary,false,false);
+                    }
+                    toggleFields(aAdvanced,false,false);                    
+                }
+                setAdvRadioDependencies(false);
+                setLabRadioDependencies((total >= 35));
+                document.getElementById("NOLAB").disabled = false;
+                document.getElementById("NOL5").disabled = false;
+                document.getElementById("NAD").disabled = false;
+
+                setExams();
+            }
+
+            function setLabRadioDependencies(maxed){
+                if(!maxed || (maxed && !document.getElementById("NOLAB").checked)){
+                    toggleLabRadio("BIO4");
+                    toggleLabRadio("CHE");
+                    toggleLabRadio("PHY");
+                }
+            }
+
+            function toggleLabRadio(sub){
+                var checked = true;
+                if(document.getElementById(sub).checked) {
+                    checked = false;
+                }
+                document.getElementById("LAB" + sub).disabled = checked;
+            }
+
+            function setAdvRadioDependencies(maxed){
+                if(document.getElementById("MAT3").checked) {
+                    document.getElementById("AMA").disabled = true;
+                }
+            }
+
+            function examsSetP4(sub, counter) {
+                if(document.getElementById(sub).checked) {
+                    counter++;
+                    document.getElementById("optionW"+counter+"Label").innerText = 
+                        document.getElementById(sub + "Label").innerText;
+                }
+                return counter;
+            }
+
+            function setExams() {
+                //initialise form
+                document.getElementById("L1_W").innerText = "Language 1"
+                document.getElementById("L1_O").innerText = "Language 1"
+                document.getElementById("L2_W").innerText = "Language 2"
+                for (i in aWrittenCheckboxes) {
+                    document.getElementById(aWrittenCheckboxes[i]+"Label").innerText = "Option " + aOralLetters[i];
+                    document.getElementById(aWrittenCheckboxes[i]).disabled = false;
+                    document.getElementById(aWrittenCheckboxes[i]).checked = false;
+                    document.getElementById(aWrittenCheckboxes[i]).classList.remove("blocked");
+                }
+                for (i in aOralRadios) {
+                    document.getElementById(aOralRadios[i]+"Label").innerText = "Option " + aOralLetters[+aOralRadios[i].slice(-1)];
+                    document.getElementById(aOralRadios[i]).disabled = false;
+                    document.getElementById(aOralRadios[i]).checked = false;
+                }
+
+                //============================
+                //Languages
+                //============================
+                if (document.getElementById("AL1").checked){
+                    document.getElementById("L1_W").innerText = "Advanced L1"
+                    document.getElementById("L1_O").innerText = "Advanced L1"
+                }
+                else if (document.getElementById("AL2").checked){
+                    document.getElementById("L2_W").innerText = "Advanced L2"
+                }
+
+                //============================
+                //Maths
+                //============================
+                if (document.getElementById("MAT5").checked){
+                    document.getElementById("MAT_W").innerText = "Maths 5"
+                }
+                else {
+                    document.getElementById("MAT_W").innerText = "Maths 3"
+                }
+                
+                //============================
+                //Written 4 periods
+                //============================
+                var countWritten = 0;
+                for (i in aOptional) {
+                    countWritten = examsSetP4(aOptional[i], countWritten);
+                }
+                
+                if (countWritten == 2){
+                    document.getElementById("optionW1").checked = true;
+                    document.getElementById("optionW2").checked = true;
+                    document.getElementById("optionW1").disabled = true;
+                    document.getElementById("optionW2").disabled = true;
+                    document.getElementById("optionW3").classList.add("blocked");
+                    document.getElementById("optionW4").classList.add("blocked");
+                }
+                if (countWritten == 3){
+                    document.getElementById("optionW4").classList.add("blocked");
+                }
+
+                //============================
+                //Oral Language 2
+                //============================
+                // If studying Advanced L2 must choose it if picking L2 for an Oral
+                if(document.getElementById("AL2").checked) {
+                    document.getElementById("optionL21Label").innerText = "Advanced L2";
+                }
+                else {
+                    document.getElementById("optionL21Label").innerText = "Language 2";
+                }
+
+                document.getElementById("optionL22").disabled = false; 
+                if(document.getElementById("HIS4").checked) {
+                    document.getElementById("optionL22Label").innerText = "History 4"
+                    if(countWritten < 3) {
+                        document.getElementById("optionL22").disabled = true; 
+                    }
+                }
+                else {
+                    document.getElementById("optionL22Label").innerText = "History 2"
+                }
+
+                document.getElementById("optionL23").disabled = false; 
+                if(document.getElementById("GEO4").checked) {
+                    document.getElementById("optionL23Label").innerText = "Geography 4"
+                    if(countWritten < 3) {
+                        document.getElementById("optionL23").disabled = true; 
+                    }
+                }
+                else {
+                    document.getElementById("optionL23Label").innerText = "Geography 2"
+                }
+
+                //if only one radio left, set it to checked
+                if(document.getElementById("optionL22").disabled && document.getElementById("optionL23").disabled){
+                    document.getElementById("optionL21").checked = true;
+                }
+
+                //============================
+                //Oral Options
+                //============================
+                var countOral = 0;
+                if(document.getElementById("AMA").checked) {
+                    document.getElementById("optionO31Label").innerText = "Advanced Maths";
+                    document.getElementById("optionO31").checked = true;
+                    document.getElementById("optionO31").disabled = false;
+                    for(var i=2;i<7;i++) {
+                        document.getElementById("optionO3" + i).disabled = true;
+                    }
+                }
+                else {
+                    var textO3 = "Philosophy 2";                    
+                    if(document.getElementById("PHI4").checked) {
+                        textO3 = "Philosophy 4";
+                    }
+                    countOral++;
+                    document.getElementById("optionO3"+countOral+"Label").innerText = textO3;
+
+                    textO3 = "";                    
+                    if(document.getElementById("BIO4").checked) {
+                        textO3 = "Biology 4";
+                    }
+                    else if (document.getElementById("BIO4").checked) {
+                        textO3 = "Biology 2";                    
+                    }
+                    if(textO3.length > 0) {
+                        countOral++;
+                        document.getElementById("optionO3"+countOral+"Label").innerText = textO3;
+                    }
+
+                    //if chemistry chosen as subject and only two subjects available as written exams
+                    //one of them must be chemistry, so can't choose as oral
+                    if(document.getElementById("CHE").checked && countWritten > 2) {
+                        countOral++;
+                        document.getElementById("optionO3"+countOral+"Label").innerText = "Chemistry";
+                    }
+
+                    //as for chemistry
+                    if(document.getElementById("PHY").checked && countWritten > 2) {
+                        countOral++;
+                        document.getElementById("optionO3"+countOral+"Label").innerText = "Physics";
+                    }
+
+                    if(document.getElementById("L3").checked) {
+                        countOral++;
+                        document.getElementById("optionO3"+countOral+"Label").innerText = "Language 3";
+                    }
+                    
+                    if(document.getElementById("L4").checked) {
+                        countOral++;
+                        document.getElementById("optionO3"+countOral+"Label").innerText = "Language 4 / ONL";
+                    }
+
+                    for (var i=countOral+1; i<7;i++){
+                        document.getElementById("optionO3"+i).disabled = true;
+                    }
+                }
+            }
+
+            function checkOrals(el){
+                const subject = document.getElementById(el.id + "Label").innerText;
+
+                //disable unchecked checkboxes if 2 are already checked
+                if(el.checked){
+                    var count = 0;
+                    //count checked boxes
+                    for (i in aWrittenCheckboxes) {
+                        document.getElementById(aWrittenCheckboxes[i]).disabled = false;
+                        if(document.getElementById(aWrittenCheckboxes[i]).checked){
+                            count++;
+                        }
+                    }
+                    if (count >= 2) {
+                        for (i in aWrittenCheckboxes) {
+                            document.getElementById(aWrittenCheckboxes[i]).disabled = 
+                                !document.getElementById(aWrittenCheckboxes[i]).checked;
+                        }
+                    }
+                }
+                else {
+                    for (i in aWrittenCheckboxes) {
+                        document.getElementById(aWrittenCheckboxes[i]).disabled = false;
+                    }
+                }
+
+                for (i in aOralRadios) {
+                    //disable and uncheck radio if label equals a checked checkbox label
+                    //else if checkbox is not checked enable and uncheck the radio.
+                    if(subject == document.getElementById(aOralRadios[i]+"Label").innerText){
+                        const elRadio = document.getElementById(aOralRadios[i]); 
+                        elRadio.checked = elRadio.disabled = el.checked;
+                    }
+                }
+                //if only one L2 radio left, set it to checked
+                if(document.getElementById("optionL22").disabled && document.getElementById("optionL23").disabled){
+                    document.getElementById("optionL21").checked = true;
+                }
+            }
+
+            function processGradeGrid(){
+                
+                //Initialise
+                document.getElementById("SubAdv").firstElementChild.innerText = "Advanced";
+                document.getElementById("SubAdv").style.display = "";
+                for(let element of document.getElementById("gradegrid").elements){
+                    if(element.id.toString().slice(-2) == "Wr" || element.id.toString().slice(-2) == "Or" ) {
+                        element.disabled = true;
+                    }
+                }
+                for(i = 1;i<6;i++){
+                    document.getElementById("SubOT" + i).style.display = "";
+                }
+
+                //Language 1
+                // - is fixed, unless advanced
+                document.getElementById("L1Wr").disabled = false;
+                document.getElementById("L1Or").disabled = false;
+                if(document.querySelector("input[type='radio'][name='ADV']:checked").id == "AL1") {
+                    document.getElementById("L1Wr").disabled = true;
+                    document.getElementById("L1Or").disabled = true;
+
+                    document.getElementById("SubAdv").firstElementChild.innerText = "Advanced L1";
+                    document.getElementById("AVWr").disabled = false;
+                    document.getElementById("AVOr").disabled = false;
+                }
+
+                //Language 2
+                const L2OralId = document.querySelector("input[type='radio'][name='SUB_L2']:checked").id;
+                const L2OralLabel = document.querySelector("label[for='" + L2OralId + "']").innerText;
+                document.getElementById("L2Wr").disabled = false;
+                document.getElementById("L2Or").disabled = true;
+                if(document.querySelector("input[type='radio'][name='ADV']:checked").id == "AL2") {
+                    document.getElementById("L2Wr").disabled = true;
+
+                    document.getElementById("SubAdv").firstElementChild.innerText = "Advanced L2";
+                    document.getElementById("AVWr").disabled = true;
+                }
+                if(L2OralLabel.startsWith("Advanced")){
+                        document.getElementById("L2Or").disabled = true;
+                        document.getElementById("AVOr").disabled = false;
+                }
+                else if(L2OralLabel.startsWith("Language")){
+                        document.getElementById("L2Or").disabled = false;
+                        document.getElementById("AVOr").disabled = true;
+                }
+
+                //Must do maths written
+                document.getElementById("MAWr").disabled = false;
+                if(document.querySelector("input[type='radio'][name='MAT']:checked").value == "5"){
+                    document.getElementById("SubMa").firstElementChild.innerText = "Maths 5";
+                }
+
+                //Advanced Maths chosen - must do as Oral
+                if(document.querySelector("input[type='radio'][name='ADV']:checked").id == "AMA") {
+                    document.getElementById("SubAdv").firstElementChild.innerText = "Advanced Maths";
+                    //force Advanced maths oral
+                    document.getElementById("AVWr").disabled = true;
+                    document.getElementById("AVOr").disabled = false;
+                }
+
+                //if no advanced subject, hide that row
+                if(document.getElementById("SubAdv").firstElementChild.innerText == "Advanced") {
+                    document.getElementById("SubAdv").style.display = "none";
+                }
+
+                //Create array of remaining 2 written exams
+                const WrittenChoices = document.querySelectorAll("input[type='checkbox'][id^='optionW']:checked");
+                const aWrittenSubjects = [];
+                for(const checkbox of WrittenChoices){
+                    aWrittenSubjects.push(document.querySelector("label[for='" + checkbox.id + "']").innerText)
+                   }
+                //alert(aChoiceLabels.length);
+
+                //Biology
+                if(document.getElementById("BIO4").checked) {
+                    document.getElementById("SubBio").firstElementChild.innerText = "Biology 4";
+                }
+                else {
+                    document.getElementById("SubBio").firstElementChild.innerText = "Biology 2";
+                }
+                if(!(document.getElementById("BIO4").checked || document.getElementById("BIO2").checked)) {
+                    document.getElementById("SubBio").style.display = "none";
+                }
+                else {
+                    document.getElementById("SubBio").style.display = "";
+                }
+
+                if (aWrittenSubjects.filter(s => s.includes("Biology")).length > 0){
+                    //Bio chosen as written
+                    document.getElementById("BIWr").disabled = false;
+                }
+                else {
+                    document.getElementById("BIWr").disabled = true;
+                }
+
+                const Sub3OralId = document.querySelector("input[type='radio'][name='OR_3']:checked").id;
+                const Sub3OralLabel = document.querySelector("label[for='" + Sub3OralId + "']").innerText;
+                if (Sub3OralLabel.startsWith("Biology")){
+                    //Bio chosen as Oral
+                    document.getElementById("BIOr").disabled = false;
+                }
+                else {
+                    document.getElementById("BIOr").disabled = true;
+                }
+
+                //History
+                if(document.getElementById("HIS4").checked) {
+                    document.getElementById("SubHis").firstElementChild.innerText = "History 4";
+                }
+                else {
+                    document.getElementById("SubHis").firstElementChild.innerText = "History 2";
+                }
+                if(L2OralLabel.startsWith("History")) {
+                    document.getElementById("HIOr").disabled = false;
+                }
+                if (aWrittenSubjects.filter(s => s.includes("History")).length > 0){
+                    document.getElementById("HIWr").disabled = false;
+                }
+
+                //Geography
+                if(document.getElementById("GEO4").checked) {
+                    document.getElementById("SubGeo").firstElementChild.innerText = "Geography 4";
+                }
+                else {
+                    document.getElementById("SubGeo").firstElementChild.innerText = "Geography 2";
+                }
+                if(L2OralLabel.startsWith("Geography")) {
+                    document.getElementById("GEOr").disabled = false;
+                }
+                if (aWrittenSubjects.filter(s => s.includes("Geography")).length > 0){
+                    document.getElementById("GEWr").disabled = false;
+                }
+                
+                //Philosophy
+                if(document.getElementById("PHI4").checked) {
+                    document.getElementById("SubPhi").firstElementChild.innerText = "Philosophy 4";
+                }
+                else {
+                    document.getElementById("SubPhi").firstElementChild.innerText = "Philosophy 2";
+                }
+                if(Sub3OralLabel.startsWith("Philosophy")) {
+                    document.getElementById("PHOr").disabled = false;
+                }
+                if (aWrittenSubjects.filter(s => s.includes("Philosophy")).length > 0){
+                    document.getElementById("PHWr").disabled = false;
+                }
+
+                //Process remaining optional subjects
+                //Create array of optional subjects
+                const aRemainingOptional = ["CHE","PHY","ART","MUS","L3","L4","ECO","LAT"];
+                const aRemainingComplementary = ["ARC","CLS","MSC","DRA","SUS","ICT","ECI","PSC","SOC","SPO","TDR","L5C","L5D","L5G","L5S","L5L","LABBIO4","LABCHE","LABPHY"];
+
+                const OptionalSubjects = document.querySelectorAll("div[id='optional'] input:checked");
+                const aRemOptSubjs = [];
+                for(const subj of OptionalSubjects){
+                    if(aRemainingOptional.includes(subj.id)){
+                        aRemOptSubjs.push(document.querySelector("label[for='" + subj.id + "']").innerText);
+                    }
+                }
+
+                var OptCount = 0;
+                for(const s of aRemOptSubjs){
+                    OptCount++;
+                    document.getElementById("SubOT" + OptCount).firstElementChild.innerText = s;
+                    if (aWrittenSubjects.includes(s)){
+                        document.getElementById("OT" + OptCount + "Wr").disabled = false;
+                    }
+                    else {
+                        document.getElementById("OT" + OptCount + "Wr").disabled = true;
+                    }
+
+                    if (Sub3OralLabel == s){
+                        document.getElementById("OT" + OptCount + "Or").disabled = false;
+                    }
+                    else {
+                        document.getElementById("OT" + OptCount + "Or").disabled = true;
+                    }
+
+                }
+                
+                //Process complementary subjects
+                const ComplementarySubjects = document.querySelectorAll("div[id='complementary'] input:checked");
+                const aRemComplSubjs = [];
+                for(const subj of ComplementarySubjects){
+                    if(aRemainingComplementary.includes(subj.id)){
+                        aRemComplSubjs.push(document.querySelector("label[for='" + subj.id + "']").innerText);
+                    }
+                }
+
+                for(var s of aRemComplSubjs){
+                    OptCount++;
+                    if(s == "Biology" || s == "Chemistry" || s == "Physics") {
+                        s = "Lab " + s;
+                    }
+                    document.getElementById("SubOT" + OptCount).firstElementChild.innerText = s;
+                    if (Sub3OralLabel == s){
+                        document.getElementById("OT" + OptCount + "Wr").disabled = false;
+                    }
+                    else {
+                        document.getElementById("OT" + OptCount + "Wr").disabled = true;
+                    }
+                }
+
+                //remove remaining other rows
+                for(i = OptCount+1;i<6;i++){
+                    document.getElementById("SubOT" + i).style.display = "none";
+                }
+            }
+
+            function calculateGrades() {                
+                //Have to do the calculations
+                const subjs = document.querySelectorAll("#gradegrid tbody tr");
+                let OverallPrelim = 0;
+                let OverallWritten = 0;
+                let OverallOral = 0;
+                let OverallFinal = 0;
+                let count = 0;
+                for(const subj of subjs) {
+                    if(subj.style.display == ""){
+                        count++;
+                        //work out A mark
+                        const inputs = subj.querySelectorAll("input");
+                        inputs[2].value = (Number(inputs[0].value) + Number(inputs[1].value))/2;    
+
+                        //work out B mark average
+                        var B2 = Number(inputs[4].value);
+                        if(B2 == 0) {
+                            B2 = Number(inputs[3].value);
+                        }
+                        inputs[5].value = (Number(inputs[3].value) + B2)/2;    
+
+                        //work out Prelim score
+                        inputs[6].value = ((0.4*Number(inputs[2].value) + 0.6*Number(inputs[5].value))).toFixed(2); 
+                        checkPassGrade(inputs[6], 6, false);
+
+                        //work out subject scores
+                        let SubPrelim = Number(inputs[6].value)
+                        let SubWritten = Number(inputs[7].value);
+                        let SubOral = Number(inputs[8].value);
+                        let SubFinal = 0;
+                        OverallPrelim = OverallPrelim + SubPrelim;
+                        if(!(inputs[7].disabled) && !(inputs[8].disabled)) {
+                            //Written and Oral
+                            OverallWritten = OverallWritten + SubWritten;
+                            OverallOral = OverallOral + SubOral;
+                            SubFinal = (0.5*SubPrelim + 0.35*SubWritten + 0.15*SubOral);
+                        }
+                        else if (!inputs[7].disabled) {
+                            //Written only
+                            OverallWritten = OverallWritten + SubWritten;
+                            SubFinal = (0.5*SubPrelim + 0.35*SubWritten)/0.85;
+                        }
+                        else if (!inputs[8].disabled) {
+                            //Oral onlyu
+                            OverallOral = OverallOral + SubOral;
+                            SubFinal = (0.5*SubPrelim + 0.15*SubOral)/0.65;
+                        }
+                        else {
+                            SubFinal = SubPrelim;
+                        }
+                        inputs[9].value = SubFinal.toFixed(2);                        
+                        checkPassGrade(inputs[9], 6, true);
+                    }
+                }
+                //work out overall scores
+                OverallPrelim = (10*(OverallPrelim / count)).toFixed(2);
+                OverallWritten = (10*(OverallWritten / 5)).toFixed(2);
+                OverallOral = (10*(OverallOral / 3)).toFixed(2);
+                OverallFinal = (0.5*OverallPrelim + 0.35*OverallWritten + 0.15*OverallOral).toFixed(2);
+
+                document.getElementById("OverallPre").value = OverallPrelim;
+                //document.getElementById("OverallWr").value = OverallWritten;
+                //document.getElementById("OverallOr").value = OverallOral;
+                document.getElementById("OverallFin").value = OverallFinal;
+
+                checkPassGrade(document.getElementById("OverallPre"), 60, false);
+                checkPassGrade(document.getElementById("OverallFin"), 60, true);
+                
+            }
+
+            function checkPassGrade(el, passmark, final){
+                var append = "";
+                if(!final){
+                    append = "Prelim";
+                }
+                if(Number(el.value) >= passmark) {
+                    el.classList.add("abovepass" + append);
+                    el.classList.remove("belowpass" + append);
+                }
+                else {
+                    el.classList.add("belowpass" + append);
+                    el.classList.remove("abovepass" + append);
+                }
+                //alert(el.class);
+            }   
+
+
+            function saveData(){
+                localStorage.clear();
+                const form = document.getElementById('choices');
+                for (const element of form.elements) {
+                    if(element.type == "radio" || element.type == "checkbox") {
+                        //alert(localStorage.getItem(element.id));
+                        localStorage.setItem(element.id, element.checked);
+                    }
+                    else {
+                        localStorage.setItem(element.id, element.value);
+                    }
+                }
+                const formExam = document.getElementById('examchoices');
+                for (const element of formExam.elements) {
+                    if(element.type == "radio" || element.type == "checkbox") {
+                        //alert(localStorage.getItem(element.id));
+                        localStorage.setItem(element.id, element.checked);
+                    }
+                    else {
+                        localStorage.setItem(element.id, element.value);
+                    }
+                }
+                const formGrid = document.getElementById('gradegrid');
+                for (const element of formGrid.elements) {
+                    if(element.type == "number") {
+                        //alert(element.id);
+                        //alert(localStorage.getItem(element.id));
+                        localStorage.setItem(element.id, element.value);
+                    }
+                }
+                alert("Form saved successfully.");
+            }
+
+            function retrieveData(){
+                const form = document.getElementById('choices');
+                for (const element of form.elements) {
+                    //check item exists in localstorage before setting
+                    if(!(localStorage.getItem(element.id) === null)){
+                        if(element.type == "radio" || element.type == "checkbox") {
+                            //alert(localStorage.getItem(element.id));
+                            element.checked = eval(localStorage.getItem(element.id));
+                        }
+                        else {
+                            element.value = localStorage.getItem(element.id);
+                        }
+                    }
+                }
+                updateTotals(); 
+                const formExam = document.getElementById('examchoices');
+                for (const element of formExam.elements) {
+                    //check item exists in localstorage before setting
+                    if(!(localStorage.getItem(element.id) === null)){
+                        if(element.type == "radio" || element.type == "checkbox") {
+                            //alert(localStorage.getItem(element.id));
+                            element.checked = eval(localStorage.getItem(element.id));
+                        }
+                        else {
+                            element.value = localStorage.getItem(element.id);
+                        }
+                    }
+                }
+
+                processGradeGrid();
+                const formGrid = document.getElementById('gradegrid');
+                for (const element of formGrid.elements) {
+                    //check item exists in localstorage before setting
+                    if(!(localStorage.getItem(element.id) === null)){
+                        if(element.type == "number") {
+                            element.value = localStorage.getItem(element.id);
+                        }
+                    }
+                }
+                calculateGrades();
+                //alert("Form retrieved successfully.");
+            }
+
+            function copyData(){
+                const theData = JSON.stringify(localStorage);
+                navigator.clipboard.writeText(theData).then(
+                    () => {
+                        document.getElementById("message").innerHTML = "Copied successfully";
+                    },
+                    () => {
+                        document.getElementById("message").innerHTML = "Failed to copy, please try again";
+                    }
+                );
+            }
+
+            function importData(){
+                //alert(JSON.stringify(localStorage));
+                const theData = JSON.parse(document.getElementById("theData").value);
+                for (var key in theData){
+                    var value = theData[key];
+                    localStorage.setItem(key,value);
+                }
+                //alert(JSON.stringify(localStorage));
+                retrieveData();
+            }
+        </script>
+        <style>
+            body {
+                margin:0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            header, footer {
+                background-color: #004494;
+                color: #fff;
+            }
+            h1, footer p {
+                display: block;
+                width:100%;
+                padding:0.3rem 0.7rem;
+                margin: 0;
+                font-size: 2rem;
+            }
+            header {
+                position: sticky;
+                top:0;
+                z-index: 1;
+                padding: 0.6rem 0 0.5rem 0;
+                width:100%;
+            }
+            footer {
+                position: fixed;
+                bottom:0;
+                width: 100%;
+            }
+
+            h2#grid, h2#exams {
+                scroll-margin: 5rem;
+            }
+
+            h2#intro {
+                scroll-margin:8rem;
+            }
+
+            nav {
+                padding: 0.3rem 0.7rem 0;
+            }
+
+            nav a, nav a:visited {
+                background-color: #fff;
+                color: #004494;
+                font-weight: bold;
+                padding:0.2rem;
+            }
+
+            main {
+                padding:1rem 1rem 100rem 1rem;
+            }
+            main h2 {
+                margin:0;
+                padding-top: 0.7rem;
+            }
+            main button {
+                padding:0.3rem;
+                margin:0 0.8rem 0 0;
+            }
+
+            footer p {
+                font-size: 1.1rem;
+            }
+
+            .columns {
+                display:flex;
+                flex-flow: row wrap;
+            } 
+            
+            .columns > div {
+                max-width: 30rem;
+                border: 1px solid #000;
+                padding: 0 1rem;
+                margin: 0.5rem 0.5rem 0 0;
+                line-height: 1.5rem;
+                position: relative;
+            }
+
+            #dataimport button {
+                display: inline;
+                vertical-align:top ;
+            }
+
+            #dataimport textarea {
+                width:60%;
+                height: 4em;
+            }
+
+            form > div {
+                max-width: 25rem;
+            }
+
+            fieldset {
+                border: 0;
+                padding: 0;
+                margin: 0.5rem 0 0.5rem 0;
+            }
+
+            #choices input[type=text] {
+                border:0;
+                width: 1.3rem;
+                float:right;
+                text-align: right;
+            }
+/*
+            input[type=radio] {
+                background-color: #0f0;
+            }
+*/
+            #choices label.total {
+                text-align: justify;
+            }
+
+            #choices label.total input{
+                float: none;
+            }
+
+            #choices input {
+                margin: 0;
+                vertical-align:baseline;
+            }
+
+            #choices label {
+                margin: 0 0.8rem 0 0.2rem;
+            }
+
+            div#totals {
+/*                position: absolute;
+                bottom: 0;*/
+                background-color: #FFEB9C;
+                width: 100%;
+                margin-bottom: 1rem;
+                text-align: justify;
+            }
+
+            div#label {
+                text-align: left;
+            }
+
+            div#totals input {
+/*                position: absolute;
+                right: 5px;*/
+                float: right;
+                text-align: right;
+            }
+            
+            div#totals div {
+/*                width: 95%;*/
+                font-weight: 800;
+                border-bottom: 1px solid #000;
+            }
+
+            div#totals div input  {
+                font-weight: 800;
+            }
+
+            div#totals.high {
+                background-color: #FFC7CE ;
+            }
+
+            div#totals.good {
+                background-color: #C6EFCE ;
+            }
+
+            div#totals.low {
+                background-color: #FFEB9C ;
+            }
+
+            form p {
+                margin: 0;
+            }
+
+            #choices p:has(input[type=checkbox]:disabled){
+                background-color:#fff;
+            }
+
+            /*#choices p:has(input:checked),*/
+            #choices p:has(input[type=checkbox]:checked),
+            #choices input[type=radio]:checked+label {
+                background-color: #C6EFCE;
+                /* #FFEB9C */
+            }
+
+            #choices p:has(input[type=checkbox]:disabled),
+            #choices input[type=radio]:disabled+label {
+                /*text-decoration: line-through;*/
+                color:#888;
+            }
+            #choices p:has(input[type=checkbox]:disabled:checked){
+                text-decoration: none;
+                color:#000;
+            }
+
+            p#maths {
+                background-color: #fff;
+            }
+
+            #examchoices p:has(input[type=radio]:disabled),
+            #examchoices p:has(input[type=checkbox].blocked) {
+                display:none;
+            }
+
+            #examchoices p:has(input:checked),
+            #examchoices p.fixed {
+                background-color: #C6EFCE ;
+            }
+
+            #examchoices fieldset p {
+                padding-left: 0.6rem;
+            }
+
+            #gradegrid table {
+                border-collapse: collapse;
+                table-layout:auto;
+                width:100%;
+            }
+
+            #gradegrid th {
+                border: 1px solid #000;
+                background-color: #eee;
+                padding: 5px;
+                white-space: nowrap;
+            }
+
+            #gradegrid tbody th {
+                text-align: left;
+            }
+
+            #gradegrid td {
+                border: 1px solid #000;
+                padding: 0;
+                text-align: center;
+            }
+
+            #gradegrid td:has(input:read-only) {
+                background-color: #ccc;
+            }
+
+            #gradegrid td:has(input.abovepass) {
+                background-color: palegreen;
+            }
+
+            #gradegrid td:has(input.abovepassPrelim) {
+                background-color: orange;
+            }
+
+            #gradegrid td:has(input.belowpass), #gradegrid td:has(input.belowpassPrelim) {
+                background-color: palevioletred;
+            }
+
+            #gradegrid input {
+                margin: 0;
+                border: 0;
+                padding: 2;
+                width: 90%;
+                height: 99%;
+            }
+
+            #gradegrid input:read-only {
+                background-color: #ccc;
+            }
+
+            #gradegrid input.abovepass {
+                background-color: palegreen;
+            }
+            #gradegrid input.abovepassPrelim {
+                background-color: orange;
+            }
+
+            #gradegrid input.belowpass, #gradegrid input.belowpassPrelim {    
+                background-color: palevioletred;
+            }
+
+            #gradegrid input {
+                text-align: center;
+            }
+
+            #overallmarks   {
+                outline: 3px solid #000;
+                line-height: 2em;
+                font-weight: 800;
+                font-size: larger;
+            }
+
+            #overallmarks input {
+                font-size: larger;
+                font-weight: 800;
+            }
+</style>
+    </head>
+    <body>
+        <header>
+            <h1>Subject selector for European Baccalaureate</h1>
+            <nav>
+                <a href="#intro">Introduction</a>&nbsp;
+                <a href="#grid">Subject grid</a>&nbsp;
+                <a href="#exams">Bac exam options</a>
+                <a href="#calc">Bac mark calculator</a>
+            </nav>
+        </header>
+        <main>
+            <div class="columns">
+                <div>
+                    <h2 id="intro">Introduction</h2>
+                    <p>
+                        This page will help you make <a href="http://www.euroschool.lu/site/secondary-s6-s7-subject-choice-booklet/">your subject choices</a> for the European Baccalaureate. For the complete rules, see that page.
+                    </p>
+                    <p>
+                        Note: The page will generally enforce the rules, nevertheless it is possible to choose more than 35 periods.
+                    </p>
+                </div>
+                <div id="yourchoices">
+                    <h2>Save and retrieve choices</h2>
+                    <p>
+                        <button onclick="saveData();">Save to browser</button>
+                        <button onclick="retrieveData();">Retrieve from browser</button>
+                        <button onclick="copyData();">Copy to clipboard</button>
+                    </p>
+                    <form id="dataimport">
+                        <p>
+                            <label>To import, paste your copied choices here, then click import.
+                                <textarea id="theData"></textarea>
+                            </label>
+                            <button type="button" onclick="importData();">Import</button>
+                        </p>
+                    </form>
+                </div>
+                <div>
+                    <h2>Quick picks</h2>
+                    <p>These buttons help you pre-configure <br>the subject grid</p>
+                    <p>
+                        <button onclick="setMaxSciences();">Maximise Sciences</button>
+                        <button onclick="setMinSubjects();">Minimise Subjects</button>
+                    </p>
+                </div>
+            </div>
+        <h2 id="grid">Subject Grid</h2>
+        <form id="choices" class="columns">
+            <div id="compulsory">
+                <h3>Compulsory subjects</h3>
+                <p>
+                    <input type="checkbox" checked disabled id="L1" value="4"><label for="L1">Language 1</label>
+                    <input type="text" value="4" readonly disabled size="1" id="L1_X">
+                </p>
+                <p>
+                    <input type="checkbox" checked disabled id="L2" value="3">
+                    <label for="L2" id="L2Label">Language 2</label>
+                    <input type="text" value="3" readonly disabled size="1" id="L2_X">
+                </p>
+                <p id="maths">
+                    <input type="radio" checked id="MAT3" value="3" name="MAT">
+                    <label for="MAT3" id="MAT3Label">Maths 3</label>
+                    <input type="radio" id="MAT5" value="5" name="MAT">
+                    <label for="MAT5" id="MAT5Label">Maths 5</label>
+                    <input type="text" value="3" readonly disabled size="1" id="MAT_X">                        
+                </p>
+                <p>
+                    <input type="checkbox" checked disabled id="BIO2" value="2">
+                    <label for="BIO2" id="BIO2Label">Biology 2</label>
+                    <input type="text" value="2" readonly disabled size="1" id="BIO2_X">
+                </p>
+                <p>
+                    <input type="checkbox" checked disabled id="HIS2" value="2">
+                    <label for="HIS2" id="HIS2Label">History 2</label>
+                    <input type="text" value="2" readonly disabled size="1" id="HIS2_X">
+                </p>
+                <p>
+                    <input type="checkbox" checked disabled id="GEO2" value="2">
+                    <label for="GEO2" id="GEO2Label">Geography 2</label>
+                    <input type="text" value="2" readonly disabled size="1" id="GEO2_X">
+                </p>
+                <p>
+                    <input type="checkbox" checked disabled id="PHI2" value="2">
+                    <label for="PHI2" id="PHI2Label">Philosophy 2</label>
+                    <input type="text" value="2" readonly disabled size="1" id="PHI2_X">
+                </p>
+                <p>
+                    <input type="checkbox" checked disabled id="PE" value="2">
+                    <label for="PE" id="PELabel">Physical Education</label>
+                    <input type="text" value="2" readonly disabled size="1" id="PE_X">
+                </p>
+                <p>
+                    <input type="checkbox" checked disabled id="ETH" value="1">
+                    <label for="ETH" id="ETHLabel">Ethics/Religion</label>
+                    <input type="text" value="1" readonly disabled size="1" id="ETH_X">                    
+                </p>
+                <div id="totals">
+                    <h3>Totals <span id="status">(too low)</span></h3>
+                    <label class="total" for="COMPULSORY_X">Compulsory: </label>
+                    <input type="text" readonly disabled value="21" id="COMPULSORY_X"><br>
+                    <label class="total" for="OPTIONAL_X">Optional: </label>
+                    <input type="text" readonly disabled value="0" id="OPTIONAL_X"><br>
+                    <label class="total" for="COMPLEMENTARY_X">Complementary: </label>
+                    <input type="text" readonly disabled value="0" id="COMPLEMENTARY_X"><br>
+                    <div>
+                        <label class="total" for="TOTAL_X">Overall: </label>
+                        <input type="text" readonly disabled value="21" id="TOTAL_X">
+                    </div>
+                </div>
+        </div>
+            <div id="optional">
+                <h3>Optional subjects</h3>
+                <p>
+                    <input type="checkbox" id="HIS4" value="4">
+                    <label for="HIS4" id="HIS4Label">History 4</label>
+                    <input type="text" value="0" readonly disabled size="1" id="HIS4_X" aria-hidden="true">
+                </p>
+                <p>
+                    <input type="checkbox" id="GEO4" value="4">
+                    <label for="GEO4" id="GEO4Label">Geography 4</label>
+                    <input type="text" value="0" readonly disabled size="1" id="GEO4_X" aria-hidden="true">
+                </p>
+                <p>
+                    <input type="checkbox" id="PHI4" value="4">
+                    <label for="PHI4" id="PHI4Label">Philosophy 4</label>
+                    <input type="text" value="0" readonly disabled size="1" id="PHI4_X" aria-hidden="true">
+                </p>
+                <p>
+                    <input type="checkbox" id="BIO4" value="4">
+                    <label for="BIO4" id="BIO4Label">Biology 4</label>
+                    <input type="text" value="0" readonly disabled size="1" id="BIO4_X" aria-hidden="true">
+                </p>
+                <p>
+                    <input type="checkbox" id="CHE" value="4">
+                    <label for="CHE" id="CHELabel">Chemistry</label>
+                    <input type="text" value="0" readonly disabled size="1" id="CHE_X" aria-hidden="true">                        
+                </p>
+                <p>
+                    <input type="checkbox" id="PHY" value="4">
+                    <label for="PHY" id="PHYLabel">Physics</label>
+                    <input type="text" value="0" readonly disabled size="1" id="PHY_X" aria-hidden="true">                        
+                </p>
+                <br>
+                <p>
+                    <input type="checkbox" id="ART" value="4">
+                    <label for="ART" id="ARTLabel">Art</label>
+                    <input type="text" value="0" readonly disabled size="1" id="ART_X">
+                </p>
+                <p>
+                    <input type="checkbox" id="MUS" value="4">
+                    <label for="MUS" id="MUSLabel">Music</label>
+                    <input type="text" value="0" readonly disabled size="1" id="MUS_X">
+                </p>
+                <p>                    
+                    <input type="checkbox" id="L3" value="4">
+                    <label for="L3" id="L3Label">Language 3</label>
+                    <input type="text" value="0" readonly disabled size="1" id="L3_X">
+                </p>
+                <p>
+                    <input type="checkbox" id="L4" value="4">
+                    <label for="L4" id="L4Label">Language 4 or ONL</label>
+                    <input type="text" value="0" readonly disabled size="1" id="L4_X">
+                </p>
+                <hr>
+                <input type="radio" id="ECO" name="ECL" value="4">
+                <label for="ECO" id="ECOLabel">Economics</label>
+                <input type="radio" id="LAT" name="ECL" value="4">
+                <label for="LAT" id="LATLabel">Latin</label>
+                <input type="radio" id="NEL" name="ECL" value="0" checked>
+                <label for="NEL" id="NELLabel">Neither</label>
+                <input type="text" value="0" readonly disabled size="1" id="ECL_X">        
+            
+                <fieldset>
+                    <legend>Advanced subjects</legend>
+                        <input type="radio" checked  id="NAD" name="ADV" value="0">
+                        <label for="NAD" id="NADLabel">None</label>
+                        <input type="radio" id="AL1" name="ADV" value="3">
+                        <label for="AL1" id="AL1Label">L1</label>
+                        <input type="radio" id="AL2" name="ADV" value="3">
+                        <label for="AL2" id="AL2Label">L2</label>
+                        <input type="radio" id="AMA" name="ADV" disabled value="3">
+                        <label for="AMA" id="AMALabel">Maths</label>
+                        <input type="text" value="0" readonly disabled size="1" id="ADV_X">
+                </fieldset>
+            </div>
+            <div id="complementary">
+                <h3>Complementary subjects</h3>
+                <p>
+                    <input type="checkbox" id="ARC" value="2">
+                    <label for="ARC" id="ARCLabel">Art</label>
+                    <input type="text" value="0" readonly disabled size="1" id="ARC_X">
+                </p>
+                <p>
+                    <input type="checkbox" id="CLS" value="2">
+                    <label for="CLS" id="CLSLabel">Classical Studies</label>
+                    <input type="text" value="0" readonly disabled size="1" id="CLS_X">
+                </p>
+                <p>
+                    <input type="checkbox" id="DRA" value="2">
+                    <label for="DRA" id="DRALabel">Drama</label>
+                    <input type="text" value="0" readonly disabled size="1" id="DRA_X">                    
+                </p>
+                <p>
+                    <input type="checkbox" id="SUS" value="2">
+                    <label for="SUS" id="SUSLabel">Education for Sustainable Development</label>
+                    <input type="text" value="0" readonly disabled size="1" id="SUS_X">                    
+                </p>
+                <p>
+                    <input type="checkbox" id="ICT" value="2">
+                    <label for="ICT" id="ICTLabel">ICT</label>
+                    <input type="text" value="0" readonly disabled size="1" id="ICT_X">                    
+                </p>
+                <p>
+                    <input type="checkbox" id="ECI" value="2">
+                    <label for="ECI" id="ECILabel">Introduction to Economics</label> 
+                    <input type="text" value="0" readonly disabled size="1" id="ECI_X">                    
+                </p>
+                <p>
+                    <input type="checkbox" id="MSC" value="2">
+                    <label for="MSC" id="MSCLabel">Music</label>
+                    <input type="text" value="0" readonly disabled size="1" id="MSC_X">                    
+                </p>
+                <p>
+                    <input type="checkbox" id="PSC" value="2">
+                    <label for="PSC" id="PSCLabel">Political Science</label>
+                    <input type="text" value="0" readonly disabled size="1" id="PSC_X">                    
+                </p>
+                <p>
+                    <input type="checkbox" id="SOC" value="2">
+                    <label for="SOC" id="SOCLabel">Sociology</label>
+                    <input type="text" value="0" readonly disabled size="1" id="SOC_X">                    
+                </p>
+                <p>
+                    <input type="checkbox" id="SPO" value="2">
+                    <label for="SPO" id="SPOLabel">Sport</label>
+                    <input type="text" value="0" readonly disabled size="1" id="SPO_X">                    
+                </p>
+                <p>
+                    <input type="checkbox" id="TDR" value="2">
+                    <label for="TDR" id="TDRLabel">Technical Drawing</label>
+                    <input type="text" value="0" readonly disabled size="1" id="TDR_X">                    
+                </p>
+                <fieldset>
+                    <legend>Laboratories</legend>
+                    <input type="radio" id="NOLAB" name="LAB" value="0" checked>
+                    <label for="NOLAB" id="NOLABLabel">None</label>
+                    <input type="radio" id="LABBIO4" name="LAB" value="2" disabled>
+                    <label for="LABBIO4" id="LABBIO4Label">Biology</label>
+                    <input type="radio" id="LABCHE" name="LAB" value="2" disabled>
+                    <label for="LABCHE" id="LABCHELabel">Chemistry</label> 
+                    <input type="radio" id="LABPHY" name="LAB" value="2" disabled>
+                    <label for="LABPHY" id="LABPHYLabel">Physics</label>
+                    <input type="text" value="0" readonly disabled size="1"  id="LAB_X">
+                </fieldset>
+                <fieldset>
+                    <legend>Language 5</legend>
+                    <input type="radio" id="NOL5" name="L5" value="0" checked>
+                    <label for="NOL5" id="NOL5Label">None</label>
+                    <input type="radio" id="L5C" name="L5" value="2">
+                    <label for="L5C" id="L5CLabel">Chinese</label>
+                    <input type="radio" id="L5D" name="L5" value="2">
+                    <label for="L5D" id="L5DLabel">Dutch</label>
+                    <input type="radio" id="L5S" name="L5" value="2">
+                    <label for="L5S" id="L5SLabel">Spanish</label><br>
+                    <input type="radio" id="L5L" name="L5" value="2">
+                    <label for="L5L" id="L5LLabel">Luxembourgish</label>
+                    <input type="radio" id="L5G" name="L5" value="2">
+                    <label for="L5G" id="L5GLabel">Modern Greek</label>
+                    <input type="text" value="0" readonly disabled size="1" id="L5_X">
+                </fieldset>
+                </div>
+            </form>
+
+            <h2 id="exams">Final Bac Exams Choices</h2>
+            <form id="examchoices">
+            <div class="columns">
+                <div>
+                    <h3>Written</h3>
+                    <p class="fixed">
+                        <span id="L1_W">Language 1</span>
+                    </p>
+                    <p class="fixed">
+                        <span id="L2_W">Language 2</span>
+                    </p>
+                    <p class="fixed">
+                        <span id="MAT_W">Maths 3</span>
+                    </p>
+                    <fieldset>
+                        <legend>Options, 2 from:</legend>
+                        <p>
+                            <input type="checkbox" id="optionW1" value="WA" onclick="checkOrals(this)"><label for="optionW1" id="optionW1Label">Option A</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="optionW2" value="WB" onclick="checkOrals(this)"><label for="optionW2" id="optionW2Label">Option B</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="optionW3" value="WC" onclick="checkOrals(this)"><label for="optionW3" id="optionW3Label">Option C</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="optionW4" value="WD" onclick="checkOrals(this)"><label for="optionW4" id="optionW4Label">Option D</label>
+                        </p>
+                    </fieldset>
+                </div>
+                <div>
+                    <h3>Oral</h3>
+                    <p class="fixed">
+                        <span id="L1_O">Language 1</span>
+                    </p>
+                    <fieldset>
+                        <legend>Subject in L2:</legend>
+                        <p>
+                            <input type="radio" id="optionL21" value="OL2A" name="SUB_L2">
+                            <label for="optionL21" id="optionL21Label">Option A</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="optionL22" value="OL2B" name="SUB_L2">
+                            <label for="optionL22" id="optionL22Label">Option B</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="optionL23" value="OL2C" name="SUB_L2">
+                            <label for="optionL23" id="optionL23Label">Option C</label>
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Options:</legend>
+                        <p>
+                            <input type="radio" id="optionO31" value="O3A" name="OR_3">
+                            <label for="optionO31" id="optionO31Label">Option A</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="optionO32" value="O3B" name="OR_3">
+                            <label for="optionO32" id="optionO32Label">Option B</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="optionO33" value="O3C" name="OR_3">
+                            <label for="optionO33" id="optionO33Label">Option C</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="optionO34" value="O3D" name="OR_3">
+                            <label for="optionO34" id="optionO34Label">Option D</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="optionO35" value="O3E" name="OR_3">
+                            <label for="optionO35" id="optionO35Label">Option E</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="optionO36" value="O3F" name="OR_3">
+                            <label for="optionO36" id="optionO36Label">Option F</label>
+                        </p>
+                    </fieldset>
+                </div>
+            </div>
+            </form>
+            <h2 id="calc">Bac Mark Calculator</h2>
+            <!-- https://adrianroselli.com/2019/05/uniquely-labeling-fields-in-a-table.html -->
+            <p>Note: Ethics/Religion does not count towards the Bac score, so is not listed here.</p>
+            <p>
+                Once you have chosen your exam subjects: <button onClick="processGradeGrid();">update the grade grid</button>
+            </p>
+            <form id="gradegrid" onsubmit="calculateGrades(); return false;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="ColSubj">Subject</th>
+                            <th id="ColA1">A1 mark</th>
+                            <th id="ColA2">A2 mark</th>
+                            <th id="ColA">A average</th>
+                            <th id="ColB1">B1 mark</th>
+                            <th id="ColB2">B2 mark</th>
+                            <th id="ColB">B average</th>
+                            <th id="ColPre">Prelim</th>
+                            <th id="ColWr">Written</th>
+                            <th id="ColOr">Oral</th>
+                            <th id="ColFinal">Final mark</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="SubL1">
+                            <th scope="row" id="LabSubL1">
+                                Language 1
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L1A1" aria-labelledby="LabSubL1 ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L1A2" aria-labelledby="LabSubL1 ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="L1A" readonly aria-labelledby="LabSubL1 ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L1B1" aria-labelledby="LabSubL1 ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L1B2" aria-labelledby="LabSubL1 ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="L1B" readonly aria-labelledby="LabSubL1 ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="L1Pre" readonly aria-labelledby="LabSubL1 ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L1Wr" aria-labelledby="LabSubL1 ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L1Or" aria-labelledby="LabSubL1 ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="L1Fin" readonly aria-labelledby="LabSubL1 ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubL2">
+                            <th scope="row" id="LabSubL2">
+                                Language 2
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L2A1" aria-labelledby="LabSubL2 ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L2A2" aria-labelledby="LabSubL2 ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="L2A" readonly aria-labelledby="LabSubL2 ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L2B1" aria-labelledby="LabSubL2 ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L2B2" aria-labelledby="LabSubL2 ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="L2B" readonly aria-labelledby="LabSubL2 ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="L2Pre" readonly aria-labelledby="LabSubL2 ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L2Wr" aria-labelledby="LabSubL2 ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="L2Or" aria-labelledby="LabSubL2 ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="L2Fin" readonly aria-labelledby="LabSubL2 ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubMa">
+                            <th scope="row" id="LabSubMA">
+                                Maths 3
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="MAA1" aria-labelledby="LabSubMA ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="MAA2" aria-labelledby="LabSubMA ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="MAA" readonly aria-labelledby="LabSubMA ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="MAB1" aria-labelledby="LabSubMA ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="MAB2" aria-labelledby="LabSubMA ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="MAB" readonly aria-labelledby="LabSubMA ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="MAPre" readonly aria-labelledby="LabSubMA ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="MAWr" aria-labelledby="LabSubMA ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="MAOr" aria-labelledby="LabSubMA ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="MAFin" readonly aria-labelledby="LabSubMA ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubBio">
+                            <th scope="row" id="LabSubBio">
+                                Biology 2
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="BIA1" aria-labelledby="LabSubBio ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="BIA2" aria-labelledby="LabSubBio ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="BIA" readonly aria-labelledby="LabSubBio ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="BIB1" aria-labelledby="LabSubBio ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="BIB2" aria-labelledby="LabSubBio ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="BIB" readonly aria-labelledby="LabSubBio ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="BIPre" readonly aria-labelledby="LabSubBio ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="BIWr" aria-labelledby="LabSubBio ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="BIOr" aria-labelledby="LabSubBio ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="BIFin" readonly aria-labelledby="LabSubBio ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubHis">
+                            <th scope="row" id="LabSubHis">
+                                History 2
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="HIA1" aria-labelledby="LabSubHis ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="HIA2" aria-labelledby="LabSubHis ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="HIA" readonly aria-labelledby="LabSubHis ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="HIB1" aria-labelledby="LabSubHis ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="HIB2" aria-labelledby="LabSubHis ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="HIB" readonly aria-labelledby="LabSubHis ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="HIPre" readonly aria-labelledby="LabSubHis ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="HIWr" aria-labelledby="LabSubHis ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="HIOr" aria-labelledby="LabSubHis ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="HIFin" readonly aria-labelledby="LabSubHis ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubGeo">
+                            <th scope="row" id="LabSubGeo">
+                                Geography 2
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="GEA1" aria-labelledby="LabSubGeo ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="GEA2" aria-labelledby="LabSubGeo ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="GEA" readonly aria-labelledby="LabSubGeo ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="GEB1" aria-labelledby="LabSubGeo ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="GEB2" aria-labelledby="LabSubGeo ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="GEB" readonly aria-labelledby="LabSubGeo ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="GEPre" readonly aria-labelledby="LabSubGeo ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="GEWr" aria-labelledby="LabSubGeo ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="GEOr" aria-labelledby="LabSubGeo ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="GEFin" readonly aria-labelledby="LabSubGeo ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubPhi">
+                            <th scope="row" id="LabSubPhi">
+                                Philosophy 2
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PHA1" aria-labelledby="LabSubPhi ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PHA2" aria-labelledby="LabSubPhi ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="PHA" readonly aria-labelledby="LabSubPhi ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PHB1" aria-labelledby="LabSubPhi ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PHB2" aria-labelledby="LabSubPhi ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="PHB" readonly aria-labelledby="LabSubPhi ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="PHPre" readonly aria-labelledby="LabSubPhi ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PHWr" aria-labelledby="LabSubPhi ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PHOr" aria-labelledby="LabSubPhi ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="PHFin" readonly aria-labelledby="LabSubPhi ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubPE">
+                            <th scope="row" id="LabSubPE">
+                                Physical Education
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PEA1" aria-labelledby="LabSubPE ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PEA2" aria-labelledby="LabSubPE ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="PEA" readonly aria-labelledby="LabSubPE ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PEB1" aria-labelledby="LabSubPE ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PEB2" aria-labelledby="LabSubPE ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="PEB" readonly aria-labelledby="LabSubPE ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="PEPre" readonly aria-labelledby="LabSubPE ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PEWr" disabled aria-labelledby="LabSubPE ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="PEOr" disabled aria-labelledby="LabSubPE ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="PEFin" readonly aria-labelledby="LabSubPE ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubAdv">
+                            <th scope="row" id="LabSubAdv">Advanced</th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="AVA1" aria-labelledby="LabSubAdv ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="AVA2" aria-labelledby="LabSubAdv ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="AVA" readonly aria-labelledby="LabSubAdv ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="AVB1" aria-labelledby="LabSubAdv ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="AVB2" aria-labelledby="LabSubAdv ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="AVB" readonly aria-labelledby="LabSubAdv ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="AVPre" readonly aria-labelledby="LabSubAdv ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="AVWr" aria-labelledby="LabSubAdv ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="AVOr" aria-labelledby="LabSubAdv ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="AVFin" readonly aria-labelledby="LabSubAdv ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubOT1">
+                            <th scope="row" id="LabSubOT1">
+                                Other 1
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT1A1" aria-labelledby="LabSubOT1 ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT1A2" aria-labelledby="LabSubOT1 ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT1A" readonly aria-labelledby="LabSubOT1 ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT1B1" aria-labelledby="LabSubOT1 ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT1B2" aria-labelledby="LabSubOT1 ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT1B" readonly aria-labelledby="LabSubOT1 ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT1Pre" readonly aria-labelledby="LabSubOT1 ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT1Wr" aria-labelledby="LabSubOT1 ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT1Or" aria-labelledby="LabSubOT1 ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT1Fin" readonly aria-labelledby="LabSubOT1 ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubOT2">
+                            <th scope="row" id="LabSubOT2">
+                                Other 2
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT2A1" aria-labelledby="LabSubOT2 ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT2A2" aria-labelledby="LabSubOT2 ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT2A" readonly aria-labelledby="LabSubOT2 ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT2B1" aria-labelledby="LabSubOT2 ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT2B2" aria-labelledby="LabSubOT2 ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT2B" readonly aria-labelledby="LabSubOT2 ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT2Pre" readonly aria-labelledby="LabSubOT2 ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT2Wr" aria-labelledby="LabSubOT2 ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT2Or" aria-labelledby="LabSubOT2 ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT2Fin" readonly aria-labelledby="LabSubOT2 ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubOT3">
+                            <th scope="row" id="LabSubOT3">
+                                Other 3
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT3A1" aria-labelledby="LabSubOT3 ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT3A2" aria-labelledby="LabSubOT3 ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT3A" readonly aria-labelledby="LabSubOT3 ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT3B1" aria-labelledby="LabSubOT3 ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT3B2" aria-labelledby="LabSubOT3 ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT3B" readonly aria-labelledby="LabSubOT3 ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT3Pre" readonly aria-labelledby="LabSubOT3 ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT3Wr" aria-labelledby="LabSubOT3 ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT3Or" aria-labelledby="LabSubOT3 ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT3Fin" readonly aria-labelledby="LabSubOT3 ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubOT4">
+                            <th scope="row" id="LabSubOT4">
+                                Other 4
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT4A1" aria-labelledby="LabSubOT4 ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT4A2" aria-labelledby="LabSubOT4 ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT4A" readonly aria-labelledby="LabSubOT4 ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT4B1" aria-labelledby="LabSubOT4 ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT4B2" aria-labelledby="LabSubOT4 ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT4B" readonly aria-labelledby="LabSubOT4 ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT4Pre" readonly aria-labelledby="LabSubOT4 ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT4Wr" aria-labelledby="LabSubOT4 ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT4Or" aria-labelledby="LabSubOT4 ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT4Fin" readonly aria-labelledby="LabSubOT4 ColFinal">
+                            </td>
+                        </tr>
+                        <tr id="SubOT5">
+                            <th scope="row" id="LabSubOT5">
+                                Other 5
+                            </th>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT5A1" aria-labelledby="LabSubOT5 ColA1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT5A2" aria-labelledby="LabSubOT5 ColA2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT5A" readonly aria-labelledby="LabSubOT5 ColA">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT5B1" aria-labelledby="LabSubOT5 ColB1">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT5B2" aria-labelledby="LabSubOT5 ColB2">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT5B" readonly aria-labelledby="LabSubOT5 ColB">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT5Pre" readonly aria-labelledby="LabSubOT5 ColPre">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT5Wr" aria-labelledby="LabSubOT5 ColWr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" step="0.1" id="OT5Or" aria-labelledby="LabSubOT5 ColOr">
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OT5Fin" readonly aria-labelledby="LabSubOT5 ColFinal">
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr id="overallmarks">
+                            <th scope="row" id="LabSubOverall">
+                                Overall
+                            </th>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OverallPre" readonly aria-labelledby="LabSubOverall ColPre">
+                            </td>
+                            <td>
+                                <!-- <input type="number" min="0" max="10" id="OverallWr" readonly aria-labelledby="LabSubOverall ColWr"> -->
+                            </td>
+                            <td>
+                                <!-- <input type="number" min="0" max="10" id="OverallOr" readonly aria-labelledby="LabSubOverall ColOr"> -->
+                            </td>
+                            <td>
+                                <input type="number" min="0" max="10" id="OverallFin" readonly aria-labelledby="LabSubOverall ColFinal">
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>                
+                <!--
+                    <p>
+                    Populate the grid with your subjetc scores and then: 
+                    <button>calculate the grades</button>
+                    </p>
+                -->
+            </form>
+    </main>
+    <footer>
+        <p>
+            Offered without any warranty or guarantee about the accuracy. Good luck!
+        </p>
+    </footer>
+    <script>
+        let form = document.getElementById('choices');
+        form.addEventListener('change', updateValue);
+        form = document.getElementById('gradegrid');
+        form.addEventListener('change', calculateGrades);
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!-- bookmarks.html -->
+<!--
+<%
+' Descr: 		Bookmarks "wizard"	
+' Created:		04/11/1998 (RM)
+' Last Changed:	06/11/1998 (RM)
+' Params:		
+%>
+-->
+<html>
+
+<head>
+<title>Bookmark Wizard</title>
+<link REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../css/atd_viewer.css">
+<script LANGUAGE="javascript" SRC="../js/bookmarks.js">
+</script>
+</head>
+
+<body onBlur="KeepFocused();" onLoad="parent.opener.status='Bookmarks Window'"
+class="dialog">
+
+<form NAME="bMarks" style="margin: 0px; padding-top: 0px; padding-bottom: 0px">
+  <div align="center"><center><table CLASS="bookmarks" CELLSPACING="0" width="100%"
+  height="41">
+    <tr>
+      <td ALIGN="center" bgcolor="#C0C0C0" height="17"><b>BOOKMARK VIEWER</b></td>
+    </tr>
+    <tr>
+      <td bgcolor="#0000FF" height="1"></td>
+    </tr>
+    <tr>
+      <td ALIGN="left" bgcolor="#C0C0C0" height="10"><ul>
+        <li>To bookmark the current page press <b>Add</b></li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td ALIGN="left" bgcolor="#C0C0C0" height="17"><ul>
+        <li>To delete bookmarks, check the unwanted bookmarks and press <b>Delete</b></li>
+      </ul>
+      </td>
+    </tr>
+  </table>
+  </center></div><table CLASS="bookmarks" CELLSPACING="0" width="100%"
+  style="border-left: 1px solid rgb(0,0,0); border-right: 1px solid rgb(128,128,128); border-top: 1px solid rgb(0,0,0); border-bottom: 1px solid rgb(128,128,128)">
+    <tr>
+      <td bgcolor="#FFFFFF"></td>
+    </tr>
+    <script LANGUAGE="javascript">
+<!--
+//Create a hyperlink and checkbox for each bookmark
+for (var i=0;i<=iTotPages;i++)
+{
+	var iTabNum =parent.opener.parent.HIDDEN.L.Page[i].nTabs;
+	if (iTabNum>1)
+	{
+		for (j=0;j<iTabNum;j++)
+		{
+			if (parent.opener.parent.HIDDEN.L.Page[i].Tab[j].bookmarks==1)
+			{
+sText = parent.opener.parent.TOOLBAR.detStatusText(i);
+sText = sText.substring(0, sText.indexOf(" of "));
+
+document.write("<TR><TD ALIGN=right WIDTH=10% COLSPAN=2 bgcolor='#FFFFFF'><INPUT TYPE=checkbox NAME=\"p"+i+"t"+j+"\"></TD>\n") 
+document.write("<TD WIDTH=90% bgcolor='#FFFFFF'><A HREF=\"javascript:goPage('"+i+"','"+(j+1)+"')\";")
+document.write(" onMouseOver=\"parent.opener.status='Go to "+parent.opener.parent.HIDDEN.L.Page[i].name+" ("+sText+", tab "+(j+1)+")'; return true\"")
+document.write(" onMouseOut=\"parent.opener.status='Bookmarks Window'; return true\">\n")
+document.write(parent.opener.parent.HIDDEN.L.Page[i].name+" ("+sText+", tab "+(j+1)+")")
+document.write("</A></TD></TR>\n")
+			}
+		}
+	}
+	else if (parent.opener.parent.HIDDEN.L.Page[i].bookmarks==1)
+	{
+sText = parent.opener.parent.TOOLBAR.detStatusText(i);
+sText = sText.substring(0, sText.indexOf(" of "));
+
+document.write("<TR><TD ALIGN=right WIDTH=10% COLSPAN=2 bgcolor='#FFFFFF'><INPUT TYPE=checkbox NAME=\"p"+i+"\"></TD>\n") 
+document.write("<TD WIDTH=90% bgcolor='#FFFFFF'><A HREF=\"javascript:goPage('"+i+"')\";")
+document.write(" onMouseOver=\"parent.opener.status='Go to "+parent.opener.parent.HIDDEN.L.Page[i].name+" ("+sText+")'; return true\"")
+document.write(" onMouseOut=\"parent.opener.status='Bookmarks Window'; return true\">\n")
+document.write(parent.opener.parent.HIDDEN.L.Page[i].name+" ("+sText+")")
+document.write("</A></TD></TR>\n")
+	}
+}
+//-->
+</script>
+
+  </table>
+</form>
+</body>
+</html>

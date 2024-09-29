@@ -1,0 +1,321 @@
+/*
+I have four style sheets for the site
+1. fonts.css        - loads the font face
+2. structure.css    - defining the layout and structure of the site
+3. style.css        - defining the design of the site, such as colours, fonts and so on
+                    - overridden by the theme as needed
+4. default.css      - the default theme css. Replaced by other theme css files using the theme picker
+                    - default theme only contains the dark / light mode settings
+*/
+
+body {
+    font-family: 'Mona Sans', sans-serif, serif;
+    background-color: var(--body-bg-color);
+}
+
+a, details summary {
+    border:2px solid;
+    border-color: rgba(0,0,0,0); /*use alpha = 0 to remove border color completely for all links*/
+    color: var(--link-color);
+    text-decoration-color: var(--main-highlight-color); /*rgb(248, 119, 175);*/
+    text-decoration-thickness: 3px;
+}
+
+a:visited {
+    color: var(--link-color);
+}
+
+a:focus, a:hover, button:focus, details summary:focus, details summary:hover  {
+    background-color: var(--link-focus-bg-color)!important;
+    color: var(--link-focus-color)!important;
+    border:2px solid;
+    border-color: var(--link-focus-color)!important;
+    text-decoration: none!important;
+}
+
+button:disabled {
+    color: #fff;
+    background-color: #aaa;
+}
+
+header.masthead {
+    background-color: var(--header-bg-color);
+}
+
+header.masthead p#themeSwitch select:focus {
+  background-color: var(--link-focus-bg-color)!important;
+}
+
+header.masthead p#themeSwitch select:focus option {
+    background-color: #fff !important;
+  }
+  
+header #themeSwitch span {
+    color: var(--header-title-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-right: 0.3rem;
+}
+
+header .sitetitle {
+    margin: 0;
+    margin-right:0;
+/*    margin-left:15px; */
+    color: var(--header-title-color);
+    font-weight: bold;
+    font-size: 4em;
+    font-style: normal;
+}
+
+header .subtitle {
+    margin:0;
+    font-size: 1.6em;
+    color: var(--header-subtitle-color);
+    font-weight: normal;
+    padding-top: 5px;
+    font-style: normal;
+    vertical-align:baseline;
+    line-height: 2;
+/*    letter-spacing: 0.035em; */
+}
+
+header .sitetitle a:visited, header .sitetitle a {
+    color: var(--header-title-color);
+}
+
+
+header.masthead nav a {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+header nav.subtitle a.current {
+    border:0;
+    background-color: var(--header-title-color);
+    color: var(--header-bg-color);
+    text-decoration: none;
+    padding: 0 2px 2px;
+}
+
+header nav.subtitle a.current:before {
+    content: '»';
+    padding-right: 2px;
+}
+
+
+header.masthead a {
+    text-decoration: none;
+}
+
+nav a, nav a:visited, div.access a, div.access a:visited {
+    color: var(--header-navtext-color);
+    font-weight: bold;
+    /*padding:0 2px;*/
+}   
+
+article nav a, article nav a:visited {
+    color: var(--main-text-color);
+    font-weight: normal;
+    /*padding:0 2px;*/
+}   
+
+details summary {
+    text-decoration: underline;
+    inline-size: max-content;
+}
+
+details summary:hover {
+    cursor: pointer;
+}
+
+div.posts-list nav a {
+    color: var(--postlist-navtext-color);
+}   
+
+main {
+    /*font-family: sans-serif, serif;*/
+    color: var(--main-text-color); 
+    background-color: var(--main-bg-color);
+}
+
+main h1, main h2, main h3 {
+    color: var(--main-text-color); 
+}
+
+main article.welcome {
+    text-align: center;
+}
+
+main article.welcome p {
+    margin-bottom: 0;
+}
+
+header time {
+    font-size: 0.75em;
+}
+
+.postlist time {
+    font-size: 0.85em;
+}
+
+ul.taglist a.font-scale-2 {
+    font-size: 1.5em;
+}
+ul.taglist a.font-scale-3 {
+    font-size: 2em;
+}
+ul.taglist a.font-scale-4 {
+    font-size: 2.5em;
+}
+ul.taglist a.font-scale-5 {
+    font-size: 3em;
+}
+
+blockquote {
+    border-left: 5px solid var(--main-highlight-color);
+    padding: 10px 0 10px 20px;
+}
+
+div.posts-list hr {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    border-top: #dddddd solid 1px;
+}
+
+
+article header time, h2 time {
+    font-weight: bold;
+    font-size: 1em;
+    /*float:left;*/
+}
+
+main.tmpl-post article header h1,
+main.tmpl-page article header h1,
+main.tmpl-home article header h2 {
+    font-size: 2em;
+}
+
+main.tmpl-home article header time {
+    font-size: 1.3em;
+}
+
+main article h2 {
+    font-size: 1.5em;
+}
+
+h2.all-posts-list {
+    border-top:2px solid #aaa;
+    border-bottom:2px solid #aaa;
+}
+
+h2.all-posts-list span {
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+main article h3 {
+    font-size: 1.2em;
+}
+
+div.see-all-posts {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+div.see-all-posts::before {
+    content: "👉";
+}
+
+div.see-all-posts::after {
+    content: "👈";
+}
+
+footer {
+    border-top: var(--header-bg-color) solid 10px;
+    background-color: var(--footer-bg-color);
+    padding: 10px 20px;
+    font-style: normal;
+    font-size: 1.5em;
+}
+
+article footer {
+    border-top: var(--header-bg-color) solid 3px;
+    background-color: var(--body-bg-color);
+    padding: 10px 0;
+    font-style: normal;
+    font-size: 0.9em;
+}
+
+footer div {
+    color: var(--footer-text-color);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer div a, footer div a:visited {
+    text-decoration: underline;
+    /*text-decoration-color: rgb(248, 119, 175);*/
+    text-decoration-thickness: 3px;
+    font-weight: bold;
+    color: var(--footer-navtext-color);
+}
+
+footer span.emojis {
+    display: inline-block;
+    font-style: normal;
+    /*padding-top: 5px;*/
+}
+
+footer span.emojis a {
+    text-decoration: none;
+}
+
+/* 
+    Custom post styling postlists goes here
+    at the end of the file to ensure it overrides the rest
+*/
+main div article.custom-rip {
+    background-color: #aaa;
+}
+
+main div article.custom-rip a {
+    text-decoration-color: #000;
+}
+/*
+main div article.custom-rip header time span.date-day {
+    background-color: #000;
+}
+*/
+main ul.postlist li.custom-rip a {
+    text-decoration-color: #000;
+}
+
+
+/* =========
+   MIN WIDTH
+   =========  */
+@media (min-width: 375px) { 
+    header div.sitetitle {
+    font-size: 4em;
+}
+}
+
+@media (min-width: 700px) { 
+    main {
+        font-size: 1.6em;
+    }
+
+    header div.sitetitle {
+        font-size: 4em;
+    }
+}
+
+@media (min-width: 900px) { 
+    main div.main-content {
+        border-left: #eeeeee solid 2px;
+        border-right: #eeeeee solid 2px;
+    }
+}

@@ -1,0 +1,65 @@
+<HTML>
+<TITLE></TITLE>
+<HEAD>
+<LINK REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../css/atd_viewer.css">
+<SCRIPT LANGUAGE='javascript'>
+<!--
+//*********************
+//Name:	SetLocation()
+//Purpose:	Gets the term to be scrolled to from the hidden frame and scrolls there.
+//Params:	None
+//Return:	None
+//Created:	17/12/1998 (RM)
+//Modified:	17/12/1998 (RM)
+//*********************
+function SetLocation()
+{
+  var strTerm = parent.opener.parent.HIDDEN.strGlossaryTerm;
+
+  //compare selection to glossary array
+
+  aGlos = parent.LETTERS.aGlossary;
+
+  var bFound = false;
+  for (var i=0;i<aGlos.length;i++)
+  {
+	if (aGlos[i].toUpperCase()==strTerm.toUpperCase())
+	{
+		bFound = true;
+		i=aGlos.length;
+	}
+  }
+  if (bFound)
+	this.location="glossary.htm#"+strTerm
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY onLoad="SetLocation();" onUnload="parent.opener.parent.HIDDEN.intGlossary=0;" CLASS="dialog">
+<!-- This fragment and table have no function but are necessary
+     so that the end tags in the do loop also have start tags -->
+<A NAME="TOP">
+<TABLE WIDTH=100% CLASS="dialog">
+</A>
+<TR>
+<TD BGCOLOR=lightblue COLSPAN=2><A NAME="C"><STRONG>C</STRONG></A></TD>
+</TR>
+<TR>
+<TD WDTH=30 VALIGN=TOP NOWRAP CLASS="dialog"><A NAME="COL">COL</A></TD>
+<TD CLASS="dialog">
+<TABLE BORDER=0 CLASS="dialog"><TR><TD CLASS="dialog">The Columbus Orbital Facility is...</TD><TD CLASS="dialog"><IMG SRC='../../content/graphics/ISS_columbus%20view.jpg' BORDER=0></TD></TR></TABLE>
+</TR>
+<TR>
+<TD BGCOLOR=lightblue COLSPAN=2><A NAME="E"><STRONG>E</STRONG></A></TD>
+</TR>
+<TR>
+<TD WDTH=30 VALIGN=TOP NOWRAP CLASS="dialog"><A NAME="EC">EC</A></TD>
+<TD CLASS="dialog">
+<TABLE BORDER=0 CLASS="dialog"><TR><TD CLASS="dialog">The EC is the experiment container...</TD><TD CLASS="dialog"><IMG SRC='../../content/graphics/ec1.jpg' BORDER=0></TD></TR></TABLE>
+</TR>
+</TABLE>
+<!-- Add new lines so that if the user links to the last word in the glossary
+     it scrolls to the top of the page -->
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+</BODY>
+</HTML>

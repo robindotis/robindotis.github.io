@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>Components</TITLE>
+<LINK REL="Stylesheet" TITLE="ATD Stylesheet" MEDIA="SCREEN" HREF="../common/css/atd_viewer.css">
+<SCRIPT LANGUAGE="JavaScript" SRC="../common/js/pages.js">
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+aAudio = new Array();
+aSteps = new Array();
+aElements = new Array();
+aSteps[0] = 1;
+aAudio[0] = 0;
+aElements[0] = 0;
+aSteps[1] = 1;
+aAudio[1] = 0;
+aElements[1] = 1;
+aSteps[2] = 1;
+aAudio[2] = 0;
+aElements[2] = 2;
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+//Initialise variables
+
+var bAuto = true; //%=sAuto>;
+var bStarted = false;
+var bFinished = false;
+//  -->
+</SCRIPT>
+</HEAD>
+<BODY onKeyUp="Key_Up_IE();" onUnload="unload();" onLoad="load(1);" oResize="alert('boo');if (document.layers) self.location.reload() ">
+<TABLE CELLPADDING=10 ALIGN=CENTER WIDTH=100%><TR><TD CLASS=pTitle WIDTH=50% HEIGHT=10 BGCOLOR=9CCEFF VALIGN=TOP NOWRAP><B><I><FONT FACE='arial'>Components</FONT></I></B></TD><TD WIDTH=50% HEIGHT=10>&nbsp;</TD></TR></TABLE><TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0><TR><TD>&nbsp;&nbsp;</TD><TD><IMG NAME="leftTab0" SRC="../common/graphics/tabLeft_norm.gif"></TD><TD ID="tabcell0" CLASS=tabnormal ALIGN=CENTER NOWRAP>	<A CLASS=tabnormal HREF="javascript: parent.TOOLBAR.loadTab(1);" onMouseOver="window.status='View Overview'">Overview</A></TD><TD><IMG NAME="rightTab0" SRC="../common/graphics/tabRight_norm.gif"></TD><TD>&nbsp;&nbsp;</TD><TD><IMG NAME="leftTab1" SRC="../common/graphics/tabLeft_norm.gif"></TD><TD ID="tabcell1" CLASS=tabnormal ALIGN=CENTER NOWRAP>	<A CLASS=tabnormal HREF="javascript: parent.TOOLBAR.loadTab(2);" onMouseOver="window.status='View Incubator'">Incubator</A></TD><TD><IMG NAME="rightTab1" SRC="../common/graphics/tabRight_norm.gif"></TD><TD>&nbsp;&nbsp;</TD><TD><IMG NAME="leftTab2" SRC="../common/graphics/tabLeft_norm.gif"></TD><TD ID="tabcell2" CLASS=tabnormal ALIGN=CENTER NOWRAP>	<A CLASS=tabnormal HREF="javascript: parent.TOOLBAR.loadTab(3);" onMouseOver="window.status='View Centrifuges'">Centrifuges</A></TD><TD><IMG NAME="rightTab2" SRC="../common/graphics/tabRight_norm.gif"></TD><TD>&nbsp;&nbsp;</TD></TABLE></IV><DIV ID="text0" NAME="text0" STYLE="font-family: arial; position: absolute; top: 70; left: 10; visibility: visible;"><TABLE WIDTH=100% CELLPADDING=2 CELLSPACING=2 BORDER=0><TR><TD WIDTH=50% NAME=left VALIGN=top>BIOLAB consists of several units <BR>
+integrated in the rack structure <BR>
+and a mobile Experiment <BR>
+Container ( <A CLASS="glossary" HREF="javascript:SetGlossaryTerm('EC')">EC</A> ).  <BR>
+ <BR>
+The <A CLASS="glossary" HREF="javascript:SetGlossaryTerm('EC')">EC</A> is the interface of the  <BR>
+experiments to BIOLAB´s various  <BR>
+units.
+</TD><TD WITH=50% NAME=right VALIGN=top><IMG SRC="graphics/ec_animation.gif"><BR><B>Fig: </B>ec_animation<BR></TD></TR></TABLE></DIV><DIV ID="text1" NAME="text1" STYLE="font-family: arial; position: absolute; top: 70; left: 10; visibility: hidden;"><TABLE WIDTH=100% CELLPADDING=2 CELLSPACING=2 BORDER=0><TR><TD WIDTH=50% NAME=left VALIGN=top>The <SPAN ID='incubator_50475_0' NAME='incubator_50475_0'>incubator</SPAN> is a closed controlled environment <BR>
+ that supports the life of biological <A CLASS=popup HREF="javascript:ViewPopUpItem('specimen','50483');" onMouseOver="window.status='View Pop-Up Item';return true;">specimen</A> inside<BR>
+ their ECs. <BR><BR>
+
+The <SPAN ID='incubator_50475_1' NAME='incubator_50475_1'>Incubator</SPAN> in particular provides
+<ul>
+<li> a thermal environment which can be regulated <BR> between 18 and 40°Celsius, 
+<li> an atmospheric environment where gas composition, <BR>pressure and humidity are maintained within predefined limits
+<li> a gravitational environment between µg and 2g.
+<li> illumination/observation of <A CLASS=popup HREF="javascript:ViewPopUpItem('specimen','50483');" onMouseOver="window.status='View Pop-Up Item';return true;">specimen</A>
+</ul></TD><TD WITH=50% NAME=right VALIGN=top><IMG SRC="graphics/Incubator.jpg"><BR><B>Fig: </B>Incubator<BR></TD></TR></TABLE></DIV><DIV ID="text2" NAME="text2" STYLE="font-family: arial; position: absolute; top: 70; left: 10; visibility: hidden;"><TABLE WIDTH=100% CELLPADDING=2 CELLSPACING=2 BORDER=0><TR><TD WIDTH=100% NAME=top VALIGN=top>Two identical <SPAN ID='centrifuges_50478_0' NAME='centrifuges_50478_0'><SPAN ID='centrifuge_50478_0' NAME='centrifuge_50478_0'>Centrifuge</SPAN>s</SPAN> accomodate the <BR>
+ECs during incubation. <BR>
+<BR>
+The <SPAN ID='centrifuges_50478_1' NAME='centrifuges_50478_1'><SPAN ID='centrifuge_50478_1' NAME='centrifuge_50478_1'>centrifuge</SPAN>s</SPAN> provide a microgravity environment <BR>
+when held steady or reference accelerations from 10-3 to 2g. </TD></TR><TR><TD WITH=100% NAME=bottom VALIGN=top><IMG SRC="graphics/Centrifuge 2.jpg"><BR><B>Fig: </B>Centrifuge 2<BR></TD></TR></TABLE></DIV>
+</BODY>
+</HTML>

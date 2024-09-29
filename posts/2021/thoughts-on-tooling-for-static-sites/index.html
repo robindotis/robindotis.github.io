@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+        <meta charset="UTF-8">
+    <!-- See: https://www.w3schools.com/css/css_rwd_viewport.asp-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett; Parrain">
+    <title>Robin is Thoughts on tooling for static sites</title>
+
+    <meta name="description" content="writing, travelling, seeing, coding and walking the 🐕‍🦺">
+    <meta name="keywords" content="web,jamstack,eleventy,post," />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <link rel="canonical" href="/posts/2021/thoughts-on-tooling-for-static-sites/">
+    <link rel="me" href="https://github.com/robindotis/">
+    <link rel="alternate" type="application/rss+xml" title="Robin is RSS" href="/feed/">
+    <link rel="alternate" href="/feed/index.xml" type="application/atom+xml" title="Robin is">
+    <link rel="alternate" href="" type="application/json" title="Robin is">
+    <link rel="icon" href="/assets/images/cw.jpg" type="image/jpeg" sizes="50x50">
+    <!--
+    <link rel="manifest" href="/manifest.json">
+    -->
+    <link rel="webmention" href="https://webmention.io/www.robin.is/webmention" />
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">    
+
+    <meta property="a11y:statement" content="/pages/accessibility/">
+    <meta property="a11y:feedback" content="/pages/accessibility/#feedback">
+    <meta property="a11y:complaints" content="/pages/accessibility/#complaints">
+
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Robin is... Thoughts on tooling for static sites">
+    <meta property="og:description" content="writing, travelling, seeing, coding and walking the 🐕‍🦺">
+    <meta property="og:url" content="/posts/2021/thoughts-on-tooling-for-static-sites/">
+    <meta property="og:site_name" content="Robin is">
+    <meta property="og:image" content="">
+
+    <meta name="DC.title" content="robin.is">
+    <meta name="DC.creator " content="Robin Massart">
+
+    <link rel="preload" href="/assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin>
+    
+    	    
+    <link rel="stylesheet" href="/assets/css/fonts.css" media="all">
+    <link rel="stylesheet" href="/assets/css/structure.css" media="all">
+    <link rel="stylesheet" href="/assets/css/style.css" media="all">
+    <link rel="stylesheet" href="/assets/css/default.css" media="all">
+    <script src="/assets/js/theme.js" defer></script>
+  </head>
+  <body>
+    <header class="masthead h-card">
+    <p class="skip-link"><a href="#skip-content-target">Skip to the content</a></p>
+        <div class="header-area">
+            <div class="header-title">
+            <p id="themeSwitch">                
+            </p>
+            <hr class="nodisplay" aria-hidden="true">
+            <span class="sitetitle">
+                <img class="logo u-logo u-photo" src="/assets/images/cw.jpg" alt="" width="50" height="50">
+                <a href="/" class="u-url p-name">Robin is</a>
+            </span>
+            <nav class="subtitle p-note" aria-label="Main">
+                <ul>
+
+                    <li>
+                        <a href="/now/" >/now</a> 
+                    </li>
+                    <li>
+                        <a href="/writing/" >/writing</a> 
+                    </li>
+                    <li>
+                        <a href="/travelling/" >/travelling</a> 
+                    </li>
+                    <li>
+                        <a href="/seeing/" >/seeing</a>
+                    </li>
+                    <li>
+                        <a href="/creating/" >/creating</a> 
+                    </li>
+                    <li>
+                        <a href="/coding/" >/coding</a> 
+                    </li> 
+                    <li>
+                        <a href="/reading/" >/reading</a>
+                    </li>
+                    <li>
+                        and 
+                        <a href="/walking/" >/walking</a>
+                    </li>
+                    <li>
+                        the
+                        <a href="/tagging/angie/"  >dog<span class="dog-emoji"> 🐕‍🦺</span></a>. 
+                    </li>
+                    <li>
+                        Browse his 471 <a href="/archiving/" >posts</a>,
+                    </li>
+                    <li>
+                         or read 
+                        <a href="/me/" >about</a> him.
+                    </li>
+                    <li>
+                </ul>
+            </nav>            </div>
+        </div>
+    </header>
+    <main id="site-content"  class="tmpl-post">
+        <hr class="nodisplay" aria-hidden="true">
+        <div class="main-content">
+          <article class="h-entry">
+      <nav aria-label="Paging">
+          <div class="prev-next"><a class="next" rel="next" href="/posts/drafts/draft-post/"><strong>« Newer:</strong> Draft post</a>                <br><a class="prev" rel="prev" href="/posts/2021/improving-the-publishing-workflow/"><strong>» Older:</strong> Improving the publishing workflow</a>          </div>
+          <hr>
+  </nav>
+
+    <header id="skip-content-target">
+        <h1 class="p-name">Thoughts on tooling for static sites</h1> 
+        <h2 class="published">
+                              <time datetime="November 28, 2021 11:11" class="dt-published">
+            <span class="date-day">28</span> 
+            <span class="date-month">November</span>, 
+            <span class="date-year">2021</span>
+          </time>
+        </h2>
+    </header>
+    <div class="e-content">
+      <h2>Introduction</h2>
+<p>Since moving my site from <a href="https://wordpress.com/">Wordpress</a> to <a href="https://www.11ty.dev/">Eleventy</a> at the beginning of the year I've been trying find the most comfortable workflow for writing, editing and publishing posts. I love the control over my site given by using a static site generator. The speed my little site now loads in is phenomenal - way beyond anything Wordpress could deliver. Not that Wordpress was slow at all, but it can't compete with loading a few KBs of data with no processing at all. However the editing experience of Wordpress, and the workflow it included is still hard to replicate without jumping between services, repositories and branches. In Wordpress everything is in one place. You edit, create drafts, reviews and ultimately publish all from one place. So this is the description of the journey I've been on and where I have go to so far in my search of replicating the Wordpress experience for my static site generator.</p>
+<h2>Requirements</h2>
+<p>The key requirements for me are:</p>
+<ol>
+<li>Code and content must be stored in GitHub.</li>
+<li>As few services as possible. If I could do it all efficiently in GitHub, I would.</li>
+<li>A user friendly editing experience</li>
+<li>As far as possible this should all be free!</li>
+</ol>
+<h2>GitHub</h2>
+<p>Why GitHub? It's free for my needs and I always have access to my content from anywhere. I still struggle with many concepts in git, but GitHub itself is easy to use and lots of online support and documentation is available. It's also the de facto authentication service for all online developer services. No need to create endless accounts with passwords if you just authenticate through GitHub.</p>
+<h2>Services</h2>
+<p>With WordPress you go there, draft your post, publish it and you are done. Since moving to Eleventy I've been trying to reproduce this experience as best I can.  Initially I coded, wrote my posts and generated my site locally on my laptop then copied it to my hosting provider (<a href="https://www.nearlyfreespeech.com">nearlyfreespeech.com</a>). This worked a treat after some initial config and scripting in PowerShell to automate it as much as possible.</p>
+<p>But this was not the most portable solution, so I looked for options to use online services as much as possible. First, I needed an online editor, which could edit my markdown posts stored in GitHub. This would enable me to write posts from anywhere, not just my laptop. After trying a number of services, <a href="https://www.contentedweb.com/posts/2021/forestry-io/">I chose Forestry</a>. It suits my basic needs perfectly without all the complexity of other services. Forestry does one thing only: enable you create content. It's not a development environment or anything else. It's content authoring only.</p>
+<p>Next was the building and hosting my site. Again, I tried a number of options before <a href="https://www.contentedweb.com/posts/2021/netlify/">settling on Netlify</a>. This was easy setup and trigger builds from pull requests to GitHub repositories. It is great.</p>
+<p>Finally, I was curious about online coding environments and used <a href="https://www.contentedweb.com/posts/2021/gitpod/">GitPod for a while</a>. But in the end I gave that up and still do my coding on my laptop using Visual Studio Code. If <a href="https://github.com/features/codespaces">GitHub Codespaces</a> is ever available for free to basic users, I would be interested. For now I don't code that much and I can do that on my laptop.</p>
+<p>So for most of the year I have been coding locally in Visual Studio Code, writing my posts in Forestry, storing my content in GitHub and publishing and hosting my site using Netlify.</p>
+<h2>Editing experience</h2>
+<p>I like Forestry, but didn't want to keep jumping to it to edit my posts. So <a href="https://www.contentedweb.com/posts/2021/testing-netlify-cms-take-two/">I tried out Netlify CMS</a>, but decided that wasn't really an improvement over Forestry. I did like the ability pull in the CMS as a subfolder of my domain (using &quot;/admin/&quot;). But I preferred Forestry, so stuck with that.</p>
+<p>A few days ago I <a href="https://www.contentedweb.com/posts/2021/improving-the-publishing-workflow/">tried out cloudcannon</a>. Whilst this was not for me, it led me to the idea of outputting my static files to a repository to be used by GitHub Pages. If I could build my site using GitHub Actions I could point GitHub Pages to my static files and host my files directly on GitHub. This took me a day to get working, helped a lot by this <a href="https://github.com/marketplace/actions/eleventy-action">GitHub Action for building Eleventy sites</a>. It works great and means I no longer have a need for Netlify. So as much as I really liked Netlify, I decided to move my site's hosting to GitHub Pages.</p>
+<p>Finally, after looking further into the settings available in Forestry, I realised it also had the possibility present the CMS as a subfolder of my site, ie &quot;/admin/&quot;. That was dead simple to setup and now I am down to using GitHub for storing and publishing my content and Forestry for editing the content, but being able to do so from my own domain. Small detail, but I like it.</p>
+<h2>Free, as in beer</h2>
+<p>Most of the services and tools I've used over the last few months are free for my level of usage. This is great. I am always amazed at the ability of companies to offer free plans. This is not like Facebook selling your user data. This is simply the fact that for small users, the costs to companies hosting them are not very significant compared to large enterprise clients. Also, I imagine with many small scale users, they get to iron out all the annoying edge cases that you only encounter by being a &quot;stupid end user&quot;.</p>
+<p>So how much does all this cost me? Well up until I switched to Netlify, it was free. But using GitHub pages with my own domain required some DNS configurations which obviously Netlify won't do for domain not using their services. So I switched my DNS servers back to those of my registrar and previous hosting provider, nearlyfreespeech. They do charge for this service though. Thankfully it's less than $4 per year, it's hardly going to break the bank. My goal of running my site for free is currently not quite met. I know there are free DNS providers, but since I already pay about $12 per year for my domain name, an extra few dollars is hardly an issue.</p>
+<p>So my entire setup is almost, but not quite, free (as in beer). It's less $20 per year though. That's quite a miracle in my books!</p>
+ 
+    </div>
+    <hr aria-hidden="true">
+      <div class="tagged"><strong>Tagged: </strong><a href="/tagging/web/" class="post-tag" rel="tag">web</a> &nbsp;<a href="/tagging/jamstack/" class="post-tag" rel="tag">jamstack</a> &nbsp;<a href="/tagging/eleventy/" class="post-tag" rel="tag">eleventy</a> &nbsp;<a href="/tagging/post/" class="post-tag" rel="tag">post</a> &nbsp;  </div>
+    <hr aria-hidden="true">
+      <nav aria-label="Paging">
+          <div class="prev-next"><a class="next" rel="next" href="/posts/drafts/draft-post/"><strong>« Newer:</strong> Draft post</a>                <br><a class="prev" rel="prev" href="/posts/2021/improving-the-publishing-workflow/"><strong>» Older:</strong> Improving the publishing workflow</a>          </div>
+          <hr>
+  </nav>
+
+  </article>
+        </div> 
+    </main>
+        <footer>
+        <div class="footer-area">
+            <div class="rss">
+                <p>
+                <img src="/assets/images/rss-logo.png" alt=""  width="15" height="15" loading="lazy">&nbsp;<a class="a11y-statement" href="/feed/">RSS</a>
+               
+                                                                                                                            <a href="/accessible/" >Accessibility</a> 
+                                                    <a href="/my-site/" >Site info</a> 
+                                                                            </p>
+            </div>
+            <div class="copy">
+                <p>
+                robin.is AI free and 100% Human.
+                </p>
+            </div>
+            <div class="copy">
+                <p>
+                    Hand crafted using <a href="https://www.11ty.dev/">eleventy</a>
+                    <span class="emojis"><a href="" title="Edit">👍</a></span>
+                </p>
+            </div>
+            <div class="copy">
+                <p>
+                <a href="https://xn--sr8hvo.ws/previous">←</a>
+                An <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍
+                <a href="https://xn--sr8hvo.ws/next">→</a>
+                </p>
+            </div>
+            <div class="badges">
+                <p>
+                <a href="https://www.anybrowser.org/campaign/"><img src="/assets/images/any-browser-button.png" alt="Viewable With Any Browser" width="80" height="15" loading="lazy"/></a>
+                <a href="https://indieweb.org/"><img src="/assets/images/indieweb-button.png" alt="IndieWeb" width="80" height="15" loading="lazy"/></a>
+                <a href="https://indiewebify.me/"><img src="/assets/images/indiewebified-button.png" alt="IndieWebified" width="80" height="15" loading="lazy"/></a>
+                <a href="http://microformats.org/"><img src="/assets/images/microformats-button.png" alt="microformats" width="80" height="15" loading="lazy"/></a>
+                <a href="https://html.spec.whatwg.org/"><img src="/assets/images/valid_html5_blue-button.png" alt="Valid HTML5" width="80" height="15" loading="lazy"/></a>
+                <a href="https://www.w3.org/Style/CSS/current-work"><img src="/assets/images/valid_css3_blue-button.png" alt="Valid CSS3" width="80" height="15" loading="lazy"/></a>
+                </p>
+            </div>
+            <div class="lastrun">
+                <p>
+                Built on the 29/09//2024 at 21:09:31 in the flashiest of flashes⚡.
+                </p>
+            </div> 
+            <div class="copy">
+                <p>
+                &copy; 1998 - 2024 Robin Massart 
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Current page: /posts/2021/thoughts-on-tooling-for-static-sites/ -->
+  </body>
+</html>
