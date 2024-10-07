@@ -17,7 +17,7 @@
 		<updated>2024-09-30 09:11:00</updated>
 		<id>https://www.robin.is/posts/2024/back-on-github-pages/</id>
 		<content type="html">&lt;p&gt;A couple of days ago I wrote about how I had migrated my SSG from &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt; to my own custom PHP script and switched to hosting the site on &lt;a href=&quot;https://www.nearlyfreespeech.net/&quot;&gt;NearlyFreeSpeech.Net&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I now managed to get my PHP running with GitHub Actions, which meant I can again publish to GitHub Pages. As much as like supporting smaller hosts, the convenience of publishing to GitHub Pages using an automated GitHub Action is hard to beat. It saves me having to connect to the NFS servers and run a build script there. Sure I could have a cron job running there or something like that, but it seemed a bit pointless to build without changes to the content.&lt;/p&gt;
+&lt;p&gt;I now managed to get my PHP script running with GitHub Actions, which meant I can again publish to GitHub Pages. As much as like supporting smaller hosts, the convenience of publishing to GitHub Pages using an automated GitHub Action is hard to beat. It saves me having to connect to the NFS servers and run a build script there. Sure I could have a cron job running there or something like that, but it seemed a bit pointless to build without changes to the content.&lt;/p&gt;
 &lt;p&gt;Now if only there was a good editor or even CMS for GitHub. I miss forestry.io, which really did exactly what I wanted, but unfortunately its replacement, &lt;a href=&quot;https://tina.io/forestry/&quot;&gt;tina.io&lt;/a&gt; does not. I will keep looking.&lt;/p&gt;
 </content>
 	</entry>
