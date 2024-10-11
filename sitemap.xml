@@ -2,35 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
         <loc>https://www.robin.is/archiving/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/coding/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/reading/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/seeing/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/travelling/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/walking/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/working/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/writing/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
                   <url>
         <loc>https://www.robin.is/posts/2024/back-on-github-pages/</loc>
@@ -1918,7 +1918,7 @@
       </url>
           <url>
         <loc>https://www.robin.is/posts/2024/parrain/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
                     <url>
         <loc>https://www.robin.is/my-site/</loc>
@@ -1966,34 +1966,34 @@
       </url>
           <url>
         <loc>https://www.robin.is/sitemap.xml</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/tagging/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/404.html</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/offline/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/tagging/{{ tag | slug }}/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/wordle/</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
                   <url>
         <loc>https://www.robin.is/feed/index.xml</loc>
-        <lastmod>2024-10-07</lastmod>
+        <lastmod>2024-10-11</lastmod>
       </url>
       </urlset>
