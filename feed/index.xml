@@ -12,6 +12,19 @@
 		<email>admin@robin.is</email>
 	</author>
 			<entry>
+		<title>Thoughts on Wordpress vs WP Engine</title>
+		<link href="https://www.robin.is/posts/2024/wordpress-wpengine/"/>
+		<updated>2024-10-28 16:33:27</updated>
+		<id>https://www.robin.is/posts/2024/wordpress-wpengine/</id>
+		<content type="html">&lt;p&gt;Wordpress has been in the web news a lot recently. It&#039;s even made it into the &lt;a href=&quot;https://www.bbc.com/news/articles/cm2y7eyp3zpo&quot;&gt;mainstream UK news sites&lt;/a&gt;. Unfortunately it has been for all the wrong reasons which I will not recap here. Instead you can read about the full story over on &lt;a href=&quot;https://techcrunch.com/2024/10/28/wordpress-vs-wp-engine-drama-explained/&quot;&gt;techcrunch&lt;/a&gt;, as well as &lt;a href=&quot;https://designerly.com/wordpress-vs-wp-engine/&quot;&gt;a few&lt;/a&gt; &lt;a href=&quot;https://slate.com/technology/2024/10/wordpress-wpengine-matt-mullenweg-drama-explained.html&quot;&gt;other sites&lt;/a&gt;. Google, Bing or your favourite search engine will throw up plenty more coverage.&lt;/p&gt;
+&lt;p&gt;I don&#039;t use Wordpress anymore, having &lt;a href=&quot;/posts/2023/wordpress/&quot;&gt;deleted my Wordpress account back in April 2023&lt;/a&gt;. So for me this whole saga is neither here nor there. My personal feeling is that at the beginning of this drama Matt Mullenweg had the moral upperhand in expecting companies who make millions out of the open source Wordpress community should give back more than the bare minimum to that community.  Sponsoring a few WordCamps is not enough. Unfortunately morals don&#039;t really come into it in the business world and the license Wordpress was released under does not oblige any payment, in-kind or otherwise. So Automattic decided to sue WP Engine to pay a significant license fee for using &amp;quot;Wordpress&amp;quot; in their hosting plans. WP Engine simply renamed their plans.&lt;/p&gt;
+&lt;p&gt;However his actions since then were morally wrong. He&#039;s kind of lost his way here. Disconnecting WP Engine from the Wordpress.org plugin platform raised alarm bells in the wider community, with many thinking &amp;quot;am I next&amp;quot;?  Then taking control of the ACF plugin appears to be bordering on theft the way it was done. I am not a specialist in this area at all, but that&#039;s what it looks like to me and probably many others who are open source license experts. Again, it has the wider community wondering &amp;quot;is my plugin next&amp;quot;?&lt;/p&gt;
+&lt;p&gt;I sometimes wonder if Automattic have forgotten the fact that the Wordpress CMS became so immensely popular precisely because it was open source, because there was no fee, no expectationm to contribute if you didn&#039;t want to. In any case for the sake of the Wordpress community and in fact the open source community in general, I hope they can settle their differences asap.&lt;/p&gt;
+&lt;p&gt;My reasons for leaving Wordpress were the opposite of using it in the first place. When &lt;a href=&quot;/reminiscing/&quot;&gt;I started using Wordpress&lt;/a&gt; it was to make the business of creating websites more straight forward and procedural, as well as to have the backing of a large community. With time it became gradually more complex to simply go in and write a post or edit some content. I am quite OK using a plain text editor and don&#039;t need fancy WYSIWYG tools, let alone the Gutenberg editor which split the Wordpress community long before the latest drama.&lt;/p&gt;
+&lt;p&gt;I am very happy now with &lt;a href=&quot;/posts/2024/going-it-alone/&quot;&gt;my onwn 500 line PHP script&lt;/a&gt; that generates my site using GitHub Actions. I am also happy writing my posts using GitHub&#039;s editor. It helps me concentrate on the content, not the design or the CMS.&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
 		<title>Intolerance Paralax</title>
 		<link href="https://www.robin.is/posts/2024/intolerance-paralax/"/>
 		<updated>2024-10-20 23:18:27</updated>
@@ -222,72 +235,6 @@
 &lt;p&gt;I&#039;ve tried this for three days and it seems to be helping. I will see later if this works long term. The proof will be in the pudding, which should always be eaten as a dessert and not separately from the main meal.&lt;/p&gt;
 &lt;p&gt;19.08.2024 to 25.08.2024.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/2024/glucose-revolution.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-</content>
-	</entry>
-			<entry>
-		<title>Visiting Oslo</title>
-		<link href="https://www.robin.is/posts/2024/visiting-oslo/"/>
-		<updated>2024-08-25 20:20:30</updated>
-		<id>https://www.robin.is/posts/2024/visiting-oslo/</id>
-		<content type="html">&lt;h2&gt;Oslo Day 1&lt;/h2&gt;
-&lt;p&gt;We landed in Oslo around 11am. The airport is quite a distance out of town, but they have a very efficient train service to get you to Oslo centre in about 20 minutes. After checking in at our hotel, we headed out to explore the city. The weather was not great so pretty much the first thing we did was take shelter in the central library and had a coffee there. It&#039;s a wonderful library, well worth a visit in itself.&lt;/p&gt;
-&lt;h3&gt;Opera House&lt;/h3&gt;
-&lt;p&gt;Once the rain had stopped, we walked to the opera house on the sea front. It&#039;s an impressive piece of architecture that affords great views of the bay from its root. That&#039;s if you manage to hang on and not get blown off.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-1.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-2.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-7.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;Munch museum&lt;/h3&gt;
-&lt;p&gt;Next we headed to the Munch museum, just behind the opera house. It was about 5pm when we arrived, so there were no queues to buy tickets. Most famous for being the home of Munch&#039;s &amp;quot;Scream&amp;quot; painting, it is well worth a visit in its own right.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-3.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;What most people don&#039;t know, me included, is that Munch created more than one version his most famous artwork, The Scream. There are versions using different mediums. The three most important ones are displayed in an octagonal room, where only one version is visible at any one time. They alternate every 30 minutes. They say this is to protect the painting from over exposure to too much light. I reckon it&#039;s to encourage you to visit the rest of the museum! These are the three pictures on show in that room.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-4.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-5.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-6.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;Olivia restaurant&lt;/h3&gt;
-&lt;p&gt;We finished the day with a lovely meal in the Olivia Italian restaurant. Living in Luxembourg, the idea of free water in restaurants is alien to us, so we were very happy to see that they give it away in bucket loads. The beer on the other hand costs €11 for a pint!&lt;/p&gt;
-&lt;h2&gt;Oslo Day 2&lt;/h2&gt;
-&lt;p&gt;The next day we were met by a Ukrainian friend and her partner, who gave us a great tour of Oslo for the next two days.&lt;/p&gt;
-&lt;h3&gt;Vigeland park&lt;/h3&gt;
-&lt;p&gt;First up was Vigeland park, which is a large park containing a lot of sculptures. The most famous one being this angry boy.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-8.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;He reminded me a bit of mannequin piss in Brussels.  In fact the sculpture has been stolen on numerous occasions, but they always managed to return it.&lt;/p&gt;
-&lt;p&gt;The centre piece of the whole park is this massive sculpture, carved from one piece of rock.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-9.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;Holmenkollen&lt;/h3&gt;
-&lt;p&gt;After the park, we got the metro to Holmenkollen, an olympic ski jump area. The metro ride takes you through a lovely wooded residential area.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-10.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;We had a lovely picnic on Ukrainian national day with a Norwegian beer!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-11.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;Frognersteren&lt;/h3&gt;
-&lt;p&gt;Next we took the metro further up the hill to Frognersteren, where we had a short in the nature bordering the city.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-12.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;Boat ride&lt;/h3&gt;
-&lt;p&gt;We finished the day&#039;s touring with a boat ride around the bay, which because it was part of the public transport system, cost nothing extra.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-13.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;Egond restautant&lt;/h3&gt;
-&lt;p&gt;Finally, we sat down in the Egond restaurant near the central train station. Not as nice as the Olivia restaurant the day before, but still a good choice.&lt;/p&gt;
-&lt;h2&gt;Oslo Day 3&lt;/h2&gt;
-&lt;h3&gt;Bygdoy&lt;/h3&gt;
-&lt;p&gt;On our last full day in Oslo, our friends took us to the Bygdoy peninsuala visit the folk musem. The weather was much sunnier which made the visit even more pleasurable.&lt;/p&gt;
-&lt;h3&gt;Volkmuseum&lt;/h3&gt;
-&lt;p&gt;The folk museum is an outdoor museum recreating how Norwegians traditionally lived in various parts of the country. It is well worth a visit.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-14.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-15.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-17.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;There was an impressive performance by the country&#039;s folk dancing group.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-16.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;Huk bay&lt;/h3&gt;
-&lt;p&gt;After the folk museum, we finished the day with another picnic, this time in Huk Bay.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-18.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Our friends had brought along their little gas grill, so we had some lovely grilled sausages.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-19.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;h2&gt;Oslo Day 4&lt;/h2&gt;
-&lt;p&gt;The next day our train left for Gothenburg later in the afternoon, so we still had time to discover the city a little more in the morning.&lt;/p&gt;
-&lt;p&gt;First we visited the church near our hotel, which had been shut whenever we turned up the previous days.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-21.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Finally, we managed to see the royal palace. Not as impressive as Buckingham palace, but then they don&#039;t take their royal family so serious I don&#039;t think. In the photo, the right hand side of the building is actually being renovated, so what you see is in fact a giant painting covering the ongoing works.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/oslo-20.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;And so finished our visit to Oslo. Next up: &lt;a href=&quot;/posts/2024/visiting-gothenburg/&quot;&gt;Gothenburg&lt;/a&gt;.&lt;/p&gt;
 </content>
 	</entry>
 	</feed>
