@@ -2,69 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
         <loc>https://www.robin.is/archiving/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/coding/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/reading/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/seeing/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/travelling/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/walking/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/working/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/writing/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
                   <url>
-        <loc>https://www.robin.is/posts/2011/consort/</loc>
-        <lastmod>2024-11-01</lastmod>
-      </url>
-          <url>
-        <loc>https://www.robin.is/posts/2011/equator-network/</loc>
-        <lastmod>2024-11-01</lastmod>
-      </url>
-          <url>
-        <loc>https://www.robin.is/posts/2011/health-rights-information-scotland/</loc>
-        <lastmod>2024-11-01</lastmod>
-      </url>
-          <url>
-        <loc>https://www.robin.is/posts/2011/idras/</loc>
-        <lastmod>2024-11-01</lastmod>
-      </url>
-          <url>
-        <loc>https://www.robin.is/posts/2011/log-on-to-care/</loc>
-        <lastmod>2024-11-01</lastmod>
-      </url>
-          <url>
-        <loc>https://www.robin.is/posts/2011/maggies-cancerlinks/</loc>
-        <lastmod>2024-11-01</lastmod>
-      </url>
-          <url>
-        <loc>https://www.robin.is/posts/2012/nsuhr/</loc>
-        <lastmod>2024-11-01</lastmod>
-      </url>
-          <url>
-        <loc>https://www.robin.is/posts/2011/the-national-elf-service/</loc>
-        <lastmod>2024-11-01</lastmod>
-      </url>
-          <url>
         <loc>https://www.robin.is/posts/2024/wordpress-wpengine/</loc>
         <lastmod>2024-10-28</lastmod>
       </url>
@@ -1553,8 +1521,16 @@
         <lastmod>2012-02-29</lastmod>
       </url>
           <url>
+        <loc>https://www.robin.is/posts/2012/nsuhr/</loc>
+        <lastmod>2024-11-01</lastmod>
+      </url>
+          <url>
         <loc>https://www.robin.is/posts/2012/site-speed/</loc>
         <lastmod>2012-02-13</lastmod>
+      </url>
+          <url>
+        <loc>https://www.robin.is/posts/2011/maggies-cancerlinks/</loc>
+        <lastmod>2024-11-01</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/posts/2011/future-friendly-manifesto/</loc>
@@ -1597,6 +1573,10 @@
         <lastmod>2011-10-16</lastmod>
       </url>
           <url>
+        <loc>https://www.robin.is/posts/2011/the-national-elf-service/</loc>
+        <lastmod>2024-11-01</lastmod>
+      </url>
+          <url>
         <loc>https://www.robin.is/posts/2011/vitamin-d-council/</loc>
         <lastmod>2024-11-01</lastmod>
       </url>
@@ -1606,6 +1586,10 @@
       </url>
           <url>
         <loc>https://www.robin.is/posts/2011/tvcn/</loc>
+        <lastmod>2024-11-01</lastmod>
+      </url>
+          <url>
+        <loc>https://www.robin.is/posts/2011/idras/</loc>
         <lastmod>2024-11-01</lastmod>
       </url>
           <url>
@@ -1689,11 +1673,23 @@
         <lastmod>2024-11-01</lastmod>
       </url>
           <url>
+        <loc>https://www.robin.is/posts/2011/equator-network/</loc>
+        <lastmod>2024-11-01</lastmod>
+      </url>
+          <url>
+        <loc>https://www.robin.is/posts/2011/log-on-to-care/</loc>
+        <lastmod>2024-11-01</lastmod>
+      </url>
+          <url>
         <loc>https://www.robin.is/posts/2011/casp-uk/</loc>
         <lastmod>2011-09-18</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/posts/2011/learn-to-care/</loc>
+        <lastmod>2024-11-01</lastmod>
+      </url>
+          <url>
+        <loc>https://www.robin.is/posts/2011/consort/</loc>
         <lastmod>2024-11-01</lastmod>
       </url>
           <url>
@@ -1711,6 +1707,10 @@
           <url>
         <loc>https://www.robin.is/posts/2011/childsmile/</loc>
         <lastmod>2011-09-12</lastmod>
+      </url>
+          <url>
+        <loc>https://www.robin.is/posts/2011/health-rights-information-scotland/</loc>
+        <lastmod>2024-11-01</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/posts/2011/equilibrium/</loc>
@@ -1930,7 +1930,7 @@
       </url>
           <url>
         <loc>https://www.robin.is/posts/2024/parrain/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
                     <url>
         <loc>https://www.robin.is/running/</loc>
@@ -1982,34 +1982,34 @@
       </url>
           <url>
         <loc>https://www.robin.is/sitemap.xml</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/tagging/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/404.html</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/offline/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/tagging/{{ tag | slug }}/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
           <url>
         <loc>https://www.robin.is/wordle/</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
                   <url>
         <loc>https://www.robin.is/feed/index.xml</loc>
-        <lastmod>2024-11-01</lastmod>
+        <lastmod>2024-11-02</lastmod>
       </url>
       </urlset>
