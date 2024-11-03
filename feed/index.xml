@@ -12,6 +12,63 @@
 		<email>admin@robin.is</email>
 	</author>
 			<entry>
+		<title>Link rot</title>
+		<link href="https://www.robin.is/posts/2024/link-rot/"/>
+		<updated>2024-11-03 07:11:11</updated>
+		<id>https://www.robin.is/posts/2024/link-rot/</id>
+		<content type="html">&lt;p&gt;I&#039;ve &lt;a href=&quot;/posts/2014/link-rot/&quot;&gt;posted about link rot before&lt;/a&gt;, but unfortunately links keep breaking, including presumably on my own site, although I do try to avoid that.&lt;/p&gt;
+&lt;p&gt;Recently I went through the &lt;a href=&quot;/working/&quot;&gt;50 or sites&lt;/a&gt; I created whilst I was still a professional web developer. Of those an impressive 22, almost half, are still online in a relevant form. Even more impressively, about five of them still have more or less the same design.&lt;/p&gt;
+&lt;p&gt;The sites are listed in chronological order of creation:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.ndorms.ox.ac.uk/csm&quot;&gt;The Centre for Statistics in Medicine&lt;/a&gt; Created: 2005.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.crowe-associates.co.uk/&quot;&gt;Crowe Associates&lt;/a&gt; Created: 2006. Design still recognisable.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://pifonline.org.uk/&quot;&gt;The Patient Information Forum&lt;/a&gt; Created: 2006.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.cebm.net/&quot;&gt;Centre for Evidence-Based Medicine&lt;/a&gt; Created: 2006.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.equator-network.org/&quot;&gt;Equator Network&lt;/a&gt; Created: 2007. Design still recognisable.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.childsmile.nhs.scot/&quot;&gt;Childsmile&lt;/a&gt; Created: 2007.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.scottishdental.nhs.scot/&quot;&gt;Scottish Dental&lt;/a&gt; Created: 2008. Now a part of the Scottish NHS website.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.sdpbrn.org.uk/&quot;&gt;SDPBRN&lt;/a&gt; Created: 2008. Now a part of the Scottish NHS website.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.sdcep.org.uk/&quot;&gt;SDCEP&lt;/a&gt; Created: 2008. Now a part of the Scottish NHS website.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://casp-uk.net/&quot;&gt;CASP UK&lt;/a&gt; Created: 2009.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.psm.sdcep.org.uk/&quot;&gt;Practice Support Manual&lt;/a&gt; Created: 2010. Now a part of the Scottish NHS website.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.careers.ox.ac.uk/&quot;&gt;The Oxford University Careers Service&lt;/a&gt; Created: 2009.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://ndip.scottishdental.org/&quot;&gt;NDIP&lt;/a&gt; Created: 2010. Design still recognisable.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.bncs.org.uk/&quot;&gt;British Nuclear Cardiology Society&lt;/a&gt; Created: 2010.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.peopleinresearch.org/&quot;&gt;People in Research&lt;/a&gt; Created: 2010.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.agreetrust.org/&quot;&gt;AGREE&lt;/a&gt; Created: 2010. Design still recognisable.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.ukcrc.org/&quot;&gt;UKCRC&lt;/a&gt; Created: 2010. Design still recognisable.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.nationalelfservice.net/&quot;&gt;The National Elf Service&lt;/a&gt; Created: 2011.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.testingtreatments.org/&quot;&gt;Testing Treatments&lt;/a&gt; Created: 2011. Design still recognisable.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.ideal-collaboration.net/&quot;&gt;Ideal Collaboration&lt;/a&gt; Created: 2011.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://www.healthylivingaward.co.uk/index&quot;&gt;Healthy Living Award&lt;/a&gt; Created: 2012.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;https://acta-bristol.com/&quot;&gt;ACTA Community Theatre&lt;/a&gt; Created: 2012.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;One of them has been going for almost 20 years! Let&#039;s hope it makes it into 2025.&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
 		<title>Thoughts on Wordpress vs WP Engine</title>
 		<link href="https://www.robin.is/posts/2024/wordpress-wpengine/"/>
 		<updated>2024-10-28 16:33:27</updated>
@@ -211,30 +268,6 @@
 &lt;p&gt;&lt;img src=&quot;/assets/images/2024/gothenburg-7.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/2024/gothenburg-8.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Gothenburg was only a short stop on our way to &lt;a href=&quot;/posts/2024/visiting-copenhagen/&quot;&gt;Copenhagen&lt;/a&gt;. The next day we had another train to catch.&lt;/p&gt;
-</content>
-	</entry>
-			<entry>
-		<title>Glucose Revolution</title>
-		<link href="https://www.robin.is/posts/2024/glucose-revolution/"/>
-		<updated>2024-08-25 23:00:33</updated>
-		<id>https://www.robin.is/posts/2024/glucose-revolution/</id>
-		<content type="html">&lt;h2&gt;by Jessie Inchauspe&lt;/h2&gt;
-&lt;p&gt;A very interesting and easy read about how food affects our blood sugar levels and how glucose spikes ruin our health. According to the book we need to reduce the number of glucose spikes as well reduce their size. The best thing: we can do this without changing our diet, by simply changing the order in which we eat foods.&lt;/p&gt;
-&lt;p&gt;The order should be:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Fibres&lt;/li&gt;
-&lt;li&gt;Proteins&lt;/li&gt;
-&lt;li&gt;Carbs&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Or in terms of actual food&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Veg&lt;/li&gt;
-&lt;li&gt;Meat&lt;/li&gt;
-&lt;li&gt;Bread, pasta, rice, etc&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I&#039;ve tried this for three days and it seems to be helping. I will see later if this works long term. The proof will be in the pudding, which should always be eaten as a dessert and not separately from the main meal.&lt;/p&gt;
-&lt;p&gt;19.08.2024 to 25.08.2024.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/2024/glucose-revolution.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </content>
 	</entry>
 	</feed>
