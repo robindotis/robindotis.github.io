@@ -263,6 +263,10 @@ footer div a, footer div a:visited {
     color: var(--footer-navtext-color);
 }
 
+footer div .copy {
+    font-size: 0.8em;
+}
+
 footer div .copy a, footer div .copy a:visited {
     text-decoration-thickness: initial;
     font-weight: normal;
