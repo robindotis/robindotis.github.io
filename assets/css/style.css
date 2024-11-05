@@ -263,6 +263,12 @@ footer div a, footer div a:visited {
     color: var(--footer-navtext-color);
 }
 
+footer div .copy a, footer div .copy a:visited {
+    text-decoration-thickness: initial;
+    font-weight: normal;
+    color: var(--footer-navtext-color);
+}
+
 footer span.emojis {
     display: inline-block;
     font-style: normal;
