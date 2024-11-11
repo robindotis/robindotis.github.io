@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/feed/pretty-feed-v3.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title>Robin is</title>
+	<title>Robin&#039;s</title>
 	<subtitle>writing, travelling, seeing, coding and walking the 🐕‍🦺</subtitle>
 		<link href="https://www.robin.is/feed/index.xml" rel="self"/>
 	<link href="https://www.robin.is/" rel="alternate" type="text/html"/>
