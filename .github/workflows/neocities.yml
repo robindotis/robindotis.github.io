@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 concurrency: # prevent concurrent deploys doing strange things
   group: deploy-to-neocities
@@ -32,4 +33,4 @@ jobs:
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         cleanup: false
-        dist_dir: public
+        dist_dir: ./
