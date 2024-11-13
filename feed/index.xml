@@ -12,6 +12,18 @@
 		<email>admin@robin.is</email>
 	</author>
 			<entry>
+		<title>Dream Theatre 40th Anniversary Tour</title>
+		<link href="https://www.robin.is/posts/2024/dream-theatre-40th-anniversary-tour/"/>
+		<updated>2024-11-12 23:53:36</updated>
+		<id>https://www.robin.is/posts/2024/dream-theatre-40th-anniversary-tour/</id>
+		<content type="html">&lt;h2&gt;Dream Theatre&lt;/h2&gt;
+&lt;p&gt;The 4th time watching Dream Theatre, after London (2008?), Saarbrücken (2013) and Rockhal (2022).&lt;/p&gt;
+&lt;p&gt;Still as good as ever.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/dream-theatre-1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/dream-theatre-2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
 		<title>Ten Drugs</title>
 		<link href="https://www.robin.is/posts/2024/ten-drugs/"/>
 		<updated>2024-11-12 18:00:33</updated>
@@ -168,15 +180,6 @@
 &lt;p&gt;After procrastinating between using Python or PHP, I decided on PHP as I at least had some experience of using that. After a couple of weeks of hacking, the job was done. My script came it at under 500 lines of code which I understood (at least at the time of writing them!).&lt;/p&gt;
 &lt;p&gt;Now I needed to sort out the hosting. With the Eleventy site I used a &lt;a href=&quot;https://docs.github.com/en/actions&quot;&gt;GitHub Action&lt;/a&gt; to publish my site to &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;. But getting my PHP script to run in GitHub actions seemed a lot of effort. Instead I reverted back to &lt;a href=&quot;https://www.nearlyfreespeech.net/&quot;&gt;NearlyFreeSpeech.Net&lt;/a&gt; and now use that to run the PHP script and host the static files. This involves some GitHub API calls to retrieve the latest updates of the content before processing in order to update the live site. This is a little more involved than with GitHub, but I can probably simplify it in the future.&lt;/p&gt;
 &lt;p&gt;It also feels good to be hosting my files on a smaller, indepedent host. NearlyFreeSpeech.Net have been around for over 20 years. Clearly they know what they are doing. They are also cheap as chips, hosting my site shouldn&#039;t cost me much more than a couple of dollars a month. This doesn&#039;t compete with GitHub Pages, which is free. But then, so what? The domain name costs me more than the hosting!&lt;/p&gt;
-</content>
-	</entry>
-			<entry>
-		<title>Health Inequity Hackathon</title>
-		<link href="https://www.robin.is/posts/2024/health-inequity-hackathon/"/>
-		<updated>2024-09-06 23:18:27</updated>
-		<id>https://www.robin.is/posts/2024/health-inequity-hackathon/</id>
-		<content type="html">&lt;p&gt;She&#039;s done it again! After being Bacalaureate of the year in her school last year, this year my elder daughter has won the &lt;a href=&quot;https://www.linkedin.com/feed/update/urn:li:activity:7237878146769833984/&quot;&gt;Health Inequity hackathon&lt;/a&gt; organised by &lt;a href=&quot;https://www.lilly.com/&quot;&gt;Lilly&lt;/a&gt; and &lt;a href=&quot;https://www.msd-uk.com/&quot;&gt;MKD&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Well done, we are very proud parents!&lt;/p&gt;
 </content>
 	</entry>
 	</feed>
