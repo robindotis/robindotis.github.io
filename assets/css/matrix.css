@@ -1,18 +1,18 @@
 :root {
-    --header-bg-color: #eee; /*#009cd7;*/
-    --header-title-color: #000; /*#fff;*/
-    --header-title-focus-color: #000; /*#B85F01;*/
-    --header-subtitle-color: #000;
-    --header-navtext-color: #000;
-    --main-highlight-color: #000;
-    --main-bg-color: #ffffff;
-    --main-text-color: #000;
+    --header-bg-color: #000; /*#009cd7;*/
+    --header-title-color: #03a062; /*#fff;*/
+    --header-title-focus-color: #03a062; /*#B85F01;*/
+    --header-subtitle-color: #03a062;
+    --header-navtext-color: #03a062;
+    --main-highlight-color: #03a062;
+    --main-bg-color: #000;
+    --main-text-color: #03a062;
     --main-font-family: "'Lucia Grande', Verdana, Helvetica, Arial, sans-serif, serif";
     --postlist-navtext-color: var(--header-navtext-color);
-    --footer-bg-color: #eeeeee;
+    --footer-bg-color: #000;
     --footer-text-color: var(--header-navtext-color);
     --footer-navtext-color: var(--header-navtext-color);
-    --link-color: #000000;
+    --link-color: #03a062;
     --link-focus-color: var(--link-color);
     --link-focus-bg-color: #ffff00;
     --date-bg-color: var(--header-title-color); /*var(--header-bg-color);*/
@@ -22,7 +22,7 @@
 
 a, details summary {
     border: 2px solid;
-    border-color: rgba(0, 0, 0, 0);
+    border-color: rgba(3, 160, 98, 0);
     color: var(--link-color);
     text-decoration-color: var(--main-highlight-color);
     text-decoration-thickness: 2px;
