@@ -1,23 +1,28 @@
 :root {
     --header-bg-color: #000; /*#009cd7;*/
-    --header-title-color: #03a062; /*#fff;*/
+    --header-title-color: #36ba01; /*#fff;*/
     --header-title-focus-color: #03a062; /*#B85F01;*/
-    --header-subtitle-color: #03a062;
-    --header-navtext-color: #03a062;
+    --header-subtitle-color: #36ba01;
+    --header-navtext-color: #00ff2b;
     --main-highlight-color: #03a062;
     --main-bg-color: #000;
-    --main-text-color: #03a062;
-    --main-font-family: "'Lucia Grande', Verdana, Helvetica, Arial, sans-serif, serif";
+    --main-text-color: #00ff2b;
+    --main-font-family: courier, 'Lucia Grande', Verdana, Helvetica, Arial, sans-serif, serif;
     --postlist-navtext-color: var(--header-navtext-color);
     --footer-bg-color: #000;
     --footer-text-color: var(--header-navtext-color);
     --footer-navtext-color: var(--header-navtext-color);
-    --link-color: #03a062;
-    --link-focus-color: var(--link-color);
-    --link-focus-bg-color: #ffff00;
+    --link-color: #36ba01;
+    --link-focus-color: #000;
+    --link-focus-bg-color: #00ff2b;
     --date-bg-color: var(--header-title-color); /*var(--header-bg-color);*/
     --date-text-color: var(--header-bg-color); /*var(--header-title-color);*/
     --body-color: #fff;        
+}
+
+body {
+    font-family: var(--main-font-family);
+    background-color: var(--body-bg-color);
 }
 
 a, details summary {
@@ -46,4 +51,33 @@ header nav.subtitle a.current {
     color: var(--header-bg-color);
     text-decoration: none;
     padding: 2px 5px;
+}
+
+hr {
+    height: 2px;
+    border: none;
+    background-color: #36ba01;
+}
+
+/*
+https://stackoverflow.com/questions/32413731/color-for-unicode-emoji
+*/
+span.thumbs {
+    color: transparent;  
+    text-shadow: 0 0 0 #00ff2b;
+}
+
+/*
+https://stackoverflow.com/questions/52237298/apply-a-filter-with-css-to-change-colors-of-a-picture
+*/
+header img.logo, .rss img {filter: grayscale(0); filter:hue-rotate(100deg);}
+
+img#gh-icon {
+    background-color: #00ff2b;
+}
+
+@media (min-width: 900px) {
+    main div.main-content {
+        border-right: #36ba01 solid 2px;
+    }
 }
