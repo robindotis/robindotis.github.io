@@ -12,6 +12,18 @@
 		<email>admin@robin.is</email>
 	</author>
 			<entry>
+		<title>Privacy</title>
+		<link href="https://www.robin.is/posts/2024/privacy/"/>
+		<updated>2024-11-15 06:20:30</updated>
+		<id>https://www.robin.is/posts/2024/privacy/</id>
+		<content type="html">&lt;p&gt;A very interesting &lt;a href=&quot;https://www.tbray.org/ongoing/When/202x/2024/11/14/Why-Privacy&quot;&gt;post on privacy by Tim Bray&lt;/a&gt;. I particularly like this point:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Because you’re forgetting about the people who do need privacy. If only the “suspicious” stuff is made private, then our adversaries will assume that anything that’s private must be suspicious. That endangers our basic civilizational privacy privilege and isn’t a place we want to be.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;He also has couple of talking points to use when discussing privacy with others, who are perhaps less concerned than you are.&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
 		<title>Dream Theatre 40th Anniversary Tour</title>
 		<link href="https://www.robin.is/posts/2024/dream-theatre-40th-anniversary-tour/"/>
 		<updated>2024-11-12 23:53:36</updated>
@@ -166,20 +178,6 @@
 		<content type="html">&lt;p&gt;A couple of days ago I wrote about how I had migrated my SSG from &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt; to my own custom PHP script and switched to hosting the site on &lt;a href=&quot;https://www.nearlyfreespeech.net/&quot;&gt;NearlyFreeSpeech.Net&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I now managed to get my PHP script running with GitHub Actions, which meant I can again publish to GitHub Pages. As much as like supporting smaller hosts, the convenience of publishing to GitHub Pages using an automated GitHub Action is hard to beat. It saves me having to connect to the NFS servers and run a build script there. Sure I could have a cron job running there or something like that, but it seemed a bit pointless to build without changes to the content.&lt;/p&gt;
 &lt;p&gt;Now if only there was a good editor or even CMS for GitHub. I miss forestry.io, which really did exactly what I wanted, but unfortunately its replacement, &lt;a href=&quot;https://tina.io/forestry/&quot;&gt;tina.io&lt;/a&gt; does not. I will keep looking.&lt;/p&gt;
-</content>
-	</entry>
-			<entry>
-		<title>Going it alone</title>
-		<link href="https://www.robin.is/posts/2024/going-it-alone/"/>
-		<updated>2024-09-28 09:11:00</updated>
-		<id>https://www.robin.is/posts/2024/going-it-alone/</id>
-		<content type="html">&lt;p&gt;Towards the end of 2020 I started to rebuild my site using the &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt; static site generator.  &lt;a href=&quot;/posts/2021/welcome-back/&quot;&gt;The new site went live on the 1st January 2021&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;My site had been running on &lt;a href=&quot;https://wordpress.org/&quot;&gt;Wordpress&lt;/a&gt; for years. First on a self-hosted Wordpress installation, later on &lt;a href=&quot;https://wordpress.org/&quot;&gt;Wordpress.com&lt;/a&gt;. At some point I just got tired of the increasing complexity of Wordpress. It&#039;s a great tool, but all I really needed to do was to write some posts and update some pages. I also wanted to be much more free to style my site the way I wanted, without having create or adapt Wordpress themes. In short I wanted to be closer to the metal and didn&#039;t need 99% of the features Wordpress offers.&lt;/p&gt;
-&lt;p&gt;Eleventy seemed like a good choice at the time, and so it proved. I don&#039;t in any way regret making the switch. Once I got going in it, I found it relatively easy to deal with and adapt. However, with time I also realised that my JavaScript skills are simply not good enough. I stopped programming for a living over 10 years ago. Even beforehand, I was never really focussed on JavaScript. With time I realised that whilst I could get things done in Eleventy, I struggled to understand what I was doing. There is excellent support out there in terms of blogs and discussions, and I always managed to implement what I wanted, but it often felt more like plug and pray.&lt;/p&gt;
-&lt;p&gt;I became curious to write my own SSG (static site generator). One which does exactly what I want without the flexibility to support various use cases. I mean, how difficult can it be to process a bunch of markdown files?&lt;/p&gt;
-&lt;p&gt;After procrastinating between using Python or PHP, I decided on PHP as I at least had some experience of using that. After a couple of weeks of hacking, the job was done. My script came it at under 500 lines of code which I understood (at least at the time of writing them!).&lt;/p&gt;
-&lt;p&gt;Now I needed to sort out the hosting. With the Eleventy site I used a &lt;a href=&quot;https://docs.github.com/en/actions&quot;&gt;GitHub Action&lt;/a&gt; to publish my site to &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;. But getting my PHP script to run in GitHub actions seemed a lot of effort. Instead I reverted back to &lt;a href=&quot;https://www.nearlyfreespeech.net/&quot;&gt;NearlyFreeSpeech.Net&lt;/a&gt; and now use that to run the PHP script and host the static files. This involves some GitHub API calls to retrieve the latest updates of the content before processing in order to update the live site. This is a little more involved than with GitHub, but I can probably simplify it in the future.&lt;/p&gt;
-&lt;p&gt;It also feels good to be hosting my files on a smaller, indepedent host. NearlyFreeSpeech.Net have been around for over 20 years. Clearly they know what they are doing. They are also cheap as chips, hosting my site shouldn&#039;t cost me much more than a couple of dollars a month. This doesn&#039;t compete with GitHub Pages, which is free. But then, so what? The domain name costs me more than the hosting!&lt;/p&gt;
 </content>
 	</entry>
 	</feed>
