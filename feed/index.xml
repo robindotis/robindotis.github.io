@@ -12,6 +12,28 @@
 		<email>admin@robin.is</email>
 	</author>
 			<entry>
+		<title>Paris</title>
+		<link href="https://www.robin.is/posts/2024/paris/"/>
+		<updated>2024-11-17 07:30:00</updated>
+		<id>https://www.robin.is/posts/2024/paris/</id>
+		<content type="html">&lt;p&gt;This was a quick day trip to Paris for administrative reasons. The TGV from Luxembourg gets you there in under two and a hours.&lt;/p&gt;
+&lt;p&gt;We finished the administrative stuff a lot earlier than expected, so we had six hours to waste. After an expensive underwhelming lunch in the Cafe de l&#039;Opera (the Google reviews are about right), we crossed the road to the Galeries Lafayette Haussmann and enjoyed the view from the rooftop as well the Christmas decorations underneath the impressive dome.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/paris-1.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/paris-2.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;We then planned to have a look at the nearby opera house, but the hall itself could not be visited at the moment, so we skipped that and headed to the Louvre. The queues were short and we headed straight to the Mona Lisa. Here a reasonable crowd of people was taking selfies so we waited a few minutes to get to the front to view the most famous picture of them all:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/paris-3.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Given the, understandable, distance you have to keep from the picture, if you really want to study it, you might be better off buying a poster in the souvenir shop 😉.&lt;/p&gt;
+&lt;p&gt;Next we viewed the &amp;quot;Libery leading the people&amp;quot;, which had been photoshopped earlier in the year. Well, the analog equivalent. They call it conservation in the art world!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/paris-4.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/paris-5.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Finally here&#039;s an obligatory shot of the glass pyramids around the Louvre:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/paris-6.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;After that it was time to head back to train statio, but first a quick glimpse of the Seine.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/2024/paris-7.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Overall, the one impression I have from this day trip to Paris is that compared to 25 years ago it has been tidied up a lot and made far more pleasant and accessible to tourists, and hopefully locals as well. Also, there were lots cycle lanes which were being used, despite it almost being winter and about 8°C. Well done Paris!&lt;/p&gt;
+</content>
+	</entry>
+			<entry>
 		<title>Privacy</title>
 		<link href="https://www.robin.is/posts/2024/privacy/"/>
 		<updated>2024-11-15 06:20:30</updated>
@@ -168,16 +190,6 @@
 &lt;p&gt;...and then I waited another 2 minutes at the table for that last bit to settle.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/images/2024/guinness-2.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Cheers! 🍀&lt;/p&gt;
-</content>
-	</entry>
-			<entry>
-		<title>Back on GitHub Pages</title>
-		<link href="https://www.robin.is/posts/2024/back-on-github-pages/"/>
-		<updated>2024-09-30 09:11:00</updated>
-		<id>https://www.robin.is/posts/2024/back-on-github-pages/</id>
-		<content type="html">&lt;p&gt;A couple of days ago I wrote about how I had migrated my SSG from &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt; to my own custom PHP script and switched to hosting the site on &lt;a href=&quot;https://www.nearlyfreespeech.net/&quot;&gt;NearlyFreeSpeech.Net&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I now managed to get my PHP script running with GitHub Actions, which meant I can again publish to GitHub Pages. As much as like supporting smaller hosts, the convenience of publishing to GitHub Pages using an automated GitHub Action is hard to beat. It saves me having to connect to the NFS servers and run a build script there. Sure I could have a cron job running there or something like that, but it seemed a bit pointless to build without changes to the content.&lt;/p&gt;
-&lt;p&gt;Now if only there was a good editor or even CMS for GitHub. I miss forestry.io, which really did exactly what I wanted, but unfortunately its replacement, &lt;a href=&quot;https://tina.io/forestry/&quot;&gt;tina.io&lt;/a&gt; does not. I will keep looking.&lt;/p&gt;
 </content>
 	</entry>
 	</feed>
